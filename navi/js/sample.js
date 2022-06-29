@@ -25,21 +25,21 @@ window.addEventListener("load", function () {
 
 
 
-var swiper = new Swiper(".fadeSwiper", {
-  centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  effect: "fade", //フェードのエフェクト
-  autoplay: {
-    delay: 4000, //４秒後に次の画像へ
-    disableOnInteraction: false //ユーザー操作後に自動再生を再開する
-  },
-  speed: 2000, //２秒かけながら次の画像へ移動
-  allowTouchMove: false, //マウスでのスワイプを禁止
-});
+// var swiper = new Swiper(".fadeSwiper", {
+//   centeredSlides: true,
+//   autoplay: {
+//     delay: 2500,
+//     disableOnInteraction: false
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   effect: "fade", //フェードのエフェクト
+//   autoplay: {
+//     delay: 4000, //４秒後に次の画像へ
+//     disableOnInteraction: false //ユーザー操作後に自動再生を再開する
+//   },
+//   speed: 2000, //２秒かけながら次の画像へ移動
+//   allowTouchMove: false, //マウスでのスワイプを禁止
+// });
