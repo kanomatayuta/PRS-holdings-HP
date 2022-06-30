@@ -1,0 +1,390 @@
+/*
+--------------------------------------
+
+0.Comon
+1.Top
+2.Concept
+3.Service
+4.Company
+5.Contact
+6.footer
+*/
+/*
+--------------------------------------
+0.Comon
+--------------------------------------
+*/
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.subtitle {
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+/*
+--------------------------------------
+1.top
+--------------------------------------
+*/
+.top .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.top .inner .hum-position {
+  position: absolute;
+  right: 65px;
+  top: 65px;
+  z-index: 2;
+}
+.top .inner .hum-position .hum-btn {
+  position: relative;
+  height: 28px;
+  width: 39px;
+  cursor: pointer;
+}
+.top .inner .hum-position .hum-btn span {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #19A2DB;
+}
+.top .inner .hum-position .hum-btn span:nth-of-type(1) {
+  top: 0;
+}
+.top .inner .hum-position .hum-btn span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.top .inner .hum-position .hum-btn span:nth-of-type(3) {
+  bottom: 0;
+}
+.top .inner .left {
+  padding-bottom: 80px;
+}
+.top .inner .left .svg-center {
+  text-align: center;
+  padding: 50px 50px;
+}
+.top .inner .left .subhead {
+  background-color: #E0E9F8;
+  font-size: 20px;
+  line-height: 52px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 16px auto 0;
+  padding: 0 40px;
+  position: relative;
+}
+.top .inner .left .subhead::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  color: #202A39;
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+  border: 0.1em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+  transform: translateY(-25%) rotate(135deg);
+  position: absolute;
+  top: 80px;
+  left: calc(50% - 12px);
+}
+.top .inner .right .mainvisual {
+  margin-bottom: 0;
+}
+.top .inner .right .mainvisual li img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 483px;
+  height: 100%;
+  width: auto;
+}
+.top .inner .right .mainvisual .slick-dots {
+  top: 50%;
+  transform: translateY(-50%);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.top .inner .right .mainvisual .slick-dots li {
+  display: block;
+  margin: 0 23px 16px auto;
+}
+.top .inner .right .mainvisual .slick-dots li:last-child {
+  margin-bottom: 0;
+}
+.top .inner .right .mainvisual .slick-dots li button::before {
+  font-size: 16px;
+}
+.top .inner .right .mainvisual .slick-dots .slick-active button::before {
+  color: #97B5E7;
+}
+
+/*
+--------------------------------------
+2.concept
+--------------------------------------
+*/
+.concept .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 8vw 0;
+}
+.concept .inner .left {
+  width: 50%;
+}
+.concept .inner .left .title {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.concept .inner .left .title .subtitle {
+  display: block;
+}
+.concept .inner .right {
+  width: 50%;
+  padding: 0 5%;
+}
+.concept .inner .right .cont-head {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+}
+.concept .inner .right .concept-text {
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+/*
+--------------------------------------
+3.service
+--------------------------------------
+*/
+.service .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 8vw 0;
+}
+.service .inner .left {
+  width: 50%;
+}
+.service .inner .left .title {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.service .inner .left .title .subtitle {
+  display: block;
+}
+.service .inner .left .service-menu-list {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.service .inner .left .service-menu-list .service-menu {
+  margin-top: 16px;
+}
+.service .inner .right {
+  width: 50%;
+  padding: 0 5%;
+}
+.service .inner .right .service-visual .slick-prev::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 30px 16px 30px 0;
+  border-color: transparent #000 transparent transparent;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.service .inner .right .service-visual .slick-prev::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 30px 16px 30px 0;
+  border-color: transparent #fff transparent transparent;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.service .inner .right .service-visual .slick-next::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 30px 0 30px 16px;
+  border-color: transparent transparent transparent #000;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+}
+.service .inner .right .service-visual .slick-next::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 30px 0 30px 16px;
+  border-color: transparent transparent transparent #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -16px;
+}
+.service .inner .right .service-visual .slick-dots {
+  bottom: -30px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.service .inner .right .service-visual .slick-dots li button::before {
+  font-size: 16px;
+}
+.service .inner .right .service-visual .slick-dots .slick-active button::before {
+  color: #97B5E7;
+}
+.service .inner .right .more {
+  margin: 70px auto 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.service .inner .right .more .more-btn {
+  background-color: #97B5E7;
+  text-align: center;
+  border-radius: 9999px;
+  padding: 20px 95px;
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.service .inner .right .more .more-btn::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 40px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+.service .inner .right .more .more-btn:hover {
+  opacity: 0.7;
+}
+.service .inner .right .more .more-btn:hover::before {
+  right: 35px;
+}
+
+/*
+--------------------------------------
+3.company
+--------------------------------------
+*/
+.company .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 8vw 0;
+}
+.company .inner .left {
+  width: 50%;
+}
+.company .inner .left .title {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.company .inner .left .title .subtitle {
+  display: block;
+}
+.company .inner .right {
+  width: 50%;
+  padding: 0;
+}
+.company .inner .right .more {
+  margin: 77px auto 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.company .inner .right .more .more-btn {
+  background-color: #97B5E7;
+  text-align: center;
+  border-radius: 9999px;
+  padding: 20px 80px;
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.company .inner .right .more .more-btn::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 40px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+.company .inner .right .more .more-btn:hover {
+  opacity: 0.7;
+}
+.company .inner .right .more .more-btn:hover::before {
+  right: 35px;
+}/*# sourceMappingURL=common.css.map */
