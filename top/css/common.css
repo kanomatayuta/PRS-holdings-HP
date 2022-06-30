@@ -14,6 +14,10 @@
 0.Comon
 --------------------------------------
 */
+body {
+  background-color: #cacaca;
+}
+
 .left {
   width: 50%;
 }
@@ -25,6 +29,7 @@
 .inner {
   max-width: 960px;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 .title {
@@ -41,6 +46,11 @@ img {
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 /*
@@ -158,7 +168,7 @@ li {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 8vw 0;
+  padding: 8vw 0 0;
 }
 .concept .inner .left {
   width: 50%;
@@ -201,7 +211,7 @@ li {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 8vw 0;
+  padding: 8vw 0 40px;
 }
 .service .inner .left {
   width: 50%;
@@ -298,7 +308,7 @@ li {
   width: fit-content;
 }
 .service .inner .right .more .more-btn {
-  background-color: #97B5E7;
+  background-color: rgba(151, 181, 231, 0.5);
   text-align: center;
   border-radius: 9999px;
   padding: 20px 95px;
@@ -319,7 +329,7 @@ li {
   transition: all 0.5s ease;
 }
 .service .inner .right .more .more-btn:hover {
-  opacity: 0.7;
+  background-color: rgb(151, 181, 231);
 }
 .service .inner .right .more .more-btn:hover::before {
   right: 35px;
@@ -327,7 +337,7 @@ li {
 
 /*
 --------------------------------------
-3.company
+4.company
 --------------------------------------
 */
 .company .inner {
@@ -362,7 +372,7 @@ li {
   width: fit-content;
 }
 .company .inner .right .more .more-btn {
-  background-color: #97B5E7;
+  background-color: rgba(151, 181, 231, 0.5);
   text-align: center;
   border-radius: 9999px;
   padding: 20px 80px;
@@ -383,8 +393,123 @@ li {
   transition: all 0.5s ease;
 }
 .company .inner .right .more .more-btn:hover {
-  opacity: 0.7;
+  background-color: rgb(151, 181, 231);
 }
 .company .inner .right .more .more-btn:hover::before {
   right: 35px;
+}
+
+/*
+--------------------------------------
+5.global-contact
+--------------------------------------
+*/
+.global-contact {
+  height: 264px;
+}
+.global-contact .inner {
+  background-color: #202A39;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+}
+.global-contact .inner .left {
+  text-align: center;
+}
+.global-contact .inner .left h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.global-contact .inner .right .more {
+  margin: 0 auto 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.global-contact .inner .right .more .more-btn {
+  background-color: rgba(151, 181, 231, 0.8);
+  text-align: center;
+  border-radius: 9999px;
+  padding: 20px 80px;
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.global-contact .inner .right .more .more-btn::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 40px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+.global-contact .inner .right .more .more-btn:hover {
+  background-color: rgb(151, 181, 231);
+}
+.global-contact .inner .right .more .more-btn:hover::before {
+  right: 35px;
+}
+
+/*
+--------------------------------------
+6.footer
+--------------------------------------
+*/
+footer {
+  background-color: #E5E5E5;
+  max-width: 960px;
+  margin: 0 auto;
+}
+footer .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+footer .inner .left {
+  padding-left: 64px;
+}
+footer .inner .left .footer-logo {
+  margin-top: 30px;
+}
+footer .inner .left .address {
+  font-style: normal;
+  margin-top: 15px;
+  line-height: 30px;
+}
+footer .inner .right nav {
+  display: flex;
+  justify-content: end;
+  margin-right: 8%;
+}
+footer .inner .right nav .menu-list {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  padding-right: 8%;
+  border-right: solid 1px #000;
+}
+footer .inner .right nav .service-list {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  padding-left: 30px;
+}
+footer .inner .right nav .service-list li {
+  list-style: disc;
+  margin-left: 20px;
+}
+footer .copyright {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 50px 0 20px;
 }/*# sourceMappingURL=common.css.map */

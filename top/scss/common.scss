@@ -26,6 +26,9 @@
 --------------------------------------
 */
 
+body {
+  background-color: #cacaca;
+}
 
 .left {
   width: 50%;
@@ -38,6 +41,7 @@
 .inner {
   max-width: 960px;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 .title {
@@ -54,6 +58,11 @@ img {
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 
@@ -204,7 +213,7 @@ li {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 8vw 0;
+    padding: 8vw 0 0;
 
     .left {
       width: 50%;
@@ -252,7 +261,7 @@ li {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 8vw 0;
+    padding: 8vw 0 40px;
 
     .left {
       width: 50%;
@@ -369,7 +378,7 @@ li {
         width: fit-content;
 
         .more-btn {
-          background-color: #97B5E7;
+          background-color: rgba(151, 181, 231, 0.5);
           text-align: center;
           border-radius: 9999px;
           padding: 20px 95px;
@@ -391,7 +400,7 @@ li {
           }
 
           &:hover {
-            opacity: 0.7;
+            background-color: rgba(151, 181, 231, 1);
 
             &::before {
               right: 35px;
@@ -405,7 +414,7 @@ li {
 
 /*
 --------------------------------------
-3.company
+4.company
 --------------------------------------
 */
 
@@ -441,7 +450,7 @@ li {
         width: fit-content;
 
         .more-btn {
-          background-color: #97B5E7;
+          background-color: rgba(151, 181, 231, 0.5);
           text-align: center;
           border-radius: 9999px;
           padding: 20px 80px;
@@ -463,7 +472,7 @@ li {
           }
 
           &:hover {
-            opacity: 0.7;
+            background-color: rgba(151, 181, 231, 1);
 
             &::before {
               right: 35px;
@@ -472,5 +481,142 @@ li {
         }
       }
     }
+  }
+}
+
+/*
+--------------------------------------
+5.global-contact
+--------------------------------------
+*/
+
+.global-contact {
+  height: 264px;
+
+  .inner {
+    background-color: #202A39;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+
+    .left {
+      text-align: center;
+
+      h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+
+    }
+
+    .right {
+      .more {
+        margin: 0 auto 0;
+        display: block;
+        width: fit-content;
+
+        .more-btn {
+          background-color: rgba(151, 181, 231, 0.8);
+          text-align: center;
+          border-radius: 9999px;
+          padding: 20px 80px;
+          position: relative;
+          transition: all .5s ease;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: calc(50% - 5px);
+            right: 40px;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+            transform: rotate(45deg);
+            transition: all .5s ease;
+          }
+
+          &:hover {
+            background-color: rgba(151, 181, 231, 1);
+
+            &::before {
+              right: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+--------------------------------------
+6.footer
+--------------------------------------
+*/
+footer {
+  background-color: #E5E5E5;
+  max-width: 960px;
+  margin: 0 auto;
+
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .left {
+      padding-left: 64px;
+
+      .footer-logo {
+        margin-top: 30px;
+      }
+
+      .address {
+        font-style: normal;
+        margin-top: 15px;
+        line-height: 30px;
+      }
+
+    }
+
+    .right {
+      nav {
+        display: flex;
+        justify-content: end;
+        margin-right: 8%;
+
+        .menu-list {
+          display: flex;
+          flex-flow: column;
+          gap: 15px;
+          padding-right: 8%;
+          border-right: solid 1px #000;
+        }
+
+        .service-list {
+          display: flex;
+          flex-flow: column;
+          gap: 15px;
+          padding-left: 30px;
+
+          li {
+            list-style: disc;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 50px 0 20px;
   }
 }
