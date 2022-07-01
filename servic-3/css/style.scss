@@ -1,0 +1,433 @@
+@charset "UTF-8";
+
+/*--------------------------
+* 共通
+--------------------------*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Serif JP', serif;
+	font-size: 1em;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: 100%;
+	word-wrap: break-word;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	font-weight: 400;
+	letter-spacing: .15em
+}
+
+// navi hover時
+.sub-gnavi__list a,
+.breadcrumb a {
+	position: relative;
+}
+
+.sub-gnavi__list a:before,
+.breadcrumb a:before {
+	background-color: #3c3632;
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	transition: all .3s cubic-bezier(.19, 1, .22, 1);
+	transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+.breadcrumb a:before {
+	background-color: #fff;
+}
+
+.sub-gnavi__list a:hover:before,
+.breadcrumb a:hover:before {
+	width: 100%;
+}
+
+/*--------------------------
+* header
+--------------------------*/
+.sub-header {
+	position: fixed;
+	height: 100px;
+	background: lightcyan;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	margin: auto;
+
+	&__logo {
+		position: absolute;
+		left: 5%;
+		top: 0px;
+
+		img {
+			width: 300px;
+			height: 100px;
+		}
+	}
+}
+
+// サブページ用gnavi
+.sub-gnavi {
+	height: auto;
+	background: none;
+	position: absolute;
+	width: auto;
+	z-index: 1;
+	right: 5%;
+	left: auto;
+	top: 42px;
+
+	&__inner {
+		position: relative;
+		top: unset;
+		left: unset;
+		transform: none;
+		width: auto;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+	&__list {
+		display: flex;
+		padding: 0;
+
+		li {
+			font-size: 1em;
+			margin: 0 1em;
+		}
+	}
+}
+
+/*--------------------------
+* main
+--------------------------*/
+.main {
+	z-index: 0;
+}
+
+.hero {
+	// header部分
+	margin-top: 100px;
+
+	&__bg {
+		position: relative;
+		height: 200px;
+		background-image: url(../img/hero/hero.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		z-index: 0;
+
+		&:after {
+			// スモーク
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&__content {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		height: 200px;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		z-index: 1;
+
+		p {
+			margin-top: 40px;
+			color: #fff;
+		}
+
+		h1 {
+			margin-top: 8px;
+			color: #fff;
+			font-size: 3.5em;
+		}
+
+		// パンクズリスト
+		.breadcrumb {
+			margin-top: 8px;
+
+			li {
+				display: inline;
+				list-style: none;
+				font-weight: bold;
+
+				&:after {
+					content: '>';
+					padding: 0 0.2em;
+					color: #fff;
+				}
+
+				&:last-child:after {
+					content: '';
+				}
+
+				a {
+					margin: 0 16px;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------
+* 共通
+--------------------------*/
+
+.sec {
+	// セクション幅
+	padding: 8vw 0;
+	margin: 0 auto;
+
+	&__wrapper {
+		width: 90%;
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 2em;
+	}
+
+	&__text {
+		max-width: 650px;
+		padding: 32px 0 0;
+		margin: 0 auto;
+	}
+}
+
+
+/*--------------------------------------
+*	can
+--------------------------------------*/
+.can {
+	background-color: #E0E9F8;
+}
+
+.can__list {
+	margin-top: 32px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	/* 中央寄せ */
+}
+
+.can__list--item {
+	margin-bottom: 24px;
+}
+
+.circle {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: #fff;
+	position: relative;
+}
+
+.circle-content {
+	width: 60%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.can__text {
+	text-align: center;
+	margin-top: 14px;
+}
+
+
+/*--------------------------------------
+*	works
+--------------------------------------*/
+.works__swiper {
+	margin-top: 32px;
+}
+
+.swiper {
+	overflow: hidden;
+
+	&-wrapper {
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: flex;
+		transition-property: transform;
+		box-sizing: content-box;
+	}
+
+	&-slide {
+		flex-shrink: 0;
+
+	}
+}
+
+/* スライドの動き等速 */
+.swiper-wrapper {
+	transition-timing-function: linear;
+}
+
+/* 画像のサイズ調整 */
+.works__list--item img {
+	height: auto;
+	width: 100%;
+}
+
+// btn
+.works {
+	.btn {
+		margin-top: 32px;
+		text-align: center;
+	}
+}
+
+.btn a {
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	border-radius: 0.5rem;
+}
+
+.btn .btn-c {
+	font-size: 1rem;
+	position: relative;
+	padding: 1.5rem 5rem;
+	border-radius: 100vh;
+
+	&:hover:after {
+		right: 35px;
+	}
+
+	&:after {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 700;
+		font-size: 1rem;
+		line-height: 1;
+		position: absolute;
+		top: 50%;
+		right: 50px;
+		content: "\f054";
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+	}
+}
+
+.btn--blue {
+	color: #000;
+	background-color: #CBDAF3;
+
+	&:hover {
+		color: #fff;
+		background-color: #97B5E7;
+	}
+}
+
+
+
+/*--------------------------------------
+*	production
+--------------------------------------*/
+.production-step {
+	width: 100%;
+	margin-top: 32px;
+	border-spacing: 0px 24px;
+}
+
+tbody {
+	position: relative;
+}
+
+tbody::before {
+	content: "";
+	position: absolute;
+	top: 24px;
+	left: 10%;
+	border-left: 5px dotted #202A39;
+	transform: translateX(-10%);
+	height: 90%;
+	width: 5px;
+}
+
+.step-box {
+	width: 20%;
+	padding: 24px;
+	background: #202A39;
+	vertical-align: middle;
+	text-align: left;
+	overflow: visible;
+	position: relative;
+	color: #fff;
+
+	&:after {
+		left: 110%;
+		top: 50%;
+		transform: translateY(-50%);
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border: solid transparent;
+		border-left-color: #202A39;
+		border-width: 16px;
+	}
+
+	&__number {
+		text-align: center;
+	}
+
+	&__title {
+		text-align: center;
+		margin-top: 24px;
+	}
+}
+
+.step-text {
+	width: 80%;
+	padding: 24px 4em;
+	border: 1px solid #202A39;
+
+	span {
+		color: grey;
+	}
+}
