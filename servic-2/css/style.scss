@@ -1,0 +1,745 @@
+@charset "UTF-8";
+
+/*--------------------------
+* 共通
+--------------------------*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Serif JP', serif;
+	font-size: 1em;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: 100%;
+	word-wrap: break-word;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	font-weight: 400;
+	letter-spacing: .15em
+}
+
+// navi hover時
+.sub-gnavi__list a,
+.breadcrumb a {
+	position: relative;
+}
+
+.sub-gnavi__list a:before,
+.breadcrumb a:before {
+	background-color: #3c3632;
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	transition: all .3s cubic-bezier(.19, 1, .22, 1);
+	transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+.breadcrumb a:before {
+	background-color: #fff;
+}
+
+.sub-gnavi__list a:hover:before,
+.breadcrumb a:hover:before {
+	width: 100%;
+}
+
+/*--------------------------
+* header
+--------------------------*/
+.sub-header {
+	position: fixed;
+	height: 100px;
+	background: lightcyan;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	margin: auto;
+
+	&__logo {
+		position: absolute;
+		left: 5%;
+		top: 0px;
+
+		img {
+			width: 300px;
+			height: 100px;
+		}
+	}
+}
+
+// サブページ用gnavi
+.sub-gnavi {
+	height: auto;
+	background: none;
+	position: absolute;
+	width: auto;
+	z-index: 1;
+	right: 5%;
+	left: auto;
+	top: 42px;
+
+	&__inner {
+		position: relative;
+		top: unset;
+		left: unset;
+		transform: none;
+		width: auto;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+	&__list {
+		display: flex;
+		padding: 0;
+
+		li {
+			font-size: 1em;
+			margin: 0 1em;
+		}
+	}
+}
+
+/*--------------------------
+* main
+--------------------------*/
+.main {
+	z-index: 0;
+}
+
+.hero {
+	// header部分
+	margin-top: 100px;
+
+	&__bg {
+		position: relative;
+		height: 200px;
+		background-image: url(../img/hero/hero.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		z-index: 0;
+
+		&:after {
+			// スモーク
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&__content {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		height: 200px;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		z-index: 1;
+
+		p {
+			margin-top: 40px;
+			color: #fff;
+		}
+
+		h1 {
+			margin-top: 8px;
+			color: #fff;
+			font-size: 3.5em;
+		}
+
+		// パンクズリスト
+		.breadcrumb {
+			margin-top: 8px;
+
+			li {
+				display: inline;
+				list-style: none;
+				font-weight: bold;
+
+				&:after {
+					content: '>';
+					padding: 0 0.2em;
+					color: #fff;
+				}
+
+				&:last-child:after {
+					content: '';
+				}
+
+				a {
+					margin: 0 16px;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------
+* 共通
+--------------------------*/
+
+.sec {
+	// セクション幅
+	padding: 8vw 0;
+	margin: 0 auto;
+
+	&__wrapper {
+		width: 90%;
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 2em;
+	}
+
+	&__text {
+		max-width: 650px;
+		padding: 32px 0 0;
+		margin: 0 auto;
+	}
+}
+
+
+/*--------------------------------------
+*	support
+--------------------------------------*/
+// 背景
+.support {
+	margin: 8vw 0;
+	position: relative;
+	background-color: #E0E9F8;
+}
+
+%wave-content {
+	content: "";
+	display: block;
+	width: 55%;
+	height: 100%;
+	position: absolute;
+	border-radius: 100% 50%;
+	background-color: #fff;
+	right: 0;
+	top: 63%;
+}
+
+%wave-before {
+	@extend %wave-content;
+	background-color: #fff;
+	right: 0;
+	top: 63%;
+}
+
+%wave-after {
+	@extend %wave-content;
+	background-color: #E0E9F8;
+	left: 0;
+	top: 32%;
+}
+
+.wave {
+	position: absolute;
+	height: 142px;
+	width: 100%;
+	background-color: #E0E9F8;
+	z-index: -1;
+
+	&--top {
+		@extend .wave;
+		top: -53px;
+		transform: scale(-1, -1);
+
+		&::before {
+			@extend %wave-before;
+		}
+
+		&::after {
+			@extend %wave-after;
+		}
+	}
+
+	&--bottom {
+		@extend .wave;
+		bottom: -53px;
+		transform: scaleY(1);
+
+		&::before {
+			@extend %wave-before;
+		}
+
+		&::after {
+			@extend %wave-after;
+		}
+	}
+}
+
+.step {
+	&__list {
+		margin: 32px 2em 0;
+
+		&--item {
+			display: flex;
+			background-color: #fff;
+			padding: 8px 58px 16px;
+			margin-bottom: 24px;
+			width: 100%;
+			border-radius: 20px;
+			align-items: center;
+			margin-bottom: 24px;
+
+			&:last-child {
+				margin-bottom: 0px;
+
+				.circre::after {
+					content: none;
+				}
+			}
+
+			.circre {
+				position: relative;
+				display: inline-block;
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				background: #1F2937;
+				margin-right: 64px;
+
+				&__number {
+					font-size: 1.2em;
+					width: 94px;
+					color: #fff;
+					position: absolute;
+					display: inline-block;
+					left: 0;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+					text-align: center;
+				}
+
+				&::after {
+					margin-top: 8px;
+					position: absolute;
+					content: "";
+					width: 0;
+					height: 0;
+					border-left: 16px solid transparent;
+					border-right: 16px solid transparent;
+					border-top: 16px solid black;
+					left: 50%;
+					top: 120%;
+					-webkit-transform: translate(-50%, -120%);
+					transform: translate(-50%, -120%);
+				}
+			}
+		}
+	}
+
+	&__title {
+		padding-top: 8px;
+		font-size: 1.3em;
+		font-weight: 700;
+	}
+
+	&__comment {
+		padding-top: 16px;
+		font-size: 1em;
+	}
+}
+
+
+
+
+
+
+/*--------------------------------------
+*	研修カード
+--------------------------------------*/
+.card {
+	margin: 32px auto 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+
+	&__item {
+		background: #fff;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px #ccc;
+		width: 45%;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 7px 34px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+			transition: all .5s;
+		}
+	}
+
+	&-content {
+		padding: 32px 20px 20px;
+		margin: 0 20px;
+
+		&__title {
+			font-size: 1.6em;
+			color: #333;
+			font-weight: 700;
+			text-align: center;
+			padding: 0 0 16px;
+		}
+
+		&__text {
+			color: #777;
+			line-height: 1.5;
+			font-weight: 400;
+			letter-spacing: 0.15em;
+		}
+	}
+
+	&-skill {
+		position: relative;
+		text-align: center;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		padding: 24px;
+		margin: 20px 32px;
+
+		&__title {
+			font-weight: 700;
+			position: absolute;
+			top: -15px;
+			left: 1em;
+			padding: 2px 10px;
+			background-color: #fff;
+		}
+	}
+}
+
+
+
+/*--------------------------------------
+* インタビュー
+--------------------------------------*/
+.interview {
+	position: relative;
+	width: 100%;
+
+	&::before {
+		content: "";
+		top: 36%;
+		position: absolute;
+		border-style: solid;
+		border-width: 0vw 0vw 500px 100vw;
+		border-color: transparent transparent #81D6E6 transparent;
+		z-index: -1;
+	}
+}
+
+.interview__item {
+	display: flex;
+}
+
+.interview-content {
+	width: 50%;
+
+	&__title {
+		font-size: 1.2em;
+		padding: 16px 16px;
+		text-align: center;
+		background-color: #fff;
+		border: 1px solid #81D6E6;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: "";
+			top: 11px;
+			left: 11px;
+			width: 100%;
+			height: 100%;
+			background-color: #81D6E6;
+			z-index: -1;
+		}
+	}
+
+	&__text {
+		padding-top: 42px;
+	}
+}
+
+.intervie-primary {
+	width: 50%;
+	padding-left: 42px;
+
+	&--img {
+		padding-top: 100%;
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+// 背景画像
+.bg-1 {
+	background-image: url("../img/main/interview/interview-1.jpg");
+}
+
+.bg-2 {
+	background-image: url("../img/main/interview/interview-1.jpg");
+}
+
+.bg-3 {
+	background-image: url("../img/main/interview/interview-1.jpg");
+}
+
+
+// swiper
+.swiper {
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 32px 0 0;
+
+	&-wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: flex;
+		transition-property: transform;
+		box-sizing: content-box;
+	}
+
+	&-slide {
+		width: 100%;
+		display: flex;
+		align-items: flex-end;
+		flex-shrink: 0;
+		position: relative;
+		transition-property: transform;
+	}
+}
+
+.swiper-btn {
+	margin: 48px 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.swiper-pagination {
+	flex: 0 0 35%;
+	max-width: 35%;
+	text-align: center;
+	transition: .3s opacity;
+	transform: translate3d(0, 0, 0);
+
+	&-bullet {
+		cursor: pointer;
+		width: 14px;
+		height: 14px;
+		display: inline-block;
+		border-radius: 50%;
+		opacity: 0.7;
+		margin: 0 24px 0 0;
+		background-color: #E0E9F8;
+		border: 2px solid #E0E9F8;
+
+		&-active {
+			opacity: 1;
+			background-color: #202A39;
+			border: 2px solid #202A39;
+		}
+	}
+}
+
+.swiper-button-next {
+	flex: 0 0 20%;
+	max-width: 20%;
+	position: relative;
+	top: auto;
+	right: auto;
+	left: auto;
+	margin-top: 0;
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	color: #202A39;
+
+	&:after {
+		content: "→";
+		margin-left: 24px;
+		font-size: 2rem;
+	}
+}
+
+
+/*--------------------------------------
+*	よくある質問
+--------------------------------------*/
+.accordion {
+	margin-top: 32px;
+	border-top: 1px solid #E0E9F8;
+	border-bottom: 0;
+}
+
+.accordion__tab {
+	padding: 10px 20px;
+	position: relative;
+	border-top: 0;
+	border-bottom: 1px solid #E0E9F8;
+
+	p {
+		display: inline-block;
+
+		span {
+			color: #437EF6;
+			margin-right: 1em;
+		}
+	}
+}
+
+
+
+/* 非表示の状態にする */
+.accordion__content {
+	display: none;
+	padding: 10px 20px;
+	border-bottom: 1px solid #E0E9F8;
+	opacity: 1;
+	animation: Fade-In 1.5s;
+	-webkit-animation: Fade-In 1.5s;
+	-moz-animation: Fade-In 1.5s;
+	-ms-animation: Fade-In 1.5s;
+
+	@keyframes Fade-In {
+		0% {
+			opacity: 0.2;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes Fade-In {
+		0% {
+			opacity: 0.2
+		}
+
+		100% {
+			opacity: 1
+		}
+	}
+
+	@-moz-keyframes Fade-In {
+		0% {
+			opacity: 0.2
+		}
+
+		100% {
+			opacity: 1
+		}
+	}
+
+	@-ms-keyframes Fade-In {
+		0% {
+			opacity: 0.2
+		}
+
+		100% {
+			opacity: 1
+		}
+	}
+
+	&.active {
+		display: block;
+	}
+
+	p {
+		display: inline-block;
+
+		span {
+			color: #437EF6;
+			margin-right: 1em;
+		}
+	}
+}
+
+
+.accordion__icon {
+	cursor: pointer;
+	position: relative;
+	width: 35px;
+	height: 24px;
+	float: right;
+	margin-right: 5px;
+
+	span {
+		position: absolute;
+		left: 6px;
+		width: 50%;
+		height: 1px;
+		background-color: #202A39;
+		border-radius: 4px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		-ms-border-radius: 4px;
+		transition: transform 0.3s;
+		-webkit-transition: transform 0.3s;
+		-moz-transition: transform 0.3s;
+		-ms-transition: transform 0.3s;
+
+		&:nth-of-type(1) {
+			top: 50%;
+			transform: translateY(-50%) rotate(0deg);
+			-webkit-transform: translateY(-50%) rotate(0deg);
+			-moz-transform: translateY(-50%) rotate(0deg);
+			-ms-transform: translateY(-50%) rotate(0deg);
+		}
+
+		&:nth-of-type(2) {
+			top: 50%;
+			transform: translateY(-50%) rotate(90deg);
+			-webkit-transform: translateY(-50%) rotate(90deg);
+			-moz-transform: translateY(-50%) rotate(90deg);
+			-ms-transform: translateY(-50%) rotate(90deg);
+		}
+	}
+
+	// ＋、×切り替え
+	&.active span:nth-of-type(1) {
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+		-webkit-transform: translateY(-50%) rotate(45deg);
+		-moz-transform: translateY(-50%) rotate(45deg);
+		-ms-transform: translateY(-50%) rotate(45deg);
+	}
+
+	&.active span:nth-of-type(2) {
+		top: 50%;
+		transform: translateY(-50%) rotate(135deg);
+		-webkit-transform: translateY(-50%) rotate(135deg);
+		-moz-transform: translateY(-50%) rotate(135deg);
+		-ms-transform: translateY(-50%) rotate(135deg);
+	}
+}
