@@ -54,6 +54,7 @@ body {
   &__contents {
     width: 50%;
     margin: 0 16px;
+
     .catch {
       background-color: #E0E9F8;
       margin: 1.5rem 16px 0;
@@ -67,56 +68,79 @@ body {
 
   &__list {
     padding: 5% 8%;
+
     li {
       display: flex;
       margin: 1.58em 0;
       align-items: flex-end;
-      .en{
+
+      .en {
         display: block;
         width: 50%;
         margin-right: 64px;
+
         a {
-            font-size: 1.58em;
-            font-weight: 400;
-            letter-spacing: .15em;
-          }
-      }
-      .ja {
-          display: block;
-          width: 50%;
-          a {
-            font-size: 0.8em;
-            font-weight: 400;
-            letter-spacing: .15em;
-          }
+          font-size: 1.58em;
+          font-weight: 400;
+          letter-spacing: .15em;
         }
-      &:hover{// :hover時
+      }
+
+      .ja {
+        display: block;
+        width: 50%;
+
+        a {
+          font-size: 0.8em;
+          font-weight: 400;
+          letter-spacing: .15em;
+        }
+      }
+
+      &:hover {
+
+        // :hover時
         a:before {
           width: 100%;
         }
       }
-      a {// :hover後
-          position: relative;
-          &::before {
-            background-color: #3c3632;
-            content: "";
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            transition: all .3s cubic-bezier(.19, 1, .22, 1);
-            transition-timing-function: cubic-bezier(.19, 1, .22, 1);
-          }
+
+      a {
+        // :hover後
+        position: relative;
+
+        &::before {
+          background-color: #3c3632;
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          transition: all .3s cubic-bezier(.19, 1, .22, 1);
+          transition-timing-function: cubic-bezier(.19, 1, .22, 1);
         }
       }
     }
+  }
+
   &__copy {
     position: absolute;
     top: 98%;
     left: 50%;
     transform: translate(-50%, -98%);
   }
+}
+
+.drawer--active {
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transition: all .4s cubic-bezier(.19, 1, .22, 1);
+  -webkit-transition: all .4s cubic-bezier(.19, 1, .22, 1);
+  -moz-transition: all .4s cubic-bezier(.19, 1, .22, 1);
+  z-index: 9998;
 }
 
 // コピーライト
@@ -176,28 +200,21 @@ body {
 /*--------------------------
 * js
 --------------------------*/
-.drawer--active {
-  opacity: 1;
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  transition: all .4s cubic-bezier(.19, 1, .22, 1);
-  -webkit-transition: all .4s cubic-bezier(.19, 1, .22, 1);
-  -moz-transition: all .4s cubic-bezier(.19, 1, .22, 1);
-  z-index: 9998;
-}
+
 
 .btn--active {
-  .hamburger--trigger{
+  .hamburger--trigger {
     span:nth-of-type(1) {
       transform: translateY(11px) rotate(45deg);
     }
+
     span:nth-of-type(2) {
       width: 0;
       transition-delay: .1s;
       -webkit-transition-delay: .1s;
       -moz-transition-delay: .1s;
     }
+
     span:nth-of-type(3) {
       transform: translateY(-11px) rotate(-45deg);
     }
