@@ -26,9 +26,18 @@
 --------------------------------------
 */
 
-//ページ外領域がわかりやすいように設定完成後削除推奨
 body {
-  background-color: #cacaca;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1em;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-weight: 400;
+  letter-spacing: .15em
 }
 
 .left {
@@ -626,6 +635,7 @@ a {
 
 .global-contact {
   height: 264px;
+  background-color: #202A39;
 
   .inner {
     background-color: #202A39;
@@ -694,7 +704,6 @@ a {
 */
 footer {
   background-color: #E5E5E5;
-  max-width: 960px;
   margin: 0 auto;
 
   .inner {
@@ -702,6 +711,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100%;
+    background-color: #E5E5E5;
 
     .left {
       padding-left: 64px;
