@@ -3,6 +3,11 @@
 /*--------------------------
 * 共通
 --------------------------*/
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -20,7 +25,7 @@ body {
 .inner {
   // セクション幅
   max-width: 960px;
-  padding: 8vw 0;
+  padding: min(8vw, 80px) 0;
   margin: 0 auto;
 }
 
@@ -383,17 +388,53 @@ footer
 footer {
   background-color: #E5E5E5;
   margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+
+  .totop {
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    transition: all .5s ease;
+    cursor: pointer;
+    border-bottom: solid 1px #202A39;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 5px);
+      right: calc(50% - 5px);
+      width: 15px;
+      height: 15px;
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+      transform: rotate(-45deg);
+      transition: all .5s ease;
+    }
+
+    &:hover {
+      background-color: rgb(241, 241, 241);
+
+      &::before {
+        top: calc(50% - 10px);
+      }
+    }
+  }
 
   .inner {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    max-width: 960px;
+    max-width: 1080px;
+    width: 100%;
     padding: 0;
+    background-color: #E5E5E5;
 
     .left {
-      padding-left: 64px;
+      padding: 0 64px;
 
       .footer-logo {
         margin-top: 30px;
