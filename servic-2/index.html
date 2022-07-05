@@ -31,9 +31,9 @@
       <img src="img/header/PRS-logo_WEB.png">
     </div>
 
-    <nav class="sub-gnavi">
-      <div class="sub-gnavi__inner">
-        <ul class="sub-gnavi__list">
+    <nav class="pc-gnavi">
+      <div class="pc-gnavi__content">
+        <ul class="pc-gnavi__list">
           <li><span><a>ホーム</a></span></li>
           <li><span><a>事業内容</a></span></li>
           <li><span><a>会社概要</a></span></li>
@@ -42,6 +42,35 @@
         </ul>
       </div>
     </nav>
+
+    <div id="js-drawer">
+      <div class="tb-gnavi">
+        <div class="tb-gnavi__wrapper">
+          <div class="tb-gnavi__logo">
+            <img src="img/header/PRS-logo_WEB.png">
+          </div>
+          <nav>
+            <ul class="tb-gnavi__list">
+              <li><span class="en"><a href="#">HOME</a></span><span class="ja"><a>ホーム</a></span></li>
+              <li><span class="en"><a href="#">SERVICE</a></span><span class="ja"><a>サービス</a></span></li>
+              <li><span class="en"><a href="#">COMPANY</a></span><span class="ja"><a>会社概要</a></span></li>
+              <li><span class="en"><a href="#">RECRUIT</a></span><span class="ja"><a>採用情報</a></span></li>
+              <li><span class="en"><a href="#">CONTACT</a></span><span class="ja"><a>お問い合わせ</a></span></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="tb-gnavi__copy copyright">&copy; 2022 PRS HOLDINGS Co.,Ltd.</p>
+      </div>
+    </div>
+
+
+    <div class="hamburger" id="js-hamburger">
+      <div class="hamburger--trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
 
   </header>
@@ -93,8 +122,9 @@
     </section>
 
     <section class="sec support">
-      <div class="wave wave--top"></div>
-      <div class="wave wave--bottom"></div>
+      <div class="wave">
+        <canvas id="waveCanvas" class="wavecanvas--top"></canvas>
+      </div>
       <div class="sec__wrapper">
         <h2 class="sec__title">未経験デビューを徹底サポートする5ステップ</h2>
         <p class="sec__text">
@@ -108,7 +138,7 @@
           <li class="step__list--item">
             <div>
               <p class="circre">
-                <span class="circre__number">STEP<br>1</span>
+                <span class="circre__number">STEP1</span>
               </p>
             </div>
             <div>
@@ -120,7 +150,7 @@
           <li class="step__list--item">
             <div>
               <p class="circre">
-                <span class="circre__number">STEP<br>2</span>
+                <span class="circre__number">STEP2</span>
               </p>
             </div>
             <div>
@@ -132,7 +162,7 @@
           <li class="step__list--item">
             <div>
               <p class="circre">
-                <span class="circre__number">STEP<br>3</span>
+                <span class="circre__number">STEP3</span>
               </p>
             </div>
             <div>
@@ -144,7 +174,7 @@
           <li class="step__list--item">
             <div>
               <p class="circre">
-                <span class="circre__number">STEP<br>4</span>
+                <span class="circre__number">STEP4</span>
               </p>
             </div>
             <div>
@@ -156,7 +186,7 @@
           <li class="step__list--item">
             <div>
               <p class="circre">
-                <span class="circre__number">STEP<br>5</span>
+                <span class="circre__number">STEP5</span>
               </p>
             </div>
             <div>
@@ -165,6 +195,9 @@
             </div>
           </li>
         </ul>
+      </div>
+      <div class="wave">
+        <canvas id="waveCanvas2" class="wavecanvas--bottom"></canvas>
       </div>
     </section>
 
@@ -230,8 +263,7 @@
               </div>
 
               <figure class="intervie-primary">
-                <div class="intervie-primary--img bg-1">
-                </div>
+                <img src="./img/main/interview/interview-1.jpg">
               </figure>
             </li>
 
@@ -249,8 +281,7 @@
               </div>
 
               <figure class="intervie-primary">
-                <div class="intervie-primary--img bg-2">
-                </div>
+                <img src="./img/main/interview/interview-1.jpg">
               </figure>
             </li>
 
@@ -267,8 +298,7 @@
               </div>
 
               <figure class="intervie-primary">
-                <div class="intervie-primary--img bg-3">
-                </div>
+                <img src="./img/main/interview/interview-1.jpg">
               </figure>
             </li>
           </ul>
