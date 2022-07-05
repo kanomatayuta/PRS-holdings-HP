@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@mixin sp {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
 /*--------------------------
 * 共通
 --------------------------*/
@@ -60,6 +66,10 @@ body {
 .right,
 .left {
   width: 50%;
+
+  @include sp() {
+    width: 100%;
+  }
 }
 
 /*--------------------------
@@ -210,10 +220,18 @@ body {
   .inner {
     text-align: center;
     padding-bottom: 2vw;
+    font-weight: bold;
+
+    @include sp() {
+      padding: 8vw 16px 2vw;
+    }
 
     .title {
-
       font-size: 2rem;
+
+      @include sp() {
+        font-size: 1.5rem;
+      }
     }
 
     span {
@@ -232,6 +250,10 @@ body {
 
   .inner {
     padding-top: 4vw;
+
+    @include sp() {
+      padding: 4vw 40px 2vw;
+    }
 
     .Form {
       margin: 0 auto;
@@ -322,6 +344,10 @@ body {
       display: flex;
       gap: 30px;
       margin-top: 16px;
+
+      @include sp() {
+        flex-wrap: wrap;
+      }
     }
   }
 }
@@ -336,15 +362,27 @@ body {
     padding-bottom: 50px;
     text-align: center;
 
+    @include sp() {
+      padding: 8vw 16px;
+    }
+
     .title {
       font-size: 35px;
       font-weight: bold;
       text-align: center;
       margin: 0 0 16px;
+
+      @include sp() {
+        font-size: 1.5rem;
+      }
     }
 
     .agree {
       margin-top: 80px;
+
+      @include sp() {
+        margin-top: 40px;
+      }
 
       h2 {
         font-size: 18px;
@@ -358,6 +396,10 @@ body {
         background-color: #E0E9F8;
         height: 500px;
         overflow-y: scroll;
+
+        @include sp() {
+          margin-top: 20px;
+        }
 
         h2 {
           margin-top: 16px;
@@ -472,26 +514,52 @@ footer {
     padding: 0;
     background-color: #E5E5E5;
 
+    @include sp() {
+      flex-flow: column;
+      padding: 0 16px;
+    }
+
     .left {
       padding: 0 64px;
 
+      @include sp() {
+        padding: 0 5%;
+      }
+
       .footer-logo {
         margin-top: 30px;
+
+        @include sp() {
+          transform: scale(0.8);
+          margin-left: -50px;
+        }
       }
 
       .address {
         font-style: normal;
         margin-top: 15px;
         line-height: 30px;
+
+        @include sp() {
+          margin-top: 0;
+        }
       }
 
     }
 
     .right {
+      @include sp() {
+        padding: 0 5%;
+      }
+
       nav {
         display: flex;
         justify-content: end;
         margin-right: 8%;
+
+        @include sp() {
+          flex-flow: column;
+        }
 
         .menu-list {
           display: flex;
@@ -499,6 +567,35 @@ footer {
           gap: 15px;
           padding-right: 8%;
           border-right: solid 1px #000;
+
+          li:last-child {
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+          }
+
+          @include sp() {
+            border: none;
+            margin-top: 30px;
+          }
+
+          .service-list-sp {
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+
+            li {
+              list-style: disc;
+              margin-left: 20px;
+            }
+          }
         }
 
         .service-list {
@@ -506,6 +603,10 @@ footer {
           flex-flow: column;
           gap: 15px;
           padding-left: 30px;
+
+          @include sp() {
+            display: none;
+          }
 
           li {
             list-style: disc;
