@@ -57,6 +57,12 @@ body {
 .left {
   width: 50%;
 }
+@media screen and (max-width: 520px) {
+  .right,
+.left {
+    width: 100%;
+  }
+}
 
 /*--------------------------
 * header
@@ -105,6 +111,11 @@ body {
 .sub-gnavi__list {
   display: flex;
   padding: 0;
+}
+@media screen and (max-width: 520px) {
+  .sub-gnavi__list {
+    display: none;
+  }
 }
 .sub-gnavi__list li {
   font-size: 1em;
@@ -156,6 +167,11 @@ body {
   color: #fff;
   font-size: 3.5em;
 }
+@media screen and (max-width: 520px) {
+  .hero__content h1 {
+    font-size: 3rem;
+  }
+}
 .hero__content .breadcrumb {
   margin-top: 8px;
 }
@@ -181,11 +197,22 @@ body {
 /*--------------------------
 * summary
 --------------------------*/
-.summary h2 {
+@media screen and (max-width: 520px) {
+  .summary .inner {
+    padding: 12vw 8%;
+  }
+}
+.summary .inner h2 {
   text-align: center;
   font-size: 2em;
+  font-weight: bold;
 }
-.summary p {
+@media screen and (max-width: 520px) {
+  .summary .inner h2 {
+    font-size: 1.5rem;
+  }
+}
+.summary .inner p {
   max-width: 650px;
   padding: 32px 0 0;
   margin: 0 auto;
@@ -200,11 +227,21 @@ body {
 .info .inner {
   padding-top: 4vw;
 }
+@media screen and (max-width: 520px) {
+  .info .inner {
+    padding: 8vw 2rem;
+  }
+}
 .info .inner .title {
   font-size: 35px;
   font-weight: bold;
   text-align: center;
   margin: 0 0 30px;
+}
+@media screen and (max-width: 520px) {
+  .info .inner .title {
+    font-size: 1.5rem;
+  }
 }
 .info .inner table {
   background-color: #fff;
@@ -219,9 +256,25 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+@media screen and (max-width: 520px) {
+  .info .inner table tr th {
+    width: 100%;
+    display: block;
+    border: none;
+    padding: 24px 0 0 2rem;
+    text-align: left;
+  }
+}
 .info .inner table tr td {
   border-bottom: solid 1px #E0E9F8;
   width: 65%;
+}
+@media screen and (max-width: 520px) {
+  .info .inner table tr td {
+    width: 100%;
+    display: block;
+    padding: 0 0 16px 4rem;
+  }
 }
 .info .inner table tr:last-of-type th {
   border-bottom: none;
@@ -236,11 +289,22 @@ body {
 .access .inner {
   padding-bottom: 50px;
 }
+@media screen and (max-width: 520px) {
+  .access .inner {
+    padding: 8vw 2rem 4vw;
+  }
+}
 .access .inner .title {
   font-size: 35px;
   font-weight: bold;
   text-align: center;
   margin: 0 0 30px;
+}
+@media screen and (max-width: 520px) {
+  .access .inner .title {
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
 }
 .access .inner table tr th {
   padding: 30px;
@@ -248,8 +312,23 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+@media screen and (max-width: 520px) {
+  .access .inner table tr th {
+    display: block;
+    width: 100%;
+    padding: 24px 0 0 2rem;
+    text-align: left;
+  }
+}
 .access .inner table tr td {
   width: 60%;
+}
+@media screen and (max-width: 520px) {
+  .access .inner table tr td {
+    display: block;
+    width: 100%;
+    padding: 0 0 16px 4rem;
+  }
 }
 .access iframe {
   width: 100%;
@@ -274,6 +353,12 @@ global-contact
   margin: 0 auto;
   height: 100%;
 }
+@media screen and (max-width: 520px) {
+  .global-contact .inner {
+    flex-flow: column;
+    padding-bottom: 12vw;
+  }
+}
 .global-contact .inner .left {
   text-align: center;
 }
@@ -281,12 +366,23 @@ global-contact
   font-size: 40px;
   margin-bottom: 40px;
 }
+@media screen and (max-width: 520px) {
+  .global-contact .inner .left h1 {
+    font-size: 34px;
+    margin: 60px 0 20px;
+  }
+}
 .global-contact .inner .right .more {
   margin: 0 auto 0;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media screen and (max-width: 520px) {
+  .global-contact .inner .right .more {
+    margin: 60px auto;
+  }
 }
 .global-contact .inner .right .more .more-btn {
   background-color: rgba(151, 181, 231, 0.8);
@@ -365,21 +461,53 @@ footer .inner {
   padding: 0;
   background-color: #E5E5E5;
 }
+@media screen and (max-width: 520px) {
+  footer .inner {
+    flex-flow: column;
+    padding: 0 16px;
+  }
+}
 footer .inner .left {
   padding: 0 64px;
 }
+@media screen and (max-width: 520px) {
+  footer .inner .left {
+    padding: 0 5%;
+  }
+}
 footer .inner .left .footer-logo {
   margin-top: 30px;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .left .footer-logo {
+    transform: scale(0.8);
+    margin-left: -50px;
+  }
 }
 footer .inner .left .address {
   font-style: normal;
   margin-top: 15px;
   line-height: 30px;
 }
+@media screen and (max-width: 520px) {
+  footer .inner .left .address {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right {
+    padding: 0 5%;
+  }
+}
 footer .inner .right nav {
   display: flex;
   justify-content: end;
   margin-right: 8%;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav {
+    flex-flow: column;
+  }
 }
 footer .inner .right nav .menu-list {
   display: flex;
@@ -388,11 +516,45 @@ footer .inner .right nav .menu-list {
   padding-right: 8%;
   border-right: solid 1px #000;
 }
+footer .inner .right nav .menu-list li:last-child {
+  display: none;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .menu-list li:last-child {
+    display: block;
+  }
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .menu-list {
+    border: none;
+    margin-top: 30px;
+  }
+}
+footer .inner .right nav .menu-list .service-list-sp {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  display: none;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .menu-list .service-list-sp {
+    display: block;
+  }
+}
+footer .inner .right nav .menu-list .service-list-sp li {
+  list-style: disc;
+  margin-left: 20px;
+}
 footer .inner .right nav .service-list {
   display: flex;
   flex-flow: column;
   gap: 15px;
   padding-left: 30px;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .service-list {
+    display: none;
+  }
 }
 footer .inner .right nav .service-list li {
   list-style: disc;

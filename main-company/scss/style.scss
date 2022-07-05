@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@mixin sp {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
 /*--------------------------
 * 共通
 --------------------------*/
@@ -60,6 +66,10 @@ body {
 .right,
 .left {
   width: 50%;
+
+  @include sp() {
+    width: 100%;
+  }
 }
 
 /*--------------------------
@@ -113,6 +123,10 @@ body {
   &__list {
     display: flex;
     padding: 0;
+
+    @include sp() {
+      display: none;
+    }
 
     li {
       font-size: 1em;
@@ -171,6 +185,10 @@ body {
       margin-top: 8px;
       color: #fff;
       font-size: 3.5em;
+
+      @include sp() {
+        font-size: 3rem;
+      }
     }
 
     // パンクズリスト
@@ -207,16 +225,27 @@ body {
 --------------------------*/
 
 .summary {
-  h2 {
-    text-align: center;
-    font-size: 2em;
-  }
+  .inner {
+    @include sp() {
+      padding: 12vw 8%;
+    }
 
-  p {
-    max-width: 650px;
-    ;
-    padding: 32px 0 0;
-    margin: 0 auto;
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+
+      @include sp() {
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      max-width: 650px;
+      ;
+      padding: 32px 0 0;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -230,11 +259,19 @@ body {
   .inner {
     padding-top: 4vw;
 
+    @include sp() {
+      padding: 8vw 2rem;
+    }
+
     .title {
       font-size: 35px;
       font-weight: bold;
       text-align: center;
       margin: 0 0 30px;
+
+      @include sp() {
+        font-size: 1.5rem;
+      }
     }
 
     table {
@@ -242,6 +279,7 @@ body {
       width: 100%;
       border-radius: 30px;
       line-height: 34px;
+
 
       tr {
 
@@ -251,11 +289,25 @@ body {
           width: 35%;
           font-size: 18px;
           font-weight: bold;
+
+          @include sp() {
+            width: 100%;
+            display: block;
+            border: none;
+            padding: 24px 0 0 2rem;
+            text-align: left;
+          }
         }
 
         td {
           border-bottom: solid 1px #E0E9F8;
           width: 65%;
+
+          @include sp() {
+            width: 100%;
+            display: block;
+            padding: 0 0 16px 4rem;
+          }
         }
 
         &:last-of-type {
@@ -281,11 +333,20 @@ body {
   .inner {
     padding-bottom: 50px;
 
+    @include sp() {
+      padding: 8vw 2rem 4vw;
+    }
+
     .title {
       font-size: 35px;
       font-weight: bold;
       text-align: center;
       margin: 0 0 30px;
+
+      @include sp() {
+        font-size: 1.5rem;
+        margin-top: 40px;
+      }
     }
 
     table {
@@ -295,10 +356,23 @@ body {
           width: 40%;
           font-size: 18px;
           font-weight: bold;
+
+          @include sp() {
+            display: block;
+            width: 100%;
+            padding: 24px 0 0 2rem;
+            text-align: left;
+          }
         }
 
         td {
           width: 60%;
+
+          @include sp() {
+            display: block;
+            width: 100%;
+            padding: 0 0 16px 4rem;
+          }
         }
       }
     }
@@ -328,12 +402,22 @@ global-contact
     margin: 0 auto;
     height: 100%;
 
+    @include sp() {
+      flex-flow: column;
+      padding-bottom: 12vw;
+    }
+
     .left {
       text-align: center;
 
       h1 {
         font-size: 40px;
         margin-bottom: 40px;
+
+        @include sp() {
+          font-size: 34px;
+          margin: 60px 0 20px;
+        }
       }
 
     }
@@ -343,6 +427,10 @@ global-contact
         margin: 0 auto 0;
         display: block;
         width: fit-content;
+
+        @include sp() {
+          margin: 60px auto;
+        }
 
         .more-btn {
           background-color: rgba(151, 181, 231, 0.8);
@@ -433,26 +521,52 @@ footer {
     padding: 0;
     background-color: #E5E5E5;
 
+    @include sp() {
+      flex-flow: column;
+      padding: 0 16px;
+    }
+
     .left {
       padding: 0 64px;
 
+      @include sp() {
+        padding: 0 5%;
+      }
+
       .footer-logo {
         margin-top: 30px;
+
+        @include sp() {
+          transform: scale(0.8);
+          margin-left: -50px;
+        }
       }
 
       .address {
         font-style: normal;
         margin-top: 15px;
         line-height: 30px;
+
+        @include sp() {
+          margin-top: 0;
+        }
       }
 
     }
 
     .right {
+      @include sp() {
+        padding: 0 5%;
+      }
+
       nav {
         display: flex;
         justify-content: end;
         margin-right: 8%;
+
+        @include sp() {
+          flex-flow: column;
+        }
 
         .menu-list {
           display: flex;
@@ -460,6 +574,35 @@ footer {
           gap: 15px;
           padding-right: 8%;
           border-right: solid 1px #000;
+
+          li:last-child {
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+          }
+
+          @include sp() {
+            border: none;
+            margin-top: 30px;
+          }
+
+          .service-list-sp {
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+
+            li {
+              list-style: disc;
+              margin-left: 20px;
+            }
+          }
         }
 
         .service-list {
@@ -467,6 +610,10 @@ footer {
           flex-flow: column;
           gap: 15px;
           padding-left: 30px;
+
+          @include sp() {
+            display: none;
+          }
 
           li {
             list-style: disc;
