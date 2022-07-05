@@ -57,6 +57,12 @@ body {
 .left {
   width: 50%;
 }
+@media screen and (max-width: 520px) {
+  .right,
+.left {
+    width: 100%;
+  }
+}
 
 /*--------------------------
 * header
@@ -184,9 +190,19 @@ body {
 .flow {
   background-color: #fff;
 }
+@media screen and (max-width: 520px) {
+  .flow .inner {
+    padding: 12vw 64px;
+  }
+}
 .flow .inner h2 {
   text-align: center;
   font-size: 2em;
+}
+@media screen and (max-width: 520px) {
+  .flow .inner h2 {
+    font-size: 1.5rem;
+  }
 }
 .flow .inner .arrow-diagram {
   text-align: center;
@@ -194,12 +210,26 @@ body {
   justify-content: space-between;
   margin-top: 30px;
 }
+@media screen and (max-width: 520px) {
+  .flow .inner .arrow-diagram {
+    flex-flow: column;
+    gap: 60px;
+  }
+}
 .flow .inner .arrow-diagram .square {
   width: 20%;
   height: 130px;
   line-height: 140px;
   background-color: #F7DAE1;
   position: relative;
+}
+@media screen and (max-width: 520px) {
+  .flow .inner .arrow-diagram .square {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 auto;
+  }
 }
 .flow .inner .arrow-diagram .square::before {
   content: "";
@@ -211,6 +241,15 @@ body {
   right: -20%;
   top: 50%;
   transform: translateY(-50%);
+}
+@media screen and (max-width: 520px) {
+  .flow .inner .arrow-diagram .square::before {
+    top: 135%;
+    right: 50%;
+    transform: translate(50%, 0);
+    border-width: 16px 20px 0 20px;
+    border-color: #ed5a86 transparent transparent transparent;
+  }
 }
 .flow .inner .arrow-diagram .square:last-child {
   background-color: #ED5A87;
@@ -232,7 +271,7 @@ body {
   background-color: rgba(237, 90, 135, 0.2);
   text-align: center;
   border-radius: 9999px;
-  padding: 20px 80px;
+  padding: 20px 100px;
   position: relative;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -262,11 +301,21 @@ body {
 .employed {
   background-color: #E0E9F8;
 }
-.employed h2 {
+@media screen and (max-width: 520px) {
+  .employed .inner {
+    padding: 12vw 32px;
+  }
+}
+.employed .inner h2 {
   text-align: center;
   font-size: 2em;
 }
-.employed p {
+@media screen and (max-width: 520px) {
+  .employed .inner h2 {
+    font-size: 1.5rem;
+  }
+}
+.employed .inner p {
   max-width: 650px;
   padding: 32px 0 0;
   margin: 0 auto;
@@ -275,9 +324,19 @@ body {
 /*--------------------------
 * license
 --------------------------*/
+@media screen and (max-width: 520px) {
+  .license .inner {
+    padding: 12vw 32px;
+  }
+}
 .license .inner h2 {
   text-align: center;
   font-size: 2em;
+}
+@media screen and (max-width: 520px) {
+  .license .inner h2 {
+    font-size: 1.5rem;
+  }
 }
 .license .inner ul {
   width: 90%;
@@ -295,6 +354,12 @@ body {
   border: 2px solid #97B5E7;
   content: "";
 }
+@media screen and (max-width: 520px) {
+  .license .inner ul::before {
+    top: -10px;
+    left: -10px;
+  }
+}
 .license .inner ul::after {
   position: absolute;
   top: 20px;
@@ -303,6 +368,15 @@ body {
   height: 100%;
   border: 2px solid #97B5E7;
   content: "";
+}
+@media screen and (max-width: 520px) {
+  .license .inner ul::after {
+    top: 10px;
+    left: 10px;
+  }
+}
+.license .inner ul li {
+  list-style-type: square;
 }
 
 /*--------------------------
@@ -315,11 +389,22 @@ body {
   padding-top: 4vw;
   padding-bottom: max(8vw, 120px);
 }
+@media screen and (max-width: 520px) {
+  .recruitment .inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 .recruitment .inner .title {
-  font-size: 35px;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
   margin: 0 0 30px;
+}
+@media screen and (max-width: 520px) {
+  .recruitment .inner .title {
+    font-size: 1.5rem;
+  }
 }
 .recruitment .inner table {
   background-color: #fff;
@@ -327,6 +412,14 @@ body {
   border-radius: 30px;
   border-spacing: 0;
   line-height: 34px;
+}
+.recruitment .inner table tr:first-child td br:nth-of-type(2n-1) {
+  display: none;
+}
+@media screen and (max-width: 520px) {
+  .recruitment .inner table tr:first-child td br:nth-of-type(2n-1) {
+    display: inline;
+  }
 }
 .recruitment .inner table tr th {
   border-bottom: solid 1px #97B5E7;
@@ -336,10 +429,22 @@ body {
   font-weight: bold;
   background-color: #E0E9F8;
 }
+@media screen and (max-width: 520px) {
+  .recruitment .inner table tr th {
+    width: 25%;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+  }
+}
 .recruitment .inner table tr td {
   border-bottom: solid 1px #97B5E7;
   width: 65%;
   padding: 30px;
+}
+@media screen and (max-width: 520px) {
+  .recruitment .inner table tr td {
+    width: 75%;
+  }
 }
 .recruitment .inner table tr:first-of-type th {
   border-top: solid 1px #97B5E7;
@@ -351,6 +456,12 @@ body {
   margin-top: 20px;
   display: inline-block;
   line-height: 35px;
+}
+@media screen and (max-width: 520px) {
+  .recruitment .inner span {
+    font-size: 0.9rem;
+    line-height: 30px;
+  }
 }
 
 /*
@@ -371,6 +482,11 @@ global-contact
   margin: 0 auto;
   height: 100%;
 }
+@media screen and (max-width: 520px) {
+  .global-contact .inner {
+    flex-flow: column;
+  }
+}
 .global-contact .inner .left {
   text-align: center;
 }
@@ -378,12 +494,23 @@ global-contact
   font-size: 40px;
   margin-bottom: 40px;
 }
+@media screen and (max-width: 520px) {
+  .global-contact .inner .left h1 {
+    font-size: 34px;
+    margin: 20px auto;
+  }
+}
 .global-contact .inner .right .more {
   margin: 0 auto 0;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media screen and (max-width: 520px) {
+  .global-contact .inner .right .more {
+    margin: 60px auto;
+  }
 }
 .global-contact .inner .right .more .more-btn {
   background-color: rgba(151, 181, 231, 0.8);
@@ -460,22 +587,56 @@ footer .inner {
   max-width: 1080px;
   width: 100%;
   padding: 0;
+  background-color: #E5E5E5;
+}
+@media screen and (max-width: 520px) {
+  footer .inner {
+    flex-flow: column;
+    align-items: flex-start;
+    padding: 0 16px;
+  }
 }
 footer .inner .left {
   padding: 0 64px;
 }
+@media screen and (max-width: 520px) {
+  footer .inner .left {
+    padding: 0 5%;
+  }
+}
 footer .inner .left .footer-logo {
   margin-top: 30px;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .left .footer-logo {
+    transform: scale(0.8);
+    margin-left: -50px;
+  }
 }
 footer .inner .left .address {
   font-style: normal;
   margin-top: 15px;
   line-height: 30px;
 }
+@media screen and (max-width: 520px) {
+  footer .inner .left .address {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right {
+    padding: 0 5%;
+  }
+}
 footer .inner .right nav {
   display: flex;
   justify-content: end;
   margin-right: 8%;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav {
+    flex-flow: column;
+  }
 }
 footer .inner .right nav .menu-list {
   display: flex;
@@ -484,11 +645,45 @@ footer .inner .right nav .menu-list {
   padding-right: 8%;
   border-right: solid 1px #000;
 }
+footer .inner .right nav .menu-list li:last-child {
+  display: none;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .menu-list li:last-child {
+    display: block;
+  }
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .menu-list {
+    border: none;
+    margin-top: 30px;
+  }
+}
+footer .inner .right nav .menu-list .service-list-sp {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  display: none;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .menu-list .service-list-sp {
+    display: block;
+  }
+}
+footer .inner .right nav .menu-list .service-list-sp li {
+  list-style: disc;
+  margin-left: 20px;
+}
 footer .inner .right nav .service-list {
   display: flex;
   flex-flow: column;
   gap: 15px;
   padding-left: 30px;
+}
+@media screen and (max-width: 520px) {
+  footer .inner .right nav .service-list {
+    display: none;
+  }
 }
 footer .inner .right nav .service-list li {
   list-style: disc;
