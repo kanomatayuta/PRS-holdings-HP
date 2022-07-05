@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @mixin sp {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 520px) {
     @content;
   }
 }
@@ -46,10 +46,18 @@ body {
 
 .left {
   width: 50%;
+
+  @include sp() {
+    width: 100%;
+  }
 }
 
 .right {
   width: 50%;
+
+  @include sp() {
+    width: 100%;
+  }
 }
 
 .inner {
@@ -60,6 +68,10 @@ body {
 
 .title {
   font-size: 60px;
+
+  @include sp() {
+    font-size: 40px;
+  }
 }
 
 .subtitle {
@@ -88,6 +100,9 @@ a {
 */
 
 .top {
+  @include sp() {
+    height: 100vh;
+  }
 
   //humburger
   .hamburger {
@@ -96,6 +111,11 @@ a {
     right: 30PX;
     text-align: center;
     z-index: 9999;
+
+    @include sp() {
+      right: inherit;
+      left: 30px;
+    }
 
     &:hover {
       cursor: pointer;
@@ -141,8 +161,16 @@ a {
     align-items: center;
     position: relative;
 
+    @include sp() {
+      height: 100vh;
+    }
+
     .left {
       padding-bottom: 80px;
+
+      @include sp() {
+        padding-top: 100px;
+      }
 
       .svg-center {
         text-align: center;
@@ -157,6 +185,10 @@ a {
         margin: 16px auto 0;
         padding: 0 40px;
         position: relative;
+
+        @include sp() {
+          margin-top: 10%;
+        }
 
         &::before {
           content: "";
@@ -174,11 +206,18 @@ a {
           position: absolute;
           top: 80px;
           left: calc(50% - 12px);
+
+          @include sp() {
+            top: 30vw;
+          }
         }
       }
     }
 
     .right {
+      @include sp() {
+        display: none;
+      }
 
       .mainvisual {
         margin-bottom: 0;
@@ -362,13 +401,27 @@ a {
     position: relative;
     padding: 8vw 0 0;
 
+    @include sp() {
+      flex-flow: column;
+      align-items: flex-start;
+      padding: 8vw 16px;
+    }
+
     .left {
-      width: 50%;
+
+      @include sp() {
+        width: 100%;
+        padding: 0 7%;
+      }
 
       .title {
         display: block;
         width: fit-content;
         margin: 0 auto;
+
+        @include sp() {
+          margin: 0;
+        }
 
         .subtitle {
           display: block;
@@ -377,7 +430,6 @@ a {
     }
 
     .right {
-      width: 50%;
       padding: 0 5%;
 
       .cont-head {
@@ -386,11 +438,20 @@ a {
         margin: 0 auto;
         font-size: 30px;
         text-align: center;
+
+        @include sp() {
+          font-size: 20px;
+          margin-top: 30px;
+        }
       }
 
       .concept-text {
         font-size: 16px;
         margin-top: 30px;
+
+        @include sp() {
+          margin-top: 30px;
+        }
       }
     }
   }
@@ -410,13 +471,24 @@ a {
     position: relative;
     padding: 8vw 0 40px;
 
+    @include sp() {
+      flex-flow: column;
+      padding: 8vw 16px 16vw;
+    }
+
     .left {
-      width: 50%;
+      @include sp() {
+        padding: 0 7%;
+      }
 
       .title {
         display: block;
         width: fit-content;
         margin: 0 auto;
+
+        @include sp() {
+          margin: 0;
+        }
 
         .subtitle {
           display: block;
@@ -430,13 +502,21 @@ a {
 
         .service-menu {
           margin-top: 16px;
+
+          @include sp() {
+            display: none;
+          }
         }
       }
     }
 
     .right {
-      width: 50%;
       padding: 0 5%;
+
+      @include sp() {
+        padding: 0 14%;
+        margin-top: 30px;
+      }
 
       .service-visual {
 
@@ -573,13 +653,23 @@ a {
     position: relative;
     padding: 8vw 0;
 
+    @include sp() {
+      flex-flow: column;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 8vw 8% 16vw;
+    }
+
     .left {
-      width: 50%;
 
       .title {
         display: block;
         width: fit-content;
         margin: 0 auto;
+
+        @include sp() {
+          margin: 0;
+        }
 
         .subtitle {
           display: block;
@@ -588,13 +678,20 @@ a {
     }
 
     .right {
-      width: 50%;
       padding: 0;
+
+      @include sp() {
+        margin-top: 30px;
+      }
 
       .more {
         margin: 77px auto 0;
         display: block;
         width: fit-content;
+
+        @include sp() {
+          margin-top: 40px;
+        }
 
         .more-btn {
           background-color: rgba(151, 181, 231, 0.5);
@@ -650,21 +747,34 @@ a {
     margin: 0 auto;
     height: 100%;
 
+    @include sp() {
+      flex-flow: column;
+    }
+
     .left {
       text-align: center;
 
       h1 {
         font-size: 40px;
         margin-bottom: 40px;
+
+        @include sp() {
+          font-size: 34px;
+          margin-bottom: 20px;
+        }
       }
 
     }
 
     .right {
       .more {
-        margin: 0 auto 0;
+        margin: 0 auto;
         display: block;
         width: fit-content;
+
+        @include sp() {
+          margin: 60px auto;
+        }
 
         .more-btn {
           background-color: rgba(151, 181, 231, 0.8);
@@ -754,26 +864,52 @@ footer {
     padding: 0;
     background-color: #E5E5E5;
 
+    @include sp() {
+      flex-flow: column;
+      padding: 0 16px;
+    }
+
     .left {
       padding: 0 64px;
 
+      @include sp() {
+        padding: 0 5%;
+      }
+
       .footer-logo {
         margin-top: 30px;
+
+        @include sp() {
+          transform: scale(0.8);
+          margin-left: -50px;
+        }
       }
 
       .address {
         font-style: normal;
         margin-top: 15px;
         line-height: 30px;
+
+        @include sp() {
+          margin-top: 0;
+        }
       }
 
     }
 
     .right {
+      @include sp() {
+        padding: 0 5%;
+      }
+
       nav {
         display: flex;
         justify-content: end;
         margin-right: 8%;
+
+        @include sp() {
+          flex-flow: column;
+        }
 
         .menu-list {
           display: flex;
@@ -781,6 +917,35 @@ footer {
           gap: 15px;
           padding-right: 8%;
           border-right: solid 1px #000;
+
+          li:last-child {
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+          }
+
+          @include sp() {
+            border: none;
+            margin-top: 30px;
+          }
+
+          .service-list-sp {
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+
+            li {
+              list-style: disc;
+              margin-left: 20px;
+            }
+          }
         }
 
         .service-list {
@@ -788,6 +953,10 @@ footer {
           flex-flow: column;
           gap: 15px;
           padding-left: 30px;
+
+          @include sp() {
+            display: none;
+          }
 
           li {
             list-style: disc;
