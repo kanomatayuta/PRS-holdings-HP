@@ -31,9 +31,9 @@
       <img src="img/header/PRS-logo_WEB.png">
     </div>
 
-    <nav class="sub-gnavi">
-      <div class="sub-gnavi__inner">
-        <ul class="sub-gnavi__list">
+    <nav class="pc-gnavi">
+      <div class="pc-gnavi__content">
+        <ul class="pc-gnavi__list">
           <li><span><a>ホーム</a></span></li>
           <li><span><a>事業内容</a></span></li>
           <li><span><a>会社概要</a></span></li>
@@ -42,6 +42,35 @@
         </ul>
       </div>
     </nav>
+
+    <div id="js-drawer">
+      <div class="tb-gnavi">
+        <div class="tb-gnavi__wrapper">
+          <div class="tb-gnavi__logo">
+            <img src="img/header/PRS-logo_WEB.png">
+          </div>
+          <nav>
+            <ul class="tb-gnavi__list">
+              <li><span class="en"><a href="#">HOME</a></span><span class="ja"><a>ホーム</a></span></li>
+              <li><span class="en"><a href="#">SERVICE</a></span><span class="ja"><a>サービス</a></span></li>
+              <li><span class="en"><a href="#">COMPANY</a></span><span class="ja"><a>会社概要</a></span></li>
+              <li><span class="en"><a href="#">RECRUIT</a></span><span class="ja"><a>採用情報</a></span></li>
+              <li><span class="en"><a href="#">CONTACT</a></span><span class="ja"><a>お問い合わせ</a></span></li>
+            </ul>
+          </nav>
+        </div>
+        <p class="tb-gnavi__copy copyright">&copy; 2022 PRS HOLDINGS Co.,Ltd.</p>
+      </div>
+    </div>
+
+
+    <div class="hamburger" id="js-hamburger">
+      <div class="hamburger--trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
 
   </header>
@@ -112,49 +141,33 @@
 
         <ul class="merit__list">
           <li class="merit__list--item">
-            <div class="box">
-              <div class="box-content">
-                <figure class="box-content--img">
-                  <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
-                </figure>
-                <p class="merit__text">人件費の削減</p>
-              </div>
-            </div>
+            <figure class="merit__img">
+              <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
+            </figure>
+            <p class="merit__text">人件費の削減</p>
           </li>
 
           <li class="merit__list--item">
-            <div class="box">
-              <div class="box-content">
-                <figure class="box-content--img">
-                  <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
-                </figure>
-                <p class="merit__text">教育コストの削減</p>
-              </div>
-            </div>
+            <figure class="merit__img">
+              <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
+            </figure>
+            <p class="merit__text">教育コストの削減</p>
           </li>
 
           <li class="merit__list--item">
-            <div class="box">
-              <div class="box-content">
-                <figure class="box-content--img">
-                  <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
-                </figure>
-                <p class="merit__text">技術力の高い<br>
-                  エンジニアの調達可能</p>
-              </div>
-            </div>
+            <figure class="merit__img">
+              <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
+            </figure>
+            <p class="merit__text">技術力の高い<br>
+              エンジニアの調達可能</p>
           </li>
 
           <li class="merit__list--item">
-            <div class="box">
-              <div class="box-content">
-                <figure class="box-content--img">
-                  <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
-                </figure>
-                <p class="merit__text">スケジュール<br>
-                  調整がしやすい</p>
-              </div>
-            </div>
+            <figure class="merit__img">
+              <img src="./img/main/icon/icon-web.png" width="100px" height="100px">
+            </figure>
+            <p class="merit__text">スケジュール<br>
+              調整がしやすい</p>
           </li>
         </ul>
 
@@ -184,15 +197,23 @@
               <span class="value">10%</span>
             </span>
           </div>
+        </div>
 
+        <div class="tb-ratio">
+          <svg class="circle" width="280" height="280">
+            <circle class="type type4 typeA4" cx="140" cy="140" r="90"></circle>
+            <circle class="type type3 typeA3" cx="140" cy="140" r="90"></circle>
+            <circle class="type type2 typeA2" cx="140" cy="140" r="90"></circle>
+            <circle class="type type1 typeA1" cx="140" cy="140" r="90"></circle>
+          </svg>
         </div>
 
         <div class="x-axis">
           <ul class="legend">
-            <li>フロントエンド</li>
-            <li>バックエンド</li>
-            <li>インフラ</li>
-            <li>その他(運用、保守)</li>
+            <li>フロントエンド<span>50%</span></li>
+            <li>バックエンド<span>30%</span></li>
+            <li>インフラ<span>10%</span></li>
+            <li>その他(運用、保守)<span>10%</span></li>
           </ul>
         </div>
       </div>
@@ -210,7 +231,8 @@
                 <p class="step-box__number">STEP<br>1</p>
               </th>
               <td class="step-text">
-                <p>お問い合わせフォームからお気軽にご連絡ください。</p>
+                <p class="step-text__title">ご依頼</p>
+                <p class="step-text__comment">ご要望の人材について、仕事内容や期間、場所、時間、必要なスキルなど、お決まりの範囲内でお知らせください。</p>
               </td>
             </tr>
 
@@ -219,9 +241,8 @@
                 <p class="step-box__number">STEP<br>2</p>
               </th>
               <td class="step-text">
-                <p>ヒアリングはWeb打ち合わせで行います。<br>
-                  良いホームページを制作するにあたり、一番大切な部分です。<br>
-                  気兼ねなく要望や想いをお聞かせください。</p>
+                <p class="step-text__title">お問い合わせ・ご提案</p>
+                <p class="step-text__comment">仕事内容や就業条件、求める経験・スキル、ご予算などについて、担当コーディネーターがご連絡・ご訪問し、詳しくお伺いします。</p>
               </td>
             </tr>
 
@@ -230,10 +251,8 @@
                 <p class="step-box__number">STEP<br>3</p>
               </th>
               <td class="step-text">
-                <p>ヒアリングした内容を基にデザインをご提案します。<br>
-                  ご希望に添えなかった場合でも修正を行いますのでご安心ください。<br>
-                  <span>※HP制作の場合、デザイン完成後コーディグを行い形に変えていきます。</span>
-                </p>
+                <p class="step-text__title">派遣エンジニアのご紹介</p>
+                <p class="step-text__comment">ご要望に応じた最適な人材をご紹介します。</p>
               </td>
             </tr>
 
@@ -242,8 +261,18 @@
                 <p class="step-box__number">STEP<br>4</p>
               </th>
               <td class="step-text">
-                <p>ブラッシュアップを行い最良のものを納品したします。<br>
-                  納品後の改善、サイト運用も承ります。</p>
+                <p class="step-text__title">契約締結</p>
+                <p class="step-text__comment">基本契約書の締結など、正式に書面にて手続きします。</p>
+              </td>
+            </tr>
+
+            <tr>
+              <th class="step-box">
+                <p class="step-box__number">STEP<br>5</p>
+              </th>
+              <td class="step-text">
+                <p class="step-text__title">派遣エンジニアの就業開始</p>
+                <p class="step-text__comment">定期的な就業状況の確認など、就業開始後もきめ細かくフォローし、円滑に業務が遂行できるようサポートします。</p>
               </td>
             </tr>
 
