@@ -1,0 +1,627 @@
+@charset "UTF-8";
+
+@mixin sp {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
+/*--------------------------
+* 共通
+--------------------------*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1em;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-weight: 400;
+  letter-spacing: .15em
+}
+
+.inner {
+  // セクション幅
+  max-width: 960px;
+  padding: min(8vw, 80px) 0;
+  margin: 0 auto;
+}
+
+// navi hover時
+.sub-gnavi__list a,
+.breadcrumb a {
+  position: relative;
+}
+
+.sub-gnavi__list a:before,
+.breadcrumb a:before {
+  background-color: #3c3632;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: all .3s cubic-bezier(.19, 1, .22, 1);
+  transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+.breadcrumb a:before {
+  background-color: #fff;
+}
+
+.sub-gnavi__list a:hover:before,
+.breadcrumb a:hover:before {
+  width: 100%;
+}
+
+.right,
+.left {
+  width: 50%;
+
+  @include sp() {
+    width: 100%;
+  }
+}
+
+/*--------------------------
+* header
+--------------------------*/
+.sub-header {
+  position: fixed;
+  height: 100px;
+  background: lightcyan;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: auto;
+
+  &__logo {
+    position: absolute;
+    left: 5%;
+    top: 0px;
+
+    img {
+      width: 300px;
+      height: 100px;
+    }
+  }
+}
+
+// サブページ用gnavi
+.sub-gnavi {
+  height: auto;
+  background: none;
+  position: absolute;
+  width: auto;
+  z-index: 1;
+  right: 5%;
+  left: auto;
+  top: 42px;
+
+  &__inner {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+    width: auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+
+    li {
+      font-size: 1em;
+      margin: 0 1em;
+    }
+  }
+}
+
+/*--------------------------
+* main
+--------------------------*/
+
+
+.hero {
+  // header部分
+  margin-top: 100px;
+
+  &__bg {
+    position: relative;
+    height: 200px;
+    background-image: url(../img/hero/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__content {
+    height: 200px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 1;
+
+    p {
+      margin-top: 40px;
+      color: #fff;
+    }
+
+    h1 {
+      margin-top: 8px;
+      color: #fff;
+      font-size: 3.5em;
+    }
+
+    // パンクズリスト
+    .breadcrumb {
+      margin-top: 8px;
+
+      li {
+        display: inline;
+        list-style: none;
+        font-weight: bold;
+
+        &:after {
+          content: '>';
+          padding: 0 0.2em;
+          color: #fff;
+        }
+
+        &:last-child:after {
+          content: '';
+        }
+
+        a {
+          margin: 0 16px;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------------
+* contact
+--------------------------*/
+
+.contact-top {
+  .inner {
+    text-align: center;
+    padding-bottom: 2vw;
+    font-weight: bold;
+
+    @include sp() {
+      padding: 8vw 16px 2vw;
+    }
+
+    .title {
+      font-size: 2rem;
+
+      @include sp() {
+        font-size: 1.5rem;
+      }
+    }
+
+    span {
+      display: inline-block;
+      margin-top: 32px;
+    }
+  }
+}
+
+/*--------------------------
+* form
+--------------------------*/
+
+.form {
+  background-color: #E0E9F8;
+
+  .inner {
+    padding-top: 4vw;
+
+    @include sp() {
+      padding: 4vw 40px 2vw;
+    }
+
+    .Form {
+      margin: 0 auto;
+    }
+
+    .Form-Item {
+      padding: 16px 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .Form-Item-Label {
+      width: 100%;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .Form-Item-Label.isMsg {
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+
+    .Form-Item-Label-Required {
+      border-radius: 4px;
+      margin-left: 30px;
+      width: 48px;
+      display: inline-block;
+      text-align: center;
+      background: #19a2db;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .Form-Item-Input {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-left: 0px;
+      margin-top: 18px;
+      padding-left: 1em;
+      padding-right: 1em;
+      height: 48px;
+      flex: inherit;
+      width: 100%;
+      background: #fff;
+      font-size: 18px;
+
+      &::placeholder {
+        color: #a3a3a3;
+      }
+    }
+
+    .Form-Item-Textarea {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-left: 0;
+      margin-top: 18px;
+      padding-left: 1em;
+      padding-right: 1em;
+      height: 216px;
+      flex: inherit;
+      width: 100%;
+      background: #fff;
+      font-size: 18px;
+    }
+
+
+    .Form-Btn {
+      border-radius: 6px;
+      margin-top: 32px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 280px;
+      display: block;
+      letter-spacing: 0.05em;
+      background: #545454;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .contact-type {
+      display: flex;
+      gap: 30px;
+      margin-top: 16px;
+
+      @include sp() {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+/*--------------------------
+* privacy
+--------------------------*/
+
+.privacy {
+
+  .inner {
+    padding-bottom: 50px;
+    text-align: center;
+
+    @include sp() {
+      padding: 8vw 16px;
+    }
+
+    .title {
+      font-size: 35px;
+      font-weight: bold;
+      text-align: center;
+      margin: 0 0 16px;
+
+      @include sp() {
+        font-size: 1.5rem;
+      }
+    }
+
+    .agree {
+      margin-top: 80px;
+
+      @include sp() {
+        margin-top: 40px;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .text {
+        margin-top: 32px;
+        padding: 40px;
+        text-align: left;
+        background-color: #E0E9F8;
+        height: 500px;
+        overflow-y: scroll;
+
+        @include sp() {
+          margin-top: 20px;
+        }
+
+        h2 {
+          margin-top: 16px;
+        }
+      }
+
+      .check-text {
+        margin: 30px auto;
+
+      }
+
+      input[type=checkbox] {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+
+      button[type=submit] {
+        width: 250px;
+        font-size: 18px;
+      }
+
+      .Form-Btn {
+        background-color: rgba(151, 181, 231, 0.5);
+        text-align: center;
+        border-radius: 9999px;
+        padding: 20px 0;
+        position: relative;
+        transition: all .5s ease;
+        cursor: pointer;
+        border: none;
+        margin-top: 10px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: calc(50% - 5px);
+          right: 40px;
+          width: 10px;
+          height: 10px;
+          border-top: 1px solid #000;
+          border-right: 1px solid #000;
+          transform: rotate(45deg);
+          transition: all .5s ease;
+        }
+
+        &:hover {
+          background-color: rgba(151, 181, 231, 1);
+
+          &::before {
+            right: 35px;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+/*
+--------------------------------------
+footer
+--------------------------------------
+*/
+footer {
+  background-color: #E5E5E5;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+
+  .totop {
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    transition: all .5s ease;
+    cursor: pointer;
+    border-bottom: solid 1px #202A39;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 5px);
+      right: calc(50% - 5px);
+      width: 15px;
+      height: 15px;
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+      transform: rotate(-45deg);
+      transition: all .5s ease;
+    }
+
+    &:hover {
+      background-color: rgb(241, 241, 241);
+
+      &::before {
+        top: calc(50% - 10px);
+      }
+    }
+  }
+
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 1080px;
+    width: 100%;
+    padding: 0;
+    background-color: #E5E5E5;
+
+    @include sp() {
+      flex-flow: column;
+      padding: 0 16px;
+    }
+
+    .left {
+      padding: 0 64px;
+
+      @include sp() {
+        padding: 0 5%;
+      }
+
+      .footer-logo {
+        margin-top: 30px;
+
+        @include sp() {
+          transform: scale(0.8);
+          margin-left: -50px;
+        }
+      }
+
+      .address {
+        font-style: normal;
+        margin-top: 15px;
+        line-height: 30px;
+
+        @include sp() {
+          margin-top: 0;
+        }
+      }
+
+    }
+
+    .right {
+      @include sp() {
+        padding: 0 5%;
+      }
+
+      nav {
+        display: flex;
+        justify-content: end;
+        margin-right: 8%;
+
+        @include sp() {
+          flex-flow: column;
+        }
+
+        .menu-list {
+          display: flex;
+          flex-flow: column;
+          gap: 15px;
+          padding-right: 8%;
+          border-right: solid 1px #000;
+
+          li:last-child {
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+          }
+
+          @include sp() {
+            border: none;
+            margin-top: 30px;
+          }
+
+          .service-list-sp {
+            display: flex;
+            flex-flow: column;
+            gap: 15px;
+            display: none;
+
+            @include sp() {
+              display: block;
+            }
+
+            li {
+              list-style: disc;
+              margin-left: 20px;
+            }
+          }
+        }
+
+        .service-list {
+          display: flex;
+          flex-flow: column;
+          gap: 15px;
+          padding-left: 30px;
+
+          @include sp() {
+            display: none;
+          }
+
+          li {
+            list-style: disc;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 50px 0 20px;
+    font-size: 13px;
+  }
+}
