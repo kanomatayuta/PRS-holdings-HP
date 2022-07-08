@@ -1,0 +1,221 @@
+@use "variables" as va;
+
+@mixin sp {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}
+
+// 共通内容
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1em;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-weight: 400;
+  letter-spacing: .15em
+}
+
+// navi hover時
+.pc-gnavi__list a,
+.tb-gnavi__list a,
+.footer__nav a,
+.breadcrumb a {
+  position: relative;
+}
+
+.pc-gnavi__list a:before,
+.tb-gnavi__list a:before,
+.footer__nav a:before,
+.breadcrumb a:before {
+  background-color: #3c3632;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: all .3s cubic-bezier(.19, 1, .22, 1);
+  transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+}
+
+.breadcrumb a:before {
+  background-color: #fff;
+}
+
+.pc-gnavi__list a:hover:before,
+.tb-gnavi__list a:hover:before,
+.footer__nav a:hover:before,
+.breadcrumb a:hover:before {
+  width: 100%;
+}
+
+
+
+/*--------------------------
+* セクション
+--------------------------*/
+.sec {
+  padding: 8vw 0;
+  margin: 0 auto;
+}
+
+.sec__wrapper {
+  width: 90%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sec__title {
+  text-align: center;
+  font-size: 2em;
+}
+
+.sec__text {
+  max-width: 650px;
+  padding: 32px 0 0;
+  margin: 0 auto;
+}
+
+
+.btn {
+  // ボタンスタイル
+  text-align: center;
+
+  a {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    border-radius: 0.5rem;
+  }
+
+  .btn-c {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    padding: 1.5rem 5rem;
+    border-radius: 100vh;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 5px);
+      right: 40px;
+      width: 10px;
+      height: 10px;
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+      transform: rotate(45deg);
+      transition: all .5s ease;
+    }
+
+    &:hover {
+      &::before {
+        right: 35px;
+      }
+    }
+  }
+}
+
+
+
+/*
+--------------------------------------
+global-contact
+--------------------------------------
+*/
+.global-contact {
+  margin-top: 8vw;
+  background-color: #202A39;
+
+  @include sp() {
+    padding: 48px 0;
+  }
+
+  .content {
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+    @include sp() {
+      flex-flow: column;
+    }
+
+    .global-contact__text {
+      width: 50%;
+
+      @include sp() {
+        width: 100%;
+      }
+
+      p {
+        margin-top: 48px;
+
+        @include sp() {
+          margin-top: 32px;
+        }
+      }
+
+    }
+
+    .global-contact__btn {
+      width: 50%;
+
+      @include sp() {
+        width: 100%;
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+
+
+
+//ボタンカラー
+.btn--blue {
+  color: #000;
+  background-color: va.$btn--blue;
+
+  &:hover {
+    color: #fff;
+    background: va.$btn--blue-hover;
+  }
+}
+
+.btn--pink {
+  color: #000;
+  background-color: va.$btn--pink;
+
+  &:hover {
+    color: #fff;
+    background: va.$btn--pink-hover;
+  }
+}
+
+.btn--green {
+  color: #000;
+  background-color: va.$btn--green;
+
+  &:hover {
+    color: #fff;
+    background: va.$btn--green-hover;
+  }
+}
