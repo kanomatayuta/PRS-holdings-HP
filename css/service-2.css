@@ -249,7 +249,7 @@ img {
   .hamburger {
     display: block;
     position: fixed;
-    top: 2%;
+    top: 0.5%;
     left: 3%;
     text-align: center;
     z-index: 9999;
@@ -285,34 +285,6 @@ img {
   .hamburger--trigger span:nth-of-type(3) {
     top: 40px;
   }
-
-  /*--------------------------
-  * hamburger js
-  --------------------------*/
-  .drawer--active .tb-gnavi {
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    z-index: 999;
-  }
-
-  .btn--active .hamburger--trigger span:nth-of-type(1) {
-    -webkit-transform: translateY(11px) rotate(45deg);
-            transform: translateY(11px) rotate(45deg);
-  }
-  .btn--active .hamburger--trigger span:nth-of-type(2) {
-    width: 0;
-    transition-delay: 0.1s;
-    -webkit-transition-delay: 0.1s;
-    -moz-transition-delay: 0.1s;
-  }
-  .btn--active .hamburger--trigger span:nth-of-type(3) {
-    -webkit-transform: translateY(-11px) rotate(-45deg);
-            transform: translateY(-11px) rotate(-45deg);
-  }
 }
 @media screen and (max-width: 520px) {
   .hamburger {
@@ -346,6 +318,132 @@ img {
     margin-bottom: 8px;
   }
 }
+/*-------------------------
+  * hamburger　nav
+  --------------------------*/
+.home-hamburger {
+  position: fixed;
+  top: 2%;
+  right: 3%;
+  text-align: center;
+  z-index: 9999;
+}
+@media screen and (max-width: 960px) {
+  .home-hamburger {
+    right: 0;
+    left: 3%;
+  }
+}
+.home-hamburger:hover {
+  cursor: pointer;
+}
+.home-hamburger--trigger {
+  width: 65px;
+  height: 60px;
+  position: relative;
+}
+.home-hamburger--trigger span {
+  display: inline-block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  right: 13px;
+  margin: 0 auto;
+  width: 39px;
+  height: 1.5px;
+  background-color: #19A2DB;
+  border-radius: 0;
+}
+.home-hamburger--trigger span:nth-of-type(1) {
+  top: 18px;
+}
+.home-hamburger--trigger span:nth-of-type(2) {
+  top: 29px;
+}
+.home-hamburger--trigger span:nth-of-type(3) {
+  top: 40px;
+}
+
+/*--------------------------
+  * hamburger js
+  --------------------------*/
+.drawer--active .tb-gnavi,
+.drawer--active .home-gnavi {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 999;
+}
+
+.btn--active .hamburger--trigger span:nth-of-type(1),
+.btn--active .main-hamburger--trigger span:nth-of-type(1) {
+  -webkit-transform: translateY(11px) rotate(45deg);
+          transform: translateY(11px) rotate(45deg);
+}
+.btn--active .hamburger--trigger span:nth-of-type(2),
+.btn--active .main-hamburger--trigger span:nth-of-type(2) {
+  width: 0;
+  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+}
+.btn--active .hamburger--trigger span:nth-of-type(3),
+.btn--active .main-hamburger--trigger span:nth-of-type(3) {
+  -webkit-transform: translateY(-11px) rotate(-45deg);
+          transform: translateY(-11px) rotate(-45deg);
+}
+
+.main-hamburger {
+  display: block;
+  position: fixed;
+  top: 2%;
+  right: 3%;
+  text-align: center;
+  z-index: 9999;
+}
+@media screen and (max-width: 960px) {
+  .main-hamburger {
+    right: auto;
+    left: 3%;
+  }
+}
+.main-hamburger:hover {
+  cursor: pointer;
+}
+.main-hamburger--trigger {
+  width: 65px;
+  height: 60px;
+  position: relative;
+}
+.main-hamburger--trigger span {
+  display: inline-block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  right: 13px;
+  margin: 0 auto;
+  width: 39px;
+  height: 1.5px;
+  background-color: #19A2DB;
+  border-radius: 0;
+}
+.main-hamburger--trigger span:nth-of-type(1) {
+  top: 18px;
+}
+.main-hamburger--trigger span:nth-of-type(2) {
+  top: 29px;
+}
+.main-hamburger--trigger span:nth-of-type(3) {
+  top: 40px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1229,77 +1327,6 @@ footer
 }
 
 @media screen and (max-width: 960px) {
-  /*-------------------------
-  * hamburger　nav
-  --------------------------*/
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 2%;
-    left: 3%;
-    text-align: center;
-    z-index: 9999;
-  }
-  .hamburger:hover {
-    cursor: pointer;
-  }
-  .hamburger--trigger {
-    width: 65px;
-    height: 60px;
-    position: relative;
-  }
-  .hamburger--trigger span {
-    display: inline-block;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    position: absolute;
-    right: 13px;
-    margin: 0 auto;
-    width: 39px;
-    height: 1.5px;
-    background-color: #19A2DB;
-    border-radius: 0;
-  }
-  .hamburger--trigger span:nth-of-type(1) {
-    top: 18px;
-  }
-  .hamburger--trigger span:nth-of-type(2) {
-    top: 29px;
-  }
-  .hamburger--trigger span:nth-of-type(3) {
-    top: 40px;
-  }
-
-  /*--------------------------
-  * hamburger js
-  --------------------------*/
-  .drawer--active .tb-gnavi {
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    z-index: 999;
-  }
-
-  .btn--active .hamburger--trigger span:nth-of-type(1) {
-    -webkit-transform: translateY(11px) rotate(45deg);
-            transform: translateY(11px) rotate(45deg);
-  }
-  .btn--active .hamburger--trigger span:nth-of-type(2) {
-    width: 0;
-    transition-delay: 0.1s;
-    -webkit-transition-delay: 0.1s;
-    -moz-transition-delay: 0.1s;
-  }
-  .btn--active .hamburger--trigger span:nth-of-type(3) {
-    -webkit-transform: translateY(-11px) rotate(-45deg);
-            transform: translateY(-11px) rotate(-45deg);
-  }
-
   /*--------------------------
     * セクション
     --------------------------*/
@@ -1394,10 +1421,6 @@ footer
   }
 }
 @media screen and (max-width: 520px) {
-  .hamburger {
-    top: 0;
-  }
-
   .sub-header {
     height: 64px;
   }

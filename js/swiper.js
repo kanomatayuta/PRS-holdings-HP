@@ -37,3 +37,32 @@ const workSwiper = new Swiper(".workswiper", {
     },
   }
 })
+
+var swiper = new Swiper(".fadeSwiper", {
+  loop: true,
+  effect: 'fade',
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  speed: 2000,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+});
+
+
+var serviceSwaiper = new Swiper('.swiper-service', {
+  spaceBetween: 30,// 隣同士の余白
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  }
+});
