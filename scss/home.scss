@@ -155,153 +155,151 @@ footer {
 /*--------------------------
 * mainvisual
 --------------------------*/
-.mainvisual {
 
-  // .swiper {
-  .swiper {
-    width: 100%;
-    position: relative;
+// .swiper {
+.swiper {
+  width: 100%;
+  position: relative;
 
-    @include pc() {
-      display: none;
-    }
+  @include pc() {
+    display: none;
+  }
+}
+
+.fadeSwiper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include pc() {
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+  }
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  pointer-events: none;
+  transition-property: opacity;
+}
+
+.swiper--visual-item {
+  position: relative;
+  width: 100%;
+  padding-top: 50vh;
+  overflow: hidden;
+}
+
+
+.swiper--visual-pagination {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  flex-direction: column;
+  transform: translate(-3%, -50%);
+  -webkit-transform: translate(-3%, -50%);
+  -moz-transform: translate(-3%, -50%);
+  -ms-transform: translate(-3%, -50%);
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper--visual-item .bg01 {
+  background-image: url(https://placehold.jp/1000x1000.png?text=1);
+}
+
+.swiper--visual-item .bg02 {
+  background-image: url(https://placehold.jp/1000x1000.png?text=2);
+}
+
+.swiper--visual-item .bg03 {
+  background-image: url(https://placehold.jp/1000x1000.png?text=3);
+}
+
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
   }
 
-  .fadeSwiper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    @include pc() {
-      top: 0%;
-      left: 0%;
-      transform: translate(0%, 0%);
-    }
+  100% {
+    transform: scale(1.15);
   }
+}
 
-  .swiper-slide {
-    flex-shrink: 0;
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    pointer-events: none;
-    transition-property: opacity;
-  }
+.swiper-slide-active figure {
+  animation: zoomUp 10s linear 0s 1 normal both;
+}
 
-  .swiper--visual-item {
-    position: relative;
-    width: 100%;
-    padding-top: 50vh;
-    overflow: hidden;
-  }
+.slide-img img {
+  display: block;
+}
 
+.swiper-pagination-bullet {
+  cursor: pointer;
+  display: block;
+  border-radius: 50%;
+  opacity: 1;
+  width: 16px;
+  height: 16px;
+  background-color: va.$pagination-bullet;
+  flex-direction: column;
+}
 
-  .swiper--visual-pagination {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    right: 3%;
-    flex-direction: column;
-    transform: translate(-3%, -50%);
-    -webkit-transform: translate(-3%, -50%);
-    -moz-transform: translate(-3%, -50%);
-    -ms-transform: translate(-3%, -50%);
-  }
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: va.$pagination-active-a;
+}
 
-  .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.swiper-pagination-bullet {
+  margin-top: 32px;
+}
 
-  .swiper--visual-item .bg01 {
-    background-image: url(https://placehold.jp/1000x1000.png?text=1);
-  }
+.swiper-pagination-bullet:first-child {
+  margin-top: 0px;
+}
 
-  .swiper--visual-item .bg02 {
-    background-image: url(https://placehold.jp/1000x1000.png?text=2);
-  }
-
-  .swiper--visual-item .bg03 {
-    background-image: url(https://placehold.jp/1000x1000.png?text=3);
-  }
-
-  @keyframes zoomUp {
-    0% {
-      transform: scale(1);
-    }
-
-    100% {
-      transform: scale(1.15);
-    }
-  }
-
-  .swiper-slide-active figure {
-    animation: zoomUp 10s linear 0s 1 normal both;
-  }
-
-  .slide-img img {
-    display: block;
-  }
-
-  .swiper-pagination-bullet {
-    cursor: pointer;
-    display: block;
-    border-radius: 50%;
-    opacity: 1;
-    width: 16px;
-    height: 16px;
-    background-color: va.$pagination-bullet;
-    flex-direction: column;
-  }
-
-  .swiper-pagination-bullet-active {
-    opacity: 1;
-    background-color: va.$pagination-active-a;
-  }
-
-  .swiper-pagination-bullet {
-    margin-top: 32px;
-  }
-
-  .swiper-pagination-bullet:first-child {
-    margin-top: 0px;
-  }
-
-  /*--------------------------
+/*--------------------------
   * js
   --------------------------*/
-  /* swiper */
-  .fadeSwiper {
-    position: relative;
-    overflow: hidden;
-    list-style: none;
-    margin: 0 auto;
-  }
+/* swiper */
+.fadeSwiper {
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  margin: 0 auto;
+}
 
-  .swiper-wrapper {
-    position: relative;
-    display: flex;
-    box-sizing: content-box;
-  }
+.swiper-wrapper {
+  position: relative;
+  display: flex;
+  box-sizing: content-box;
+}
 
-  /* フェーイド */
-  .swiper-pagination {
-    position: absolute;
-    text-align: center;
-    transition: .3s opacity;
-    transform: translate3d(0, 0, 0);
-    z-index: 10;
-  }
+/* フェーイド */
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: .3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
 }
 
 /*--------------------------

@@ -29,42 +29,6 @@ img {
 }
 
 /*--------------------------
-* base
---------------------------*/
-/*--------------------------
-* img スモークカラー
---------------------------*/
-/*--------------------------
-* header カラー
---------------------------*/
-/*--------------------------
-* footer カラー
---------------------------*/
-/*--------------------------
-* home.html カラー
---------------------------*/
-/*--------------------------
-* service-1.html カラー
---------------------------*/
-/*--------------------------
-* service-2.html カラー
---------------------------*/
-/*--------------------------
-* service-3.html カラー
---------------------------*/
-/*--------------------------
-* service-4.html カラー
---------------------------*/
-/*--------------------------
-* recruit.html カラー
---------------------------*/
-/*--------------------------
-* company.html カラー
---------------------------*/
-/*--------------------------
-* contact.html カラー
---------------------------*/
-/*--------------------------
 * 共通  フォント
 --------------------------*/
 /*--------------------------
@@ -194,6 +158,7 @@ img {
 }
 .tb-gnavi__list {
   max-width: 700px;
+  width: 60%;
   margin: 0 auto;
   padding-top: 34px;
 }
@@ -1031,23 +996,17 @@ footer {
 /*--------------------------
 * mainvisual
 --------------------------*/
-.mainvisual {
-  /*--------------------------
-  * js
-  --------------------------*/
-  /* swiper */
-  /* フェーイド */
-}
-.mainvisual .swiper {
+.swiper {
   width: 100%;
   position: relative;
 }
 @media screen and (max-width: 960px) {
-  .mainvisual .swiper {
+  .swiper {
     display: none;
   }
 }
-.mainvisual .fadeSwiper {
+
+.fadeSwiper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1055,14 +1014,15 @@ footer {
           transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 960px) {
-  .mainvisual .fadeSwiper {
+  .fadeSwiper {
     top: 0%;
     left: 0%;
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
   }
 }
-.mainvisual .swiper-slide {
+
+.swiper-slide {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   text-align: center;
@@ -1081,13 +1041,15 @@ footer {
   -webkit-transition-property: opacity;
   transition-property: opacity;
 }
-.mainvisual .swiper--visual-item {
+
+.swiper--visual-item {
   position: relative;
   width: 100%;
   padding-top: 50vh;
   overflow: hidden;
 }
-.mainvisual .swiper--visual-pagination {
+
+.swiper--visual-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1103,7 +1065,8 @@ footer {
   -moz-transform: translate(-3%, -50%);
   -ms-transform: translate(-3%, -50%);
 }
-.mainvisual .bg {
+
+.bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -1113,15 +1076,19 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.mainvisual .swiper--visual-item .bg01 {
+
+.swiper--visual-item .bg01 {
   background-image: url(https://placehold.jp/1000x1000.png?text=1);
 }
-.mainvisual .swiper--visual-item .bg02 {
+
+.swiper--visual-item .bg02 {
   background-image: url(https://placehold.jp/1000x1000.png?text=2);
 }
-.mainvisual .swiper--visual-item .bg03 {
+
+.swiper--visual-item .bg03 {
   background-image: url(https://placehold.jp/1000x1000.png?text=3);
 }
+
 @-webkit-keyframes zoomUp {
   0% {
     -webkit-transform: scale(1);
@@ -1132,6 +1099,7 @@ footer {
             transform: scale(1.15);
   }
 }
+
 @keyframes zoomUp {
   0% {
     -webkit-transform: scale(1);
@@ -1142,14 +1110,16 @@ footer {
             transform: scale(1.15);
   }
 }
-.mainvisual .swiper-slide-active figure {
+.swiper-slide-active figure {
   -webkit-animation: zoomUp 10s linear 0s 1 normal both;
           animation: zoomUp 10s linear 0s 1 normal both;
 }
-.mainvisual .slide-img img {
+
+.slide-img img {
   display: block;
 }
-.mainvisual .swiper-pagination-bullet {
+
+.swiper-pagination-bullet {
   cursor: pointer;
   display: block;
   border-radius: 50%;
@@ -1162,23 +1132,32 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.mainvisual .swiper-pagination-bullet-active {
+
+.swiper-pagination-bullet-active {
   opacity: 1;
   background-color: #97B5E7;
 }
-.mainvisual .swiper-pagination-bullet {
+
+.swiper-pagination-bullet {
   margin-top: 32px;
 }
-.mainvisual .swiper-pagination-bullet:first-child {
+
+.swiper-pagination-bullet:first-child {
   margin-top: 0px;
 }
-.mainvisual .fadeSwiper {
+
+/*--------------------------
+  * js
+  --------------------------*/
+/* swiper */
+.fadeSwiper {
   position: relative;
   overflow: hidden;
   list-style: none;
   margin: 0 auto;
 }
-.mainvisual .swiper-wrapper {
+
+.swiper-wrapper {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1186,7 +1165,9 @@ footer {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-.mainvisual .swiper-pagination {
+
+/* フェーイド */
+.swiper-pagination {
   position: absolute;
   text-align: center;
   -webkit-transition: 0.3s opacity;

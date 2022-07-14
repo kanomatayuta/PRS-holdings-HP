@@ -2,9 +2,8 @@
 // Webサイトのベースカラーやアクセントカラーなど、変数を定義して活用。
 
 
-/*--------------------------
-* base
---------------------------*/
+
+// base
 // navi
 $navi-link: #202A39;
 $breadcrumb-link: #fff;
@@ -26,14 +25,11 @@ $btn--green-hover: #81D6E6;
 // 矢印
 $btn-icon: #000;
 
-/*--------------------------
-* img スモークカラー
---------------------------*/
+//img スモークカラー
 $smoke: rgba(0, 0, 0, 0.3);
 
-/*--------------------------
-* header カラー
---------------------------*/
+
+// header カラー
 $sub-header-bg: #fff;
 $gnavi-bg: #fff;
 $sub-header-text: #fff;
@@ -41,16 +37,16 @@ $sub-header-text: #fff;
 //hamburger
 $hamburger-rod: #19A2DB;
 
-/*--------------------------
-* footer カラー
---------------------------*/
+
+//footer カラー
+
 $footer-bg: #E5E5E5;
 $footer-bg-hover: rgba(241, 241, 241);
 $footer-border: #202A39;
 
-/*--------------------------
-* home.html カラー
---------------------------*/
+
+// home.html カラー
+
 // mainvisual
 $catch-bg :#E0E9F8;
 
@@ -63,18 +59,15 @@ $swiper-button: #202A39;
 $service-img-text: #fff;
 
 
-/*--------------------------
-* service-1.html カラー
---------------------------*/
+// service-1.html カラー
 // タイトル & 背景
 $produce--blue: #97B5E7;
 $consign--pink: #F2E0E5;
 $ses--green: #81D6E6;
 
 
-/*--------------------------
-* service-2.html カラー
---------------------------*/
+
+// service-2.html カラー
 //support
 $support-bg: #E0E9F8;
 
@@ -102,9 +95,8 @@ $accordion-tag: #437EF6;
 $accordion__icon: #202A39;
 
 
-/*--------------------------
-* service-3.html カラー
---------------------------*/
+
+// html カラー
 // can
 $can-bg: #E0E9F8;
 $can-circle-bg: #fff;
@@ -115,9 +107,8 @@ $production-text: #fff;
 $production-text-sb: #777;
 
 
-/*--------------------------
-* service-4.html カラー
---------------------------*/
+
+//service-4.html カラー
 // merit
 $merit-bg: #E0E9F8;
 $merit-iten-bg: #fff;
@@ -134,9 +125,8 @@ $introduction-tbody: #202A39;
 $introduction-step: #fff;
 
 
-/*--------------------------
-* recruit.html カラー
---------------------------*/
+
+//recruit.html カラー
 // recruit flow
 $recruit-item: #fff;
 $recruit-item-bg: #F7DAE1;
@@ -155,18 +145,16 @@ $recruitment-table: #97B5E7;
 $recruitment-th-bg: #E0E9F8;
 
 
-/*--------------------------
-* company.html カラー
---------------------------*/
+
+// company.html カラー
 //info
 $info-bg: #E0E9F8;
 $info-table-bg: #fff;
 $info-boder: #E0E9F8;
 
 
-/*--------------------------
-* contact.html カラー
---------------------------*/
+
+//contact.html カラー
 // form
 $form-bg: #E0E9F8;
 $form-label-required: #19a2db;
