@@ -268,6 +268,11 @@ img {
   word-break: keep-all;
   white-space: nowrap;
 }
+@media screen and (max-width: 520px) {
+  .hero__content .breadcrumb {
+    overflow-x: scroll;
+  }
+}
 .hero__content .breadcrumb li {
   display: inline;
   list-style: none;
@@ -466,12 +471,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (max-width: 960px) {
-  .sec__wrapper {
-    max-width: 750px;
-  }
-}
-
 .sec__title {
   text-align: center;
   font-size: 2em;
@@ -989,21 +988,23 @@ footer {
   display: block;
 }
 .sec__title .en {
-  font-size: 2em;
+  font-size: 1.5em;
   display: block;
 }
 
 /*--------------------------
 * mainvisual
 --------------------------*/
+@media screen and (max-width: 960px) {
+  .mainvisual .split__body {
+    display: none;
+    padding-top: 15vh;
+  }
+}
+
 .swiper {
   width: 100%;
   position: relative;
-}
-@media screen and (max-width: 960px) {
-  .swiper {
-    display: none;
-  }
 }
 
 .fadeSwiper {
@@ -1045,7 +1046,7 @@ footer {
 .swiper--visual-item {
   position: relative;
   width: 100%;
-  padding-top: 50vh;
+  padding-top: 500px;
   overflow: hidden;
 }
 
@@ -1060,10 +1061,8 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  transform: translate(-3%, -50%);
-  -webkit-transform: translate(-3%, -50%);
-  -moz-transform: translate(-3%, -50%);
-  -ms-transform: translate(-3%, -50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .bg {
@@ -1078,15 +1077,15 @@ footer {
 }
 
 .swiper--visual-item .bg01 {
-  background-image: url(https://placehold.jp/1000x1000.png?text=1);
+  background-image: url(/img/homevisual/main1.jpg);
 }
 
 .swiper--visual-item .bg02 {
-  background-image: url(https://placehold.jp/1000x1000.png?text=2);
+  background-image: url(/img/homevisual/main2.jpg);
 }
 
 .swiper--visual-item .bg03 {
-  background-image: url(https://placehold.jp/1000x1000.png?text=3);
+  background-image: url(/img/homevisual/main3.jpg);
 }
 
 @-webkit-keyframes zoomUp {
@@ -1168,12 +1167,9 @@ footer {
 
 /* フェーイド */
 .swiper-pagination {
-  position: absolute;
   text-align: center;
   -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
   z-index: 10;
 }
 
@@ -1218,6 +1214,9 @@ footer {
   width: 80%;
   margin: 0 auto;
   position: relative;
+}
+.service .swiper .service-img img {
+  height: 500px;
 }
 .service .swiper .service-img:after {
   content: "";

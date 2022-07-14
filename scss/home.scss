@@ -147,7 +147,7 @@ footer {
   }
 
   .en {
-    font-size: fo.$section-title;
+    font-size: 1.5em;
     display: block;
   }
 }
@@ -155,15 +155,21 @@ footer {
 /*--------------------------
 * mainvisual
 --------------------------*/
+.mainvisual {
+
+  .split__body {
+
+    @include pc() {
+      display: none;
+      padding-top: 15vh;
+    }
+  }
+}
 
 // .swiper {
 .swiper {
   width: 100%;
   position: relative;
-
-  @include pc() {
-    display: none;
-  }
 }
 
 .fadeSwiper {
@@ -194,7 +200,7 @@ footer {
 .swiper--visual-item {
   position: relative;
   width: 100%;
-  padding-top: 50vh;
+  padding-top: 500px;
   overflow: hidden;
 }
 
@@ -205,10 +211,7 @@ footer {
   top: 50%;
   right: 3%;
   flex-direction: column;
-  transform: translate(-3%, -50%);
-  -webkit-transform: translate(-3%, -50%);
-  -moz-transform: translate(-3%, -50%);
-  -ms-transform: translate(-3%, -50%);
+  transform: translateY(-50%);
 }
 
 .bg {
@@ -223,15 +226,15 @@ footer {
 }
 
 .swiper--visual-item .bg01 {
-  background-image: url(https://placehold.jp/1000x1000.png?text=1);
+  background-image: url(/img/homevisual/main1.jpg);
 }
 
 .swiper--visual-item .bg02 {
-  background-image: url(https://placehold.jp/1000x1000.png?text=2);
+  background-image: url(/img/homevisual/main2.jpg);
 }
 
 .swiper--visual-item .bg03 {
-  background-image: url(https://placehold.jp/1000x1000.png?text=3);
+  background-image: url(/img/homevisual/main3.jpg);
 }
 
 @keyframes zoomUp {
@@ -295,10 +298,8 @@ footer {
 
 /* フェーイド */
 .swiper-pagination {
-  position: absolute;
   text-align: center;
   transition: .3s opacity;
-  transform: translate3d(0, 0, 0);
   z-index: 10;
 }
 
@@ -347,6 +348,10 @@ footer {
       width: 80%;
       margin: 0 auto;
       position: relative;
+
+      img {
+        height: 500px;
+      }
 
       &:after {
         content: "";

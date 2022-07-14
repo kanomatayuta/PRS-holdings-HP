@@ -256,17 +256,6 @@ $sp: 350px;
     animation: circleA1 1s forwards;
   }
 
-  @-webkit-keyframes circleA1 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 56.5 0;
-    }
-  }
-
   @keyframes circleA1 {
     0% {
       stroke-dasharray: 0 565;
@@ -281,17 +270,6 @@ $sp: 350px;
   .typeA2 {
     -webkit-animation: circleA2 1s forwards;
     animation: circleA2 1s forwards;
-  }
-
-  @-webkit-keyframes circleA2 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 113 565;
-    }
   }
 
   @keyframes circleA2 {
@@ -310,17 +288,6 @@ $sp: 350px;
     animation: circleA3 1s forwards;
   }
 
-  @-webkit-keyframes circleA3 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 169.5 565;
-    }
-  }
-
   @keyframes circleA3 {
     0% {
       stroke-dasharray: 0 565;
@@ -328,24 +295,13 @@ $sp: 350px;
 
     99.9%,
     to {
-      stroke-dasharray: 282.5 565;
+      stroke-dasharray: 226 565;
     }
   }
 
   .typeA4 {
     -webkit-animation: circleA4 1s forwards;
     animation: circleA4 1s forwards;
-  }
-
-  @-webkit-keyframes circleA4 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 282.5 565;
-    }
   }
 
   @keyframes circleA4 {

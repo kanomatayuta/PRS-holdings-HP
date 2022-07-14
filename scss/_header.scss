@@ -272,6 +272,10 @@ $sp: 350px;
       word-break: keep-all;
       white-space: nowrap;
 
+      @include tb() {
+        overflow-x: scroll;
+      }
+
       li {
         display: inline;
         list-style: none;

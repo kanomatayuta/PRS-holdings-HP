@@ -44,7 +44,7 @@ $sp: 350px;
     display: flex;
     justify-content: space-between;
 
-    @include tb() {
+    @include pc() {
       display: block;
     }
 
@@ -55,7 +55,7 @@ $sp: 350px;
       text-align: center;
       position: relative;
 
-      @include tb() {
+      @include pc() {
         line-height: 70px;
         width: 80%;
         margin: 0 auto 40px;
@@ -70,7 +70,7 @@ $sp: 350px;
         color: va.$recruit-item;
         background: va.$recruit-item-bg-last;
 
-        @include tb() {
+        @include pc() {
           margin: 0 auto 0;
         }
       }
@@ -92,7 +92,7 @@ $sp: 350px;
         left: 0;
         z-index: 1;
 
-        @include tb() {
+        @include pc() {
           content: none;
         }
       }
@@ -105,7 +105,7 @@ $sp: 350px;
         right: -20px;
         z-index: 2;
 
-        @include tb() {
+        @include pc() {
           transform: translate(50%, 0);
           border-width: 16px 20px 0 20px;
           border-color: va.$recruit-item-bg-last transparent transparent transparent;
@@ -118,7 +118,7 @@ $sp: 350px;
       &:not(:first-child):not(:last-child) {
         padding: 0 0 0 10px;
 
-        @include tb() {
+        @include pc() {
           padding: 0;
         }
       }

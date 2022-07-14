@@ -268,6 +268,11 @@ img {
   word-break: keep-all;
   white-space: nowrap;
 }
+@media screen and (max-width: 520px) {
+  .hero__content .breadcrumb {
+    overflow-x: scroll;
+  }
+}
 .hero__content .breadcrumb li {
   display: inline;
   list-style: none;
@@ -466,12 +471,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (max-width: 960px) {
-  .sec__wrapper {
-    max-width: 750px;
-  }
-}
-
 .sec__title {
   text-align: center;
   font-size: 2em;
@@ -1088,7 +1087,7 @@ footer
       stroke-dasharray: 0 565;
     }
     99.9%, to {
-      stroke-dasharray: 56.5 0;
+      stroke-dasharray: 56.5 565;
     }
   }
   @keyframes circleA1 {
@@ -1128,7 +1127,7 @@ footer
       stroke-dasharray: 0 565;
     }
     99.9%, to {
-      stroke-dasharray: 169.5 565;
+      stroke-dasharray: 226 565;
     }
   }
   @keyframes circleA3 {
@@ -1136,7 +1135,7 @@ footer
       stroke-dasharray: 0 565;
     }
     99.9%, to {
-      stroke-dasharray: 282.5 565;
+      stroke-dasharray: 226 565;
     }
   }
   .typeA4 {
@@ -1148,7 +1147,7 @@ footer
       stroke-dasharray: 0 565;
     }
     99.9%, to {
-      stroke-dasharray: 282.5 565;
+      stroke-dasharray: 565 565;
     }
   }
   @keyframes circleA4 {
