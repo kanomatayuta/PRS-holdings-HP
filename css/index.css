@@ -264,7 +264,6 @@ img {
 .hero__content .breadcrumb {
   height: 35px;
   margin-top: 8px;
-  overflow-x: scroll;
   word-break: keep-all;
   white-space: nowrap;
 }
@@ -502,11 +501,10 @@ body {
   border-radius: 0.5rem;
 }
 .btn .btn-c {
-  font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
   position: relative;
-  padding: 1.5rem 5rem;
+  padding: 2rem 6rem;
   border-radius: 100vh;
 }
 .btn .btn-c::before {
@@ -936,6 +934,8 @@ img {
 @media screen and (max-width: 960px) {
   .split__body {
     display: block;
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
@@ -996,9 +996,13 @@ footer {
 * mainvisual
 --------------------------*/
 @media screen and (max-width: 960px) {
+  .mainvisual {
+    padding-top: 12vh;
+  }
+}
+@media screen and (max-width: 960px) {
   .mainvisual .split__body {
     display: none;
-    padding-top: 15vh;
   }
 }
 
@@ -1050,21 +1054,6 @@ footer {
   overflow: hidden;
 }
 
-.swiper--visual-pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  top: 50%;
-  right: 3%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
 .bg {
   position: absolute;
   top: 0;
@@ -1077,15 +1066,15 @@ footer {
 }
 
 .swiper--visual-item .bg01 {
-  background-image: url(/img/homevisual/main1.jpg);
+  background-image: url(../img/homevisual/main1.jpg);
 }
 
 .swiper--visual-item .bg02 {
-  background-image: url(/img/homevisual/main2.jpg);
+  background-image: url(../img/homevisual/main2.jpg);
 }
 
 .swiper--visual-item .bg03 {
-  background-image: url(/img/homevisual/main3.jpg);
+  background-image: url(../img/homevisual/main3.jpg);
 }
 
 @-webkit-keyframes zoomUp {
@@ -1118,31 +1107,8 @@ footer {
   display: block;
 }
 
-.swiper-pagination-bullet {
-  cursor: pointer;
-  display: block;
-  border-radius: 50%;
-  opacity: 1;
-  width: 16px;
-  height: 16px;
-  background-color: #E0E9F8;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background-color: #97B5E7;
-}
-
-.swiper-pagination-bullet {
-  margin-top: 32px;
-}
-
-.swiper-pagination-bullet:first-child {
-  margin-top: 0px;
+.swiper--visual-pagination {
+  display: none;
 }
 
 /*--------------------------
@@ -1218,6 +1184,11 @@ footer {
 .service .swiper .service-img img {
   height: 500px;
 }
+@media screen and (max-width: 520px) {
+  .service .swiper .service-img img {
+    height: 300px;
+  }
+}
 .service .swiper .service-img:after {
   content: "";
   position: absolute;
@@ -1230,7 +1201,7 @@ footer {
 }
 .service .swiper .service-img__text {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 700;
   position: absolute;
   top: 50%;
@@ -1239,14 +1210,9 @@ footer {
           transform: translate(-50%, -50%);
   z-index: 2;
 }
-@media screen and (max-width: 960px) {
-  .service .swiper .service-img__text {
-    font-size: 1.3rem;
-  }
-}
 @media screen and (max-width: 520px) {
   .service .swiper .service-img__text {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 .service .swiper-wrapper {
@@ -1338,4 +1304,4 @@ footer {
 }
 .company-visual .btn {
   margin-top: 32px;
-}/*# sourceMappingURL=home.css.map */
+}/*# sourceMappingURL=index.css.map */

@@ -95,6 +95,8 @@ img {
 
   @include pc() {
     display: block;
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
@@ -156,12 +158,13 @@ footer {
 * mainvisual
 --------------------------*/
 .mainvisual {
+  @include pc() {
+    padding-top: 12vh;
+  }
 
   .split__body {
-
     @include pc() {
       display: none;
-      padding-top: 15vh;
     }
   }
 }
@@ -204,16 +207,6 @@ footer {
   overflow: hidden;
 }
 
-
-.swiper--visual-pagination {
-  display: flex;
-  position: absolute;
-  top: 50%;
-  right: 3%;
-  flex-direction: column;
-  transform: translateY(-50%);
-}
-
 .bg {
   position: absolute;
   top: 0;
@@ -226,15 +219,16 @@ footer {
 }
 
 .swiper--visual-item .bg01 {
-  background-image: url(/img/homevisual/main1.jpg);
+  background-image: url(../img/homevisual/main1.jpg);
 }
 
 .swiper--visual-item .bg02 {
-  background-image: url(/img/homevisual/main2.jpg);
+  background-image: url(../img/homevisual/main2.jpg);
 }
 
+
 .swiper--visual-item .bg03 {
-  background-image: url(/img/homevisual/main3.jpg);
+  background-image: url(../img/homevisual/main3.jpg);
 }
 
 @keyframes zoomUp {
@@ -255,29 +249,40 @@ footer {
   display: block;
 }
 
-.swiper-pagination-bullet {
-  cursor: pointer;
-  display: block;
-  border-radius: 50%;
-  opacity: 1;
-  width: 16px;
-  height: 16px;
-  background-color: va.$pagination-bullet;
-  flex-direction: column;
+
+.swiper--visual-pagination {
+  display: none;
+  // display: flex;
+  // position: absolute;
+  // top: 50%;
+  // right: 3%;
+  // flex-direction: column;
+  // transform: translateY(-50%);
 }
 
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  background-color: va.$pagination-active-a;
-}
+// .swiper-pagination-bullet {
+//   cursor: pointer;
+//   display: block;
+//   border-radius: 50%;
+//   opacity: 1;
+//   width: 16px;
+//   height: 16px;
+//   background-color: va.$pagination-bullet;
+//   flex-direction: column;
+// }
 
-.swiper-pagination-bullet {
-  margin-top: 32px;
-}
+// .swiper-pagination-bullet-active {
+//   opacity: 1;
+//   background-color: va.$pagination-active-a;
+// }
 
-.swiper-pagination-bullet:first-child {
-  margin-top: 0px;
-}
+// .swiper-pagination-bullet {
+//   margin-top: 32px;
+// }
+
+// .swiper-pagination-bullet:first-child {
+//   margin-top: 0px;
+// }
 
 /*--------------------------
   * js
@@ -351,6 +356,10 @@ footer {
 
       img {
         height: 500px;
+
+        @include tb() {
+          height: 300px;
+        }
       }
 
       &:after {
@@ -366,7 +375,7 @@ footer {
 
       &__text {
         color: va.$service-img-text;
-        font-size: 1.5em;
+        font-size: 1.6em;
         font-weight: 700;
         position: absolute;
         top: 50%;
@@ -374,12 +383,8 @@ footer {
         transform: translate(-50%, -50%);
         z-index: 2;
 
-        @include pc() {
-          font-size: 1.3rem;
-        }
-
         @include tb() {
-          font-size: 1rem;
+          font-size: 1.3rem;
         }
       }
     }
