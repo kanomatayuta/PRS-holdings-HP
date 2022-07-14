@@ -7,30 +7,42 @@
 @use "reset";
 @use "header";
 @use "base";
-@use "variables";
+@use "variables" as va;
+@use "fonts" as fo;
 @use "footer";
 
-@mixin sp {
-  @media screen and (max-width: 520px) {
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
+
+@mixin pc {
+  @media screen and (max-width: $pc) {
     @content;
   }
 }
 
 @mixin tb {
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
     @content;
   }
 }
 
 /*--------------------------
-* info
+* company info
 --------------------------*/
 
 .info {
-  background-color: #E0E9F8;
+  background-color: va.$info-bg;
 
   table {
-    background-color: #fff;
+    background-color: va.$info-table-bg;
     width: 100%;
     border-radius: 30px;
     line-height: 2em;
@@ -39,13 +51,13 @@
     tr {
 
       th {
-        border-bottom: solid 1px #E0E9F8;
+        border-bottom: solid 1px va.$info-boder;
         padding: 30px;
         width: 35%;
         font-size: 18px;
         font-weight: bold;
 
-        @include sp() {
+        @include tb() {
           width: 100%;
           display: block;
           border: none;
@@ -55,11 +67,11 @@
       }
 
       td {
-        border-bottom: solid 1px #E0E9F8;
+        border-bottom: solid 1px va.$info-boder;
         width: 65%;
         padding: 32px;
 
-        @include sp() {
+        @include tb() {
           width: 100%;
           display: block;
           padding: 0 0 16px 4rem;
@@ -85,7 +97,7 @@
 --------------------------*/
 
 .access {
-  @include tb() {
+  @include pc() {
     padding-bottom: 0;
   }
 
@@ -100,7 +112,7 @@
         font-size: 18px;
         font-weight: bold;
 
-        @include sp() {
+        @include tb() {
           display: block;
           width: 100%;
           padding: 24px 0 0 2rem;
@@ -111,7 +123,7 @@
       td {
         width: 60%;
 
-        @include sp() {
+        @include tb() {
           display: block;
           width: 100%;
           padding: 0 0 16px 4rem;
@@ -129,7 +141,7 @@
 }
 
 .global-contact {
-  @include tb() {
+  @include pc() {
     margin-top: 0;
   }
 }

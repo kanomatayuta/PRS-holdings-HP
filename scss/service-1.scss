@@ -8,8 +8,31 @@
 @use "header";
 @use "base";
 @use "variables" as va;
+@use "fonts" as fo;
 @use "footer";
 
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
+
+@mixin pc {
+  @media screen and (max-width: $pc) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content;
+  }
+}
 
 // セクション共通
 .produce,
@@ -18,9 +41,18 @@
   .content {
     display: flex;
 
+    @include pc() {
+      display: block;
+    }
+
     &__text {
       padding-right: 24px;
       width: 50%;
+
+      @include pc() {
+        padding: 0;
+        width: 100%;
+      }
 
       .title {
         font-size: 1.6em;
@@ -40,6 +72,14 @@
       z-index: 0;
       position: relative;
 
+      @include pc() {
+        padding: 0;
+        width: 100%;
+        margin: 56px auto 32px; // 背景画像分（下）の余白
+        padding: 0px;
+        width: 100%;
+      }
+
       &::before {
         content: "";
         width: 100%;
@@ -51,6 +91,12 @@
         top: 40px;
         left: 40px;
         z-index: -1;
+
+        @include pc() {
+          top: 32px;
+          left: -32px;
+          width: 100%;
+        }
       }
     }
   }
@@ -64,133 +110,47 @@
     .content__text {
       padding-right: 0px;
       padding-left: 24px;
+
+      @include pc() {
+        padding: 0;
+      }
     }
 
     .content__img {
       padding-left: 0px;
       padding-right: 24px;
+
+      @include pc() {
+        padding: 0;
+      }
     }
   }
 }
 
 // タイトルカラー
 .title--blue {
-  border-left: 16px solid va.$title--blue;
+  border-left: 16px solid va.$produce--blue;
   height: 100px;
 }
 
 .title--pink {
-  border-left: 16px solid va.$title--pink;
+  border-left: 16px solid va.$consign--pink;
 }
 
 .title--green {
-  border-left: 16px solid va.$title--green;
+  border-left: 16px solid va.$ses--green;
 }
 
 // 背景 BOX
 .produce .content__img::before {
-  background-color: #97B5E7;
+  background-color: va.$produce--blue;
 }
 
 .consign .content__img::before {
   left: -40px;
-  background-color: #E6C2CB;
+  background-color: va.$consign--pink;
 }
 
 .ses .content__img::before {
-  background-color: #81D6E6;
-}
-
-
-@media screen and (max-width:960px) {
-
-  /*--------------------------
-    * セクション
-    --------------------------*/
-  .sec__wrapper {
-    width: 90%;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .sub-header__logo {
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-  }
-
-  // pc非表示
-  .pc-gnavi {
-    display: none;
-  }
-
-  .produce,
-  .consign,
-  .ses {
-    .content {
-      display: block;
-
-      &__text {
-        padding: 0;
-        width: 100%;
-      }
-
-      &__img {
-        margin: 56px auto 32px; // 背景画像分（下）の余白
-        padding: 0px;
-        width: 100%;
-
-        &::before {
-          top: 32px;
-          left: -32px;
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .consign .row .content {
-    &__text {
-      padding: 0;
-    }
-
-    &__img {
-      padding: 0;
-    }
-  }
-}
-
-@media screen and (max-width:520px) {
-
-  .sub-header {
-    height: 64px
-  }
-
-  .sub-header__logo {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    img {
-      width: 150px;
-      height: auto;
-    }
-  }
-
-  .hero {
-    margin-top: 64px
-  }
-
-}
-
-@media screen and (max-width:350px) {
-  .tb-gnavi__list {
-    padding-top: 0px;
-
-    li {
-      margin-bottom: 8px;
-    }
-  }
-
+  background-color: va.$ses--green;
 }

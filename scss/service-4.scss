@@ -8,7 +8,32 @@
 @use "header";
 @use "base";
 @use "variables" as va;
+@use "fonts" as fo;
 @use "footer";
+
+
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
+
+@mixin pc {
+  @media screen and (max-width: $pc) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content;
+  }
+}
 
 /*--------------------------------------
 *	explanation
@@ -17,12 +42,32 @@
   display: flex;
   align-items: center;
 
+  @include pc() {
+    flex-direction: column-reverse;
+  }
+
   &__img {
     width: 50%;
     padding-right: 24px;
-  }
 
-  &__text {
+    @include pc() {
+      width: 80%;
+      padding: 32px 0 0;
+      margin: 0 auto;
+
+      @include sp() {
+        width: 100%;
+      }
+    }
+
+    &__text {
+      @include pc() {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+      }
+    }
+
     width: 50%;
     padding-left: 24px;
   }
@@ -32,7 +77,7 @@
 *	merit
 --------------------------------------*/
 .merit {
-  background-color: #E0E9F8;
+  background-color: va.$merit-bg;
 
   &__list {
     margin-top: 32px;
@@ -40,10 +85,24 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
+    @include pc() {
+      justify-content: space-between;
+    }
+
     &--item {
       width: 24%;
-      background: #fff;
+      background: va.$merit-iten-bg;
       padding: 24px 16px 32px;
+
+      @include pc() {
+        width: 44%;
+        margin-bottom: 32px;
+      }
+
+      @include tb() {
+        width: 80%;
+        margin: 0 auto 32px;
+      }
     }
   }
 
@@ -63,11 +122,21 @@
 --------------------------------------*/
 .tb-ratio {
   display: none;
+
+  @include tb() {
+    display: block;
+    text-align: center;
+    margin-top: 32px;
+  }
 }
 
 .ratio {
   .graphic {
     margin-top: 32px;
+
+    @include tb() {
+      display: none;
+    }
   }
 
   .chart {
@@ -90,24 +159,28 @@
     height: 50px;
     color: #fff;
     float: left;
-    background-color: #092A60;
     position: relative;
     overflow: hidden;
   }
 
+  .block:nth-of-type(1),
+  .legend li:nth-of-type(1):before {
+    background-color: va.$block-front-bg;
+  }
+
   .block:nth-of-type(2),
   .legend li:nth-of-type(2):before {
-    background-color: #8BB6FF;
+    background-color: va.$block-back-bg;
   }
 
   .block:nth-of-type(3),
   .legend li:nth-of-type(3):before {
-    background-color: #5A97FF;
+    background-color: va.$block-infra-bg;
   }
 
   .block:nth-of-type(4),
   .legend li:nth-of-type(4):before {
-    background-color: #D6E5FF;
+    background-color: va.$block-others-bg
   }
 
   .value {
@@ -122,6 +195,10 @@
   .x-axis {
     text-align: center;
     padding: 2em 0;
+
+    @include tb() {
+      text-align: left;
+    }
   }
 
   .legend {
@@ -133,164 +210,22 @@
       padding: .25em 1em;
       line-height: 1em;
 
+      @include tb() {
+        display: block;
+      }
+
       &:before {
         content: "";
         margin-right: .5em;
         display: inline-block;
         width: 16px;
         height: 16px;
-        background-color: #092A60;
       }
     }
   }
 }
 
-/*--------------------------------------
-*	introduction
---------------------------------------*/
-.introduction-flow {
-  width: 100%;
-  border-spacing: 0px 32px;
-
-  tbody {
-    position: relative;
-  }
-
-  tbody::before {
-    content: "";
-    position: absolute;
-    top: 32px;
-    left: 5.3%;
-    border-left: 5px dotted #202A39;
-    transform: translateX(-10%);
-    height: 90%;
-    width: 5px;
-  }
-
-  .step-box {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    position: relative;
-    background: #202A39;
-    color: #fff;
-    border-radius: 50%;
-
-    &__number {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-  }
-
-  .step-text {
-    width: 85%;
-    padding: 8px 2em;
-    border-bottom: 1px solid;
-    position: relative;
-
-    &__title {
-      font-size: 1.2em;
-      font-weight: 700;
-    }
-
-    &__comment {
-      padding-top: 16px;
-    }
-
-    &::before {
-      left: 50%;
-      top: 110%;
-      transform: translateX(-50%);
-      content: "";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-left: 16px solid transparent;
-      border-right: 16px solid transparent;
-      border-top: 16px solid #202A39;
-    }
-
-    span {
-      color: grey;
-    }
-  }
-
-  tr:last-child .step-text:before {
-    content: none;
-  }
-}
-
-
-
-
-
-@media screen and (max-width: 960px) {
-
-  /*--------------------------
-     * セクション
-  --------------------------*/
-  .sec__wrapper {
-    width: 90%;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .sub-header__logo {
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-  }
-
-  .pc-gnavi {
-    display: none;
-  }
-
-  /* グラフ */
-  .graphic {
-    display: none;
-  }
-
-  .tb-ratio {
-    display: block;
-    text-align: center;
-    margin-top: 32px;
-  }
-
-  .explanation__content {
-    flex-direction: column-reverse;
-
-    &__img {
-      width: 80%;
-      padding: 32px 0 0;
-      margin: 0 auto;
-    }
-
-    &__text {
-      width: 100%;
-      padding: 0;
-      margin: 0 auto;
-    }
-  }
-
-  .merit__list {
-    justify-content: space-between;
-
-    &--item {
-      width: 44%;
-      margin-bottom: 32px;
-    }
-  }
-
-  // 円グラフ
-  .tb-ratio {
-    display: block;
-  }
-
+@include pc() {
   .circle {
     display: inline-block;
     transform: rotate(-90deg);
@@ -302,19 +237,19 @@
   }
 
   .typeA4 {
-    stroke: #092A60;
+    stroke: va.$block-front-bg;
   }
 
   .typeA3 {
-    stroke: #8BB6FF;
+    stroke: va.$block-back-bg;
   }
 
   .typeA2 {
-    stroke: #5A97FF;
+    stroke: va.$block-infra-bg;
   }
 
   .typeA1 {
-    stroke: #D6E5FF;
+    stroke: va.$block-others-bg;
   }
 
   .typeA1 {
@@ -423,94 +358,110 @@
       stroke-dasharray: 565 565;
     }
   }
+}
 
+/*--------------------------------------
+*	introduction
+--------------------------------------*/
+.introduction-flow {
+  width: 100%;
+  border-spacing: 0px 32px;
 
-
-
-
-
-  // 流れ
-  .introduction-flow {
+  @include pc() {
     border-spacing: 0px 50px;
   }
 
-  .introduction-flow tbody::before {
-    content: none;
+  tbody {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 32px;
+      left: 5.3%;
+      border-left: 5px dotted va.$introduction-tbody;
+      transform: translateX(-10%);
+      height: 90%;
+      width: 5px;
+
+      @include pc() {
+        content: none;
+      }
+    }
   }
 
-  .introduction-flow {
-    .step-box {
+  .step-box {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background: va.$introduction-tbody;
+    color: va.$introduction-step;
+    border-radius: 50%;
+
+    @include pc() {
       display: block;
       width: 70px;
       height: 70px;
       margin-left: 32px;
     }
 
-    .step-text {
+    @include tb() {
+      margin-left: 0;
+    }
+
+    &__number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+
+  .step-text {
+    width: 85%;
+    padding: 8px 2em;
+    border-bottom: 1px solid;
+    position: relative;
+
+    @include pc() {
       display: block;
       width: 80%;
       margin: 0 auto;
       padding: 16px 1em;
     }
-  }
-}
 
-@media screen and (max-width: 520px) {
-
-  .sub-header {
-    height: 64px;
-  }
-
-  .sub-header__logo {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .sub-header__logo img {
-    width: 150px;
-    height: auto;
-  }
-
-  .hero {
-    margin-top: 64px;
-  }
-
-  .ratio .x-axis {
-    text-align: left;
-  }
-
-  .ratio .legend li {
-    display: block;
-  }
-
-  .merit__list--item {
-    width: 80%;
-    margin: 0 auto 32px;
-  }
-
-  .introduction-flow {
-    .step-box {
-      margin-left: 0;
-    }
-
-    .step-text {
+    @include tb() {
       width: 100%;
       margin: 0 auto;
     }
-  }
-}
 
-@media screen and (max-width: 350px) {
-  .tb-gnavi__list {
-    padding-top: 0px;
+    &__title {
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+
+    &__comment {
+      padding-top: 16px;
+    }
+
+    &::before {
+      left: 50%;
+      top: 110%;
+      transform: translateX(-50%);
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 16px solid va.$introduction-tbody;
+    }
   }
 
-  .tb-gnavi__list li {
-    margin-bottom: 8px;
-  }
-
-  .explanation__content__img {
-    width: 100%;
+  tr:last-child .step-text:before {
+    content: none;
   }
 }

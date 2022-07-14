@@ -7,24 +7,35 @@
 @use "reset";
 @use "header";
 @use "base";
-@use "variables";
+@use "variables" as va;
+@use "fonts" as fo;
 @use "footer";
 
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
 
-@mixin sp {
-  @media screen and (max-width: 520px) {
+@mixin pc {
+  @media screen and (max-width: $pc) {
     @content;
   }
 }
 
 @mixin tb {
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
     @content;
   }
 }
 
 /*--------------------------
-* recruit
+* recruit flow
 --------------------------*/
 .recruit {
   &__flow {
@@ -33,19 +44,18 @@
     display: flex;
     justify-content: space-between;
 
-    @include sp() {
+    @include tb() {
       display: block;
     }
 
     li {
-      color: #333;
       width: calc(100% / 4);
-      background: #F7DAE1;
+      background: va.$recruit-item-bg;
       line-height: 50px;
       text-align: center;
       position: relative;
 
-      @include sp() {
+      @include tb() {
         line-height: 70px;
         width: 80%;
         margin: 0 auto 40px;
@@ -57,10 +67,10 @@
       }
 
       &:last-child {
-        color: #FFF;
-        background: #ED5A87;
+        color: va.$recruit-item;
+        background: va.$recruit-item-bg-last;
 
-        @include sp() {
+        @include tb() {
           margin: 0 auto 0;
         }
       }
@@ -77,28 +87,28 @@
       &::before {
         border: solid 32px transparent;
         border-right: solid 13px transparent;
-        border-left: solid 13px #FFF;
+        border-left: solid 13px va.$recruit-item;
         top: -7px;
         left: 0;
         z-index: 1;
 
-        @include sp() {
+        @include tb() {
           content: none;
         }
       }
 
       &::after {
         border: solid 25px transparent;
-        border-left: solid 10px #F7DAE1;
+        border-left: solid 10px va.$recruit-item-bg;
         border-right: solid 10px transparent;
         top: 0;
         right: -20px;
         z-index: 2;
 
-        @include sp() {
+        @include tb() {
           transform: translate(50%, 0);
           border-width: 16px 20px 0 20px;
-          border-color: #ed5a86 transparent transparent transparent;
+          border-color: va.$recruit-item-bg-last transparent transparent transparent;
           left: 50%;
           top: 150%;
           transform: translate(-50%, -150%);
@@ -108,7 +118,7 @@
       &:not(:first-child):not(:last-child) {
         padding: 0 0 0 10px;
 
-        @include sp() {
+        @include tb() {
           padding: 0;
         }
       }
@@ -117,8 +127,9 @@
 
   .supplement {
     margin-top: 16px;
+    color: va.$recruit-text-sb;
 
-    @include sp() {
+    @include tb() {
       width: 80%;
       margin: 16px auto 0;
     }
@@ -135,7 +146,7 @@
 --------------------------*/
 
 .employed {
-  background-color: #E0E9F8;
+  background-color: va.$employed-bg;
 
 }
 
@@ -154,7 +165,7 @@
     position: absolute;
     width: calc(100% - 4px);
     height: calc(100% - 4px);
-    border: 2px solid #97B5E7;
+    border: 2px solid va.$license-border;
     content: '';
   }
 
@@ -163,7 +174,7 @@
     left: 0px;
     z-index: -1;
 
-    @include sp() {
+    @include tb() {
       left: 2px;
     }
   }
@@ -173,7 +184,7 @@
     left: -20px;
     z-index: -1;
 
-    @include sp() {
+    @include tb() {
       left: -16px;
     }
   }
@@ -198,7 +209,7 @@
 --------------------------*/
 
 .recruitment {
-  background-color: #fff;
+  background-color: va.$recruitment-bg;
 
   .recruitment-table {
     margin-top: 32px;
@@ -213,7 +224,7 @@
           &:nth-of-type(2n-1) {
             display: none;
 
-            @include sp() {
+            @include tb() {
               display: inline;
             }
           }
@@ -222,36 +233,36 @@
     }
 
     th {
-      border-bottom: solid 1px #97B5E7;
+      border-bottom: solid 1px va.$recruitment-table;
       padding: 30px;
       width: 35%;
       font-size: 18px;
       font-weight: bold;
-      background-color: #E0E9F8;
+      background-color: va.$recruitment-th-bg;
 
-      @include sp() {
+      @include tb() {
         width: 25%;
         writing-mode: vertical-rl;
       }
     }
 
     td {
-      border-bottom: solid 1px #97B5E7;
+      border-bottom: solid 1px va.$recruitment-table;
       width: 65%;
       padding: 30px;
 
-      @include sp() {
+      @include tb() {
         width: 75%;
       }
     }
 
     &:first-of-type {
       th {
-        border-top: solid 1px #97B5E7;
+        border-top: solid 1px va.$recruitment-table;
       }
 
       td {
-        border-top: solid 1px #97B5E7;
+        border-top: solid 1px va.$recruitment-table;
       }
     }
   }
@@ -261,7 +272,7 @@
     display: inline-block;
     line-height: 35px;
 
-    @include sp() {
+    @include tb() {
       font-size: 0.9rem;
       line-height: 30px;
     }

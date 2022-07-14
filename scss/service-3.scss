@@ -8,47 +8,85 @@
 @use "header";
 @use "base";
 @use "variables" as va;
+@use "fonts" as fo;
 @use "footer";
+
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
+
+@mixin pc {
+  @media screen and (max-width: $pc) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content;
+  }
+}
 
 /*--------------------------------------
 *	can
 --------------------------------------*/
 .can {
-  background-color: #E0E9F8;
-}
+  background-color: va.$can-bg;
 
-.can__list {
-  margin-top: 32px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  /* 中央寄せ */
-}
+  &__list {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-.can__list--item {
-  margin-bottom: 24px;
-}
+    &--item {
+      margin-bottom: 24px;
 
-.circle {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: #fff;
-  position: relative;
-}
+      @include pc() {
+        width: 45%;
+      }
 
-.circle-content {
-  width: 60%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+      .circle {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: va.$can-circle-bg;
+        position: relative;
 
+        @include pc() {
+          width: 150px;
+          height: 150px;
+          margin: 0 auto;
+        }
 
-.can__text {
-  text-align: center;
-  margin-top: 14px;
+        @include sp() {
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+        }
+
+        &-content {
+          width: 60%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: 14px;
+  }
 }
 
 
@@ -108,28 +146,38 @@
 
 tbody {
   position: relative;
-}
 
-tbody::before {
-  content: "";
-  position: absolute;
-  top: 24px;
-  left: 10%;
-  border-left: 5px dotted #202A39;
-  transform: translateX(-10%);
-  height: 90%;
-  width: 5px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 10%;
+    border-left: 5px dotted va.$production-tbody;
+    transform: translateX(-10%);
+    height: 90%;
+    width: 5px;
+
+    @include pc() {
+      content: none;
+    }
+  }
 }
 
 .step-box {
   width: 20%;
   padding: 24px;
-  background: #202A39;
+  background: va.$production-tbody;
   vertical-align: middle;
   text-align: left;
   overflow: visible;
   position: relative;
-  color: #fff;
+  color: va.$production-text;
+
+  @include pc() {
+    width: 100%;
+    display: block;
+    padding: 16px;
+  }
 
   &:after {
     left: 110%;
@@ -141,8 +189,12 @@ tbody::before {
     position: absolute;
     pointer-events: none;
     border: solid transparent;
-    border-left-color: #202A39;
+    border-left-color: va.$production-tbody;
     border-width: 16px;
+
+    @include pc() {
+      content: none;
+    }
   }
 
   &__number {
@@ -152,113 +204,25 @@ tbody::before {
   &__title {
     text-align: center;
     margin-top: 24px;
+
+    @include pc() {
+      margin-top: 14px;
+    }
   }
 }
 
 .step-text {
   width: 80%;
   padding: 24px 4em;
-  border: 1px solid #202A39;
+  border: 1px solid va.$production-tbody;
 
-  span {
-    color: grey;
-  }
-}
-
-
-@media screen and (max-width:960px) {
-
-  /*--------------------------
-    * セクション
-    --------------------------*/
-  .sec__wrapper {
-    width: 90%;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .sub-header__logo {
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-  }
-
-  // pc非表示
-  .pc-gnavi {
-    display: none;
-  }
-
-  // can
-  .can__list--item {
-    width: 45%;
-  }
-
-  .circle {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-  }
-
-  tbody::before {
-    content: none;
-  }
-
-  .step-box {
-    width: 100%;
-    display: block;
-    padding: 16px;
-
-    &__title {
-      margin-top: 14px;
-    }
-
-    &:after {
-      content: none;
-    }
-  }
-
-  .step-text {
+  @include pc() {
     width: 100%;
     display: block;
     padding: 16px 2em;
   }
-}
 
-@media screen and (max-width:520px) {
-
-  .sub-header {
-    height: 64px
-  }
-
-  .sub-header__logo {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    img {
-      width: 150px;
-      height: auto;
-    }
-  }
-
-  .hero {
-    margin-top: 64px
-  }
-}
-
-@media screen and (max-width:350px) {
-  .tb-gnavi__list {
-    padding-top: 0px;
-
-    li {
-      margin-bottom: 8px;
-    }
-  }
-
-  .circle {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
+  span {
+    color: va.$production-text-sb;
   }
 }

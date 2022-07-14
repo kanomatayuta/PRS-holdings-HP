@@ -1,8 +1,21 @@
 //変数で値を管理、変数をまとめ
 // Webサイトのベースカラーやアクセントカラーなど、変数を定義して活用。
 
-// color
-// ボタン
+
+/*--------------------------
+* base
+--------------------------*/
+// navi
+$navi-link: #202A39;
+$breadcrumb-link: #fff;
+
+// global-contact
+$global-contact-bg: #202A39;
+$global-contact-text: #fff;
+
+// btn
+$btn-text: #000;
+$btn-text-hover: #fff;
 $btn--blue: #CBDAF3;
 $btn--pink: #F2E0E5;
 $btn--green: #C0EAF2;
@@ -10,8 +23,157 @@ $btn--green: #C0EAF2;
 $btn--blue-hover: #97B5E7;
 $btn--pink-hover: #E6C2CB;
 $btn--green-hover: #81D6E6;
+// 矢印
+$btn-icon: #000;
 
-// タイトル
-$title--blue: #97B5E7;
-$title--pink: #F2E0E5;
-$title--green: #81D6E6;
+/*--------------------------
+* img スモークカラー
+--------------------------*/
+$smoke: rgba(0, 0, 0, 0.3);
+
+/*--------------------------
+* header カラー
+--------------------------*/
+$sub-header-bg: #fff;
+$gnavi-bg: #fff;
+$sub-header-text: #fff;
+
+//hamburger
+$hamburger-rod: #19A2DB;
+
+/*--------------------------
+* footer カラー
+--------------------------*/
+$footer-bg: #E5E5E5;
+$footer-bg-hover: rgba(241, 241, 241);
+$footer-border: #202A39;
+
+/*--------------------------
+* home.html カラー
+--------------------------*/
+// mainvisual
+$catch-bg :#E0E9F8;
+
+// service swiper
+$pagination-bullet: #E0E9F8;
+$pagination-active-a: #97B5E7;
+$pagination-active-b: #202A39;
+$swiper-button: #202A39;
+//  img
+$service-img-text: #fff;
+
+
+/*--------------------------
+* service-1.html カラー
+--------------------------*/
+// タイトル & 背景
+$produce--blue: #97B5E7;
+$consign--pink: #F2E0E5;
+$ses--green: #81D6E6;
+
+
+/*--------------------------
+* service-2.html カラー
+--------------------------*/
+//support
+$support-bg: #E0E9F8;
+
+//step
+$step-item-bg: #fff;
+$step-item-shadow: rgba(50, 50, 93, .1);
+$circre-bg: #1F2937;
+$circre-number: #fff;
+
+// card
+$card-item-bg: #fff;
+$card-item-shadow: rgba(50, 50, 93, .1);
+$card-item-shadow-hove: rgba(0, 0, 0, .08);
+$card-title: #202A39;
+$card-text: #777;
+
+// interview
+$interview-bg: #81D6E6;
+$interview-title: #81D6E6;
+$interview-title-bg: #fff;
+
+// accordion
+$accordion-border: #E0E9F8;
+$accordion-tag: #437EF6;
+$accordion__icon: #202A39;
+
+
+/*--------------------------
+* service-3.html カラー
+--------------------------*/
+// can
+$can-bg: #E0E9F8;
+$can-circle-bg: #fff;
+
+//production
+$production-tbody: #202A39;
+$production-text: #fff;
+$production-text-sb: #777;
+
+
+/*--------------------------
+* service-4.html カラー
+--------------------------*/
+// merit
+$merit-bg: #E0E9F8;
+$merit-iten-bg: #fff;
+
+// ratio
+$block-text: #fff;
+$block-front-bg: #092A60;
+$block-back-bg: #8BB6FF;
+$block-infra-bg: #5A97FF;
+$block-others-bg: #D6E5FF;
+
+//introduction
+$introduction-tbody: #202A39;
+$introduction-step: #fff;
+
+
+/*--------------------------
+* recruit.html カラー
+--------------------------*/
+// recruit flow
+$recruit-item: #fff;
+$recruit-item-bg: #F7DAE1;
+$recruit-item-bg-last: #ED5A87;
+$recruit-text-sb: #777;
+
+// employed
+$employed-bg: #E0E9F8;
+
+// license
+$license-border: #97B5E7;
+
+// recruitment
+$recruitment-bg: #fff;
+$recruitment-table: #97B5E7;
+$recruitment-th-bg: #E0E9F8;
+
+
+/*--------------------------
+* company.html カラー
+--------------------------*/
+//info
+$info-bg: #E0E9F8;
+$info-table-bg: #fff;
+$info-boder: #E0E9F8;
+
+
+/*--------------------------
+* contact.html カラー
+--------------------------*/
+// form
+$form-bg: #E0E9F8;
+$form-label-required: #19a2db;
+$form-label-text: #fff;
+$form-item-bg: #fff;
+$form-item-border: #ddd;
+$form-item-shadow: rgba(50, 50, 93, .1);
+$form-item-placeholder: #a3a3a3;
+// privacy
+$privacy-cntent-bg: #E0E9F8;

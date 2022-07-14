@@ -7,29 +7,39 @@
 @use "reset";
 @use "header";
 @use "base";
-@use "variables";
+@use "variables" as va;
+@use "fonts" as fo;
 @use "footer";
 
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
 
-@mixin sp {
-  @media screen and (max-width: 520px) {
+@mixin pc {
+  @media screen and (max-width: $pc) {
     @content;
   }
 }
 
 @mixin tb {
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: $tb) {
     @content;
   }
 }
 
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content;
+  }
+}
 
 /*--------------------------
-* form
+* contact form
 --------------------------*/
 .form {
   margin-top: 32px;
-  background-color: #E0E9F8;
+  background-color: va.$form-bg;
 
 
   &__wrapper {
@@ -64,17 +74,19 @@
 
   .Form-Item-Label-Required {
     border-radius: 4px;
+    box-shadow: 0 2px 5px va.$form-item-shadow;
     margin-left: 30px;
     width: 48px;
     display: inline-block;
     text-align: center;
-    background: #19a2db;
-    color: #fff;
+    background-color: va.$form-label-required;
+    color: va.$form-label-text;
     font-size: 14px;
   }
 
   .Form-Item-Input {
-    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px va.$form-item-shadow;
+    border: 1px solid va.$form-item-border;
     border-radius: 6px;
     margin-left: 0px;
     margin-top: 18px;
@@ -83,16 +95,17 @@
     height: 48px;
     flex: inherit;
     width: 100%;
-    background: #fff;
+    background: va.$form-item-bg;
     font-size: 18px;
 
     &::placeholder {
-      color: #a3a3a3;
+      color: va.$form-item-placeholder;
     }
   }
 
   .Form-Item-Textarea {
-    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px va.$form-item-shadow;
+    border: 1px solid va.$form-item-border;
     border-radius: 6px;
     margin-left: 0;
     margin-top: 18px;
@@ -101,25 +114,8 @@
     height: 216px;
     flex: inherit;
     width: 100%;
-    background: #fff;
-    font-size: 18px;
-  }
-
-
-  .Form-Btn {
-    border-radius: 6px;
-    margin-top: 32px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 280px;
-    display: block;
-    letter-spacing: 0.05em;
-    background: #545454;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
+    background: va.$form-item-bg;
+    font-size: 16px;
   }
 
   .contact-type {
@@ -139,6 +135,7 @@
 --------------------------*/
 
 .privacy {
+  margin-bottom: 8vw;
 
   .agree {
     margin-top: 32px;
@@ -156,7 +153,7 @@
       margin-top: 32px;
       padding: 40px;
       text-align: left;
-      background-color: #E0E9F8;
+      background-color: va.$privacy-cntent-bg;
       height: 500px;
       overflow-y: scroll;
 

@@ -1,9 +1,30 @@
 @use "variables" as va;
+@use "fonts" as fo;
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
 
-@mixin sp {
-  @media screen and (max-width: 520px) {
+@mixin pc {
+  @media screen and (max-width: $pc) {
     @content;
   }
+}
+
+@mixin tb {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content;
+  }
+}
+
+html {
+  font-size: fo.$standard-font;
 }
 
 // 共通内容
@@ -11,7 +32,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Serif JP', serif;
-  font-size: 1em;
+  font-size: 1.6em;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   word-wrap: break-word;
@@ -33,7 +54,7 @@ body {
 .tb-gnavi__list a:before,
 .footer__nav a:before,
 .breadcrumb a:before {
-  background-color: #3c3632;
+  background-color: va.$navi-link;
   content: "";
   position: absolute;
   bottom: -3px;
@@ -45,7 +66,7 @@ body {
 }
 
 .breadcrumb a:before {
-  background-color: #fff;
+  background-color: va.$breadcrumb-link;
 }
 
 .pc-gnavi__list a:hover:before,
@@ -70,11 +91,15 @@ body {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+
+  @include pc() {
+    max-width: 750px;
+  }
 }
 
 .sec__title {
   text-align: center;
-  font-size: 2em;
+  font-size: fo.$section-title;
 }
 
 .sec__text {
@@ -117,20 +142,51 @@ body {
       content: "";
       position: absolute;
       top: calc(50% - 5px);
-      right: 40px;
+      right: 30px;
       width: 10px;
       height: 10px;
-      border-top: 1px solid #000;
-      border-right: 1px solid #000;
+      border-top: 1px solid va.$btn-icon;
+      border-right: 1px solid va.$btn-icon;
       transform: rotate(45deg);
       transition: all .5s ease;
     }
 
     &:hover {
       &::before {
-        right: 35px;
+        right: 25px;
       }
     }
+  }
+}
+
+//ボタンカラー
+.btn--blue {
+  color: va.$btn-text;
+  background-color: va.$btn--blue;
+
+  &:hover {
+    color: va.$btn-text-hover;
+    background: va.$btn--blue-hover;
+  }
+}
+
+.btn--pink {
+  color: va.$btn-text;
+  background-color: va.$btn--pink;
+
+  &:hover {
+    color: va.$btn-text-hover;
+    background: va.$btn--pink-hover;
+  }
+}
+
+.btn--green {
+  color: va.$btn-text;
+  background-color: va.$btn--green;
+
+  &:hover {
+    color: va.$btn-text-hover;
+    background: va.$btn--green-hover;
   }
 }
 
@@ -143,26 +199,26 @@ global-contact
 */
 .global-contact {
   margin-top: 8vw;
-  background-color: #202A39;
+  background-color: va.$global-contact-bg;
 
-  @include sp() {
+  @include tb() {
     padding: 48px 0;
   }
 
   .content {
-    color: #fff;
+    color: va.$global-contact-text;
     display: flex;
     align-items: center;
 
-    @include sp() {
+    @include tb() {
       flex-flow: column;
     }
 
     .global-contact__text {
       width: 50%;
 
-      @include sp() {
-        width: 100%;
+      @include tb() {
+        width: 80%;
       }
 
       p {
@@ -178,44 +234,10 @@ global-contact
     .global-contact__btn {
       width: 50%;
 
-      @include sp() {
+      @include tb() {
         width: 100%;
         margin-top: 32px;
       }
     }
-  }
-}
-
-
-
-
-//ボタンカラー
-.btn--blue {
-  color: #000;
-  background-color: va.$btn--blue;
-
-  &:hover {
-    color: #fff;
-    background: va.$btn--blue-hover;
-  }
-}
-
-.btn--pink {
-  color: #000;
-  background-color: va.$btn--pink;
-
-  &:hover {
-    color: #fff;
-    background: va.$btn--pink-hover;
-  }
-}
-
-.btn--green {
-  color: #000;
-  background-color: va.$btn--green;
-
-  &:hover {
-    color: #fff;
-    background: va.$btn--green-hover;
   }
 }

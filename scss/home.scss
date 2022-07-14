@@ -2,16 +2,27 @@
 @use "header";
 @use "base";
 @use "variables" as va;
+@use "fonts" as fo;
 @use "footer";
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
 
-@mixin sp {
-  @media screen and (max-width: 520px) {
+@mixin pc {
+  @media screen and (max-width: $pc) {
     @content;
   }
 }
 
 @mixin tb {
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
     @content;
   }
 }
@@ -21,27 +32,13 @@ img {
   height: auto;
 }
 
-// .background {
-//   background-color: #fff;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 50%;
-//   height: 100vh;
-//   z-index: -100;
-
-//   @include tb() {
-//     display: block;
-//   }
-// }
-
 .split {
   position: relative;
   z-index: 2;
   display: flex;
   height: 100vh;
 
-  @include tb() {
+  @include pc() {
     display: block;
     height: auto;
     padding: 8vh 0;
@@ -51,7 +48,7 @@ img {
 .split>* {
   width: 50%;
 
-  @include tb() {
+  @include pc() {
     width: 100%;
   }
 }
@@ -67,7 +64,7 @@ img {
   transform: translateY(-50%);
   width: 45%;
 
-  @include tb() {
+  @include pc() {
     width: 100%;
     position: initial;
     left: 0%;
@@ -80,7 +77,7 @@ img {
   opacity: 0;
   transition: opacity .7s;
 
-  @include tb() {
+  @include pc() {
     opacity: 1;
     width: 90%;
     margin: 0 auto;
@@ -96,7 +93,7 @@ img {
   justify-content: center;
   flex-direction: column;
 
-  @include tb() {
+  @include pc() {
     display: block;
   }
 }
@@ -125,7 +122,7 @@ footer {
 --------------------------*/
 
 .catch {
-  background-color: #E0E9F8;
+  background-color: va.$catch-bg;
   margin: 1.5rem 36px 0;
   padding: 16px 16px;
   text-align: center;
@@ -139,13 +136,18 @@ footer {
   margin: 0 auto;
   width: fit-content;
 
-  @include tb() {
+  @include pc() {
     text-align: center;
     margin: 0 auto 32px;
   }
 
   .ja {
     font-size: 16px;
+    display: block;
+  }
+
+  .en {
+    font-size: fo.$section-title;
     display: block;
   }
 }
@@ -160,7 +162,7 @@ footer {
     width: 100%;
     position: relative;
 
-    @include tb() {
+    @include pc() {
       display: none;
     }
   }
@@ -171,7 +173,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    @include tb() {
+    @include pc() {
       top: 0%;
       left: 0%;
       transform: translate(0%, 0%);
@@ -258,13 +260,13 @@ footer {
     opacity: 1;
     width: 16px;
     height: 16px;
-    background-color: #ffffff;
+    background-color: va.$pagination-bullet;
     flex-direction: column;
   }
 
   .swiper-pagination-bullet-active {
     opacity: 1;
-    background-color: #97B5E7;
+    background-color: va.$pagination-active-a;
   }
 
   .swiper-pagination-bullet {
@@ -313,7 +315,6 @@ footer {
 
   &-text {
     max-width: 640px;
-    margin-top: 32px;
     width: 90%;
     margin: 32px auto 0;
   }
@@ -334,7 +335,7 @@ footer {
       margin-top: 16px;
     }
 
-    @include tb() {
+    @include pc() {
       display: none;
     }
   }
@@ -356,12 +357,12 @@ footer {
         left: 0;
         height: 100%;
         width: 100%;
-        background: rgba(0, 0, 0, 0.3);
+        background-color: va.$smoke;
         z-index: 1;
       }
 
       &__text {
-        color: #fff;
+        color: va.$service-img-text;
         font-size: 1.5em;
         font-weight: 700;
         position: absolute;
@@ -370,11 +371,11 @@ footer {
         transform: translate(-50%, -50%);
         z-index: 2;
 
-        @include tb() {
+        @include pc() {
           font-size: 1.3rem;
         }
 
-        @include sp() {
+        @include tb() {
           font-size: 1rem;
         }
       }
@@ -407,19 +408,17 @@ footer {
 
       &-bullet {
         cursor: pointer;
-        width: 14px;
-        height: 14px;
         display: inline-block;
         border-radius: 50%;
         opacity: 0.7;
         margin: 0 24px 0 0;
-        background-color: #E0E9F8;
-        border: 2px solid #E0E9F8;
+        width: 16px;
+        height: 16px;
+        background-color: va.$pagination-bullet;
 
         &-active {
           opacity: 1;
-          background-color: #202A39;
-          border: 2px solid #202A39;
+          background-color: va.$pagination-active-b;
         }
       }
     }
@@ -429,7 +428,7 @@ footer {
       position: absolute;
       top: 35%;
       cursor: pointer;
-      color: #202A39;
+      color: va.$swiper-button;
       font-size: 3rem;
     }
 

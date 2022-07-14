@@ -1,15 +1,27 @@
 @charset "UTF-8";
 
 @use "variables" as va;
+@use "fonts" as fo;
 
-@mixin sp {
-  @media screen and (max-width: 350px) {
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
+
+@mixin pc {
+  @media screen and (max-width: $pc) {
     @content;
   }
 }
 
 @mixin tb {
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
     @content;
   }
 }
@@ -20,7 +32,7 @@ footer
 --------------------------------------
 */
 .footer {
-  background-color: #E5E5E5;
+  background-color: va.$footer-bg;
   margin: 0 auto;
   display: flex;
   flex-flow: column;
@@ -32,7 +44,7 @@ footer
     position: relative;
     transition: all .5s ease;
     cursor: pointer;
-    border-bottom: solid 1px #202A39;
+    border-bottom: solid 1px va.$footer-border;
 
     &::before {
       content: "";
@@ -41,14 +53,14 @@ footer
       right: calc(50% - 5px);
       width: 15px;
       height: 15px;
-      border-top: 1px solid #000;
-      border-right: 1px solid #000;
+      border-top: 1px solid va.$footer-border;
+      border-right: 1px solid va.$footer-border;
       transform: rotate(-45deg);
       transition: all .5s ease;
     }
 
     &:hover {
-      background-color: rgb(241, 241, 241);
+      background-color: va.$footer-bg-hover;
 
       &::before {
         top: calc(50% - 10px);
@@ -66,7 +78,7 @@ footer
     align-items: flex-end;
     max-width: 960px;
 
-    @include tb() {
+    @include pc() {
       display: block;
     }
   }
@@ -75,7 +87,7 @@ footer
     width: 50%;
     padding-right: 2rem;
 
-    @include tb() {
+    @include pc() {
       width: 100%;
       padding-right: 0;
     }
@@ -84,7 +96,7 @@ footer
       width: 300px;
       height: 100px;
 
-      @include sp() {
+      @include tb() {
         width: 200px;
         height: 66.6px;
       }
@@ -95,7 +107,7 @@ footer
       line-height: 30px;
       font-style: normal;
 
-      @include sp() {
+      @include tb() {
         margin-top: 0;
       }
     }
@@ -105,7 +117,7 @@ footer
   &__nav {
     width: 50%;
 
-    @include tb() {
+    @include pc() {
       width: 100%;
       margin-top: 24px;
     }
@@ -117,11 +129,11 @@ footer
       align-items: stretch;
       width: 100%;
 
-      @include tb() {
+      @include pc() {
         justify-content: flex-start;
       }
 
-      @include sp() {
+      @include tb() {
         flex-flow: column;
       }
 
@@ -129,9 +141,9 @@ footer
         display: flex;
         flex-flow: column;
         padding-right: 5%;
-        border-right: solid 1px #000;
+        border-right: solid 1px va.$footer-border;
 
-        @include sp() {
+        @include tb() {
           padding-right: 0;
           border-right: none;
         }
@@ -141,14 +153,14 @@ footer
           padding-left: 5%;
           padding-right: 0;
 
-          @include sp() {
+          @include tb() {
             border-left: none;
             padding-left: 0;
           }
         }
 
         .sp {
-          @include sp() {
+          @include tb() {
             display: none;
           }
         }
@@ -156,7 +168,7 @@ footer
         li {
           margin-bottom: 24px;
 
-          @include sp() {
+          @include tb() {
             margin-bottom: 16px;
           }
 
@@ -166,7 +178,7 @@ footer
         }
       }
 
-      @include sp() {
+      @include tb() {
         border: none;
         margin-top: 30px;
       }
@@ -174,7 +186,7 @@ footer
 
     &--tb {
 
-      @include sp() {
+      @include tb() {
         display: none;
       }
     }
@@ -182,7 +194,7 @@ footer
     &--sp {
       display: none;
 
-      @include sp() {
+      @include tb() {
         display: block;
       }
     }
@@ -206,11 +218,11 @@ footer
       }
 
       &--tb {
-        @include tb() {
+        @include pc() {
           display: block;
         }
 
-        @include sp() {
+        @include tb() {
           display: none;
         }
       }
@@ -218,7 +230,7 @@ footer
       &--sp {
         display: none;
 
-        @include sp() {
+        @include tb() {
           display: block;
         }
       }

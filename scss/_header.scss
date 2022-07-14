@@ -1,15 +1,27 @@
 @charset "UTF-8";
 
 @use "variables" as va;
+@use "fonts" as fo;
 
-@mixin sp {
-  @media screen and (max-width: 520px) {
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
+
+@mixin pc {
+  @media screen and (max-width: $pc) {
     @content;
   }
 }
 
 @mixin tb {
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
     @content;
   }
 }
@@ -21,21 +33,42 @@
 .sub-header {
   position: fixed;
   height: 100px;
-  background: lightcyan;
+  background-color: va.$sub-header-bg;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
   margin: auto;
 
+  @include tb() {
+    height: 64px
+  }
+
   &__logo {
     position: absolute;
     left: 5%;
     top: 0px;
 
+    @include pc() {
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    @include tb() {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     img {
       width: 300px;
       height: 100px;
+
+      @include tb() {
+        width: 150px;
+        height: auto;
+      }
     }
   }
 }
@@ -51,6 +84,10 @@
   right: 5%;
   left: auto;
   top: 42px;
+
+  @include pc() {
+    display: none;
+  }
 
   &__content {
     position: relative;
@@ -78,7 +115,7 @@
 // tb用
 .tb-gnavi {
   height: 100%;
-  background: rgba(255, 255, 255, 1);
+  background-color: va.$gnavi-bg;
   position: fixed;
   left: -100vw;
   width: 100%;
@@ -101,16 +138,28 @@
 
   &__logo {
     margin: 0 auto;
-    width: 60%;
+    max-width: 500px;
+
+    @include tb() {
+      width: 60%;
+    }
   }
 
   &__list {
-    width: 60%;
+    max-width: 700px;
     margin: 0 auto;
     padding-top: 34px;
 
+    @include tb() {
+      padding-top: 0px;
+    }
+
     li {
       margin-bottom: 24px;
+
+      @include tb() {
+        margin-bottom: 8px;
+      }
 
       .en {
         display: block;
@@ -162,6 +211,10 @@
   // header部分
   margin-top: 100px;
 
+  @include tb() {
+    margin-top: 64px
+  }
+
   &__bg {
     position: relative;
     height: 200px;
@@ -179,7 +232,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background: rgba(0, 0, 0, 0.3);
+      background: va.$smoke;
     }
   }
 
@@ -201,13 +254,13 @@
 
     p {
       margin-top: 40px;
-      color: #fff;
+      color: va.$sub-header-text;
     }
 
     h1 {
       margin-top: 8px;
-      color: #fff;
-      font-size: 3.5em;
+      color: va.$sub-header-text;
+      font-size: fo.$hero-title;
     }
 
     // パンクズリスト
@@ -226,7 +279,7 @@
         &:after {
           content: '>';
           padding: 0 0.2em;
-          color: #fff;
+          color: va.$sub-header-text;
         }
 
         &:last-child:after {
@@ -235,7 +288,7 @@
 
         a {
           margin: 0 16px;
-          color: #fff;
+          color: va.$sub-header-text;
           text-decoration: none;
         }
       }
@@ -244,117 +297,21 @@
 }
 
 
-
-@media screen and (max-width:960px) {
-  .sub-header__logo {
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-  }
-
-  // pc非表示
-  .pc-gnavi {
-    display: none;
-  }
-
-  /*-------------------------
-  * hamburger　nav
-  --------------------------*/
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 0.5%;
-    left: 3%;
-    text-align: center;
-    z-index: 9999;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    &--trigger {
-      width: 65px;
-      height: 60px;
-      position: relative;
-
-      span {
-        display: inline-block;
-        transition: all .2s;
-        box-sizing: border-box;
-        position: absolute;
-        right: 13px;
-        margin: 0 auto;
-        width: 39px;
-        height: 1.5px;
-        background-color: #19A2DB;
-        border-radius: 0;
-
-        &:nth-of-type(1) {
-          top: 18px;
-        }
-
-        &:nth-of-type(2) {
-          top: 29px;
-        }
-
-        &:nth-of-type(3) {
-          top: 40px;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width:520px) {
-  .hamburger {
-    top: 0;
-  }
-
-  .sub-header {
-    height: 64px
-  }
-
-  .sub-header__logo {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    img {
-      width: 150px;
-      height: auto;
-    }
-  }
-
-  .hero {
-    margin-top: 64px
-  }
-
-}
-
-@media screen and (max-width:350px) {
-  .tb-gnavi__list {
-    padding-top: 0px;
-
-    li {
-      margin-bottom: 8px;
-    }
-  }
-}
-
-
 /*-------------------------
   * hamburger　nav
   --------------------------*/
-.home-hamburger {
+.hamburger,
+.main-hamburger {
   position: fixed;
-  top: 2%;
-  right: 3%;
   text-align: center;
   z-index: 9999;
 
+  @include pc() {
+    display: block;
+  }
+
   @include tb() {
-    right: 0;
-    left: 3%;
+    height: 65px
   }
 
   &:hover {
@@ -362,8 +319,8 @@
   }
 
   &--trigger {
-    width: 65px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     position: relative;
 
     span {
@@ -375,31 +332,48 @@
       margin: 0 auto;
       width: 39px;
       height: 1.5px;
-      background-color: #19A2DB;
+      background-color: va.$hamburger-rod;
       border-radius: 0;
 
       &:nth-of-type(1) {
-        top: 18px;
+        top: 21px;
       }
 
       &:nth-of-type(2) {
-        top: 29px;
+        top: 32px;
       }
 
       &:nth-of-type(3) {
-        top: 40px;
+        top: 43px;
       }
     }
   }
 }
 
+.hamburger {
+  top: 0.7%;
+  left: 3%;
 
+  @include tb() {
+    top: 0;
+  }
+}
+
+.main-hamburger {
+  top: 2%;
+  right: 3%;
+
+  @include pc() {
+    left: 3%;
+    right: auto;
+  }
+}
 
 /*--------------------------
   * hamburger js
   --------------------------*/
 .drawer--active .tb-gnavi,
-.drawer--active .home-gnavi {
+.drawer--active .main-gnavi {
   top: 0;
   left: 0;
   opacity: 1;
@@ -426,59 +400,6 @@
 
     span:nth-of-type(3) {
       transform: translateY(-11px) rotate(-45deg);
-    }
-  }
-}
-
-
-
-
-
-.main-hamburger {
-  display: block;
-  position: fixed;
-  top: 2%;
-  right: 3%;
-  text-align: center;
-  z-index: 9999;
-
-  @include tb() {
-    right: auto;
-    left: 3%;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &--trigger {
-    width: 65px;
-    height: 60px;
-    position: relative;
-
-    span {
-      display: inline-block;
-      transition: all .2s;
-      box-sizing: border-box;
-      position: absolute;
-      right: 13px;
-      margin: 0 auto;
-      width: 39px;
-      height: 1.5px;
-      background-color: #19A2DB;
-      border-radius: 0;
-
-      &:nth-of-type(1) {
-        top: 18px;
-      }
-
-      &:nth-of-type(2) {
-        top: 29px;
-      }
-
-      &:nth-of-type(3) {
-        top: 40px;
-      }
     }
   }
 }
