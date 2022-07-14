@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/*--------------------------
+* 共通
+--------------------------*/
+
+@use "reset";
+@use "header";
+@use "base";
+@use "variables"as va;
+@use "fonts"as fo;
+@use "footer";
+
+// レスポンシブ
+$pc: 960px;
+$tb: 520px;
+$sp: 350px;
+
+@mixin pc {
+  @media screen and (max-width: $pc) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $sp) {
+    @content;
+  }
+}
+
+/*--------------------------
+* privacy
+--------------------------*/
+
+.privacy {
+  margin-bottom: 8vw;
+
+  .agree {
+    margin-top: 32px;
+
+
+    @include sp() {
+      margin-top: 40px;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    &__cntent {
+      margin-top: 32px;
+      padding: 40px;
+      text-align: left;
+      background-color: va.$privacy-cntent-bg;
+
+      @include sp() {
+        margin-top: 20px;
+      }
+
+      h4 {
+        margin-top: 16px;
+      }
+    }
+  }
+
+}
