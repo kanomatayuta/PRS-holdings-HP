@@ -95,13 +95,18 @@ $sp: 350px;
       padding: 24px 16px 32px;
 
       @include pc() {
-        width: 44%;
+        width: 45%;
         margin-bottom: 32px;
       }
 
       @include tb() {
-        width: 80%;
         margin: 0 auto 32px;
+      }
+
+      @include sp() {
+        br {
+          display: none;
+        }
       }
     }
   }
@@ -120,199 +125,70 @@ $sp: 350px;
 /*--------------------------------------
 *	ratio
 --------------------------------------*/
-.tb-ratio {
-  display: none;
+
+.chart-container {
+  display: flex;
+  margin: 32px auto 0;
+  position: relative;
+  align-items: center;
+  width: 100%;
 
   @include tb() {
     display: block;
-    text-align: center;
-    margin-top: 32px;
   }
-}
 
-.ratio {
-  .graphic {
-    margin-top: 32px;
+  .chart,
+  .label {
+    width: 50%;
 
     @include tb() {
-      display: none;
-    }
-  }
-
-  .chart {
-    overflow: hidden;
-    animation: expand 1.5s ease forwards;
-  }
-
-  @keyframes expand {
-    from {
-      width: 0%;
-    }
-
-    to {
       width: 100%;
     }
+
+    @include sp() {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 
-  .block {
-    display: block;
-    height: 50px;
-    color: #fff;
-    float: left;
+  .label {
+    @include tb() {
+      margin-top: 16px;
+    }
+  }
+
+
+  .label li {
     position: relative;
-    overflow: hidden;
-  }
-
-  .block:nth-of-type(1),
-  .legend li:nth-of-type(1):before {
-    background-color: va.$block-front-bg;
-  }
-
-  .block:nth-of-type(2),
-  .legend li:nth-of-type(2):before {
-    background-color: va.$block-back-bg;
-  }
-
-  .block:nth-of-type(3),
-  .legend li:nth-of-type(3):before {
-    background-color: va.$block-infra-bg;
-  }
-
-  .block:nth-of-type(4),
-  .legend li:nth-of-type(4):before {
-    background-color: va.$block-others-bg
-  }
-
-  .value {
     display: block;
-    line-height: 1em;
+    padding-left: 2em;
+    line-height: 2em;
+  }
+
+  .label li::before {
+    content: "";
+    width: 16px;
+    height: 16px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    transform: translateY(-50%);
   }
 
-  .x-axis {
-    text-align: center;
-    padding: 2em 0;
-
-    @include tb() {
-      text-align: left;
-    }
+  .label li:nth-of-type(1):before {
+    background-color: va.$label-front-bg;
   }
 
-  .legend {
-    margin: 0 auto;
-    padding: 0;
-
-    li {
-      display: inline-block;
-      padding: .25em 1em;
-      line-height: 1em;
-
-      @include tb() {
-        display: block;
-      }
-
-      &:before {
-        content: "";
-        margin-right: .5em;
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
-}
-
-@include pc() {
-  .circle {
-    display: inline-block;
-    transform: rotate(-90deg);
+  .label li:nth-of-type(2):before {
+    background-color: va.$label-back-bg;
   }
 
-  .circle .type {
-    fill: transparent;
-    stroke-width: 100;
+  .label li:nth-of-type(3):before {
+    background-color: va.$label-infra-bg;
   }
 
-  .typeA4 {
-    stroke: va.$block-front-bg;
-  }
-
-  .typeA3 {
-    stroke: va.$block-back-bg;
-  }
-
-  .typeA2 {
-    stroke: va.$block-infra-bg;
-  }
-
-  .typeA1 {
-    stroke: va.$block-others-bg;
-  }
-
-  .typeA1 {
-    animation: circleA1 1s forwards;
-  }
-
-  @keyframes circleA1 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 56.5 565;
-    }
-  }
-
-  .typeA2 {
-    -webkit-animation: circleA2 1s forwards;
-    animation: circleA2 1s forwards;
-  }
-
-  @keyframes circleA2 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 113 565;
-    }
-  }
-
-  .typeA3 {
-    -webkit-animation: circleA3 1s forwards;
-    animation: circleA3 1s forwards;
-  }
-
-  @keyframes circleA3 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 226 565;
-    }
-  }
-
-  .typeA4 {
-    -webkit-animation: circleA4 1s forwards;
-    animation: circleA4 1s forwards;
-  }
-
-  @keyframes circleA4 {
-    0% {
-      stroke-dasharray: 0 565;
-    }
-
-    99.9%,
-    to {
-      stroke-dasharray: 565 565;
-    }
+  .label li:nth-of-type(4):before {
+    background-color: va.$label-others-bg
   }
 }
 
@@ -357,13 +233,18 @@ $sp: 350px;
 
     @include pc() {
       display: block;
-      width: 70px;
+      width: 80%;
       height: 70px;
-      margin-left: 32px;
+      border-radius: 5px;
+      margin: 0 auto;
+
+      br {
+        display: none;
+      }
     }
 
     @include tb() {
-      margin-left: 0;
+      width: 100%;
     }
 
     &__number {
