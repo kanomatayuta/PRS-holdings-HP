@@ -2,9 +2,9 @@ const interviewSwiper = new Swiper(".interviewswiper", {
   loop: true,
   a11y: "none", //アクセシビリティ
   breakpoints: {
-    0: {// 0x以上の場合
-      slidesPerView: 1,// 横幅
-      spaceBetween: 30,// 隣同士の余白
+    0: { // 0x以上の場合
+      slidesPerView: 1, // 横幅
+      spaceBetween: 30, // 隣同士の余白
     },
   },
   // ページネーション
@@ -29,7 +29,7 @@ const workSwiper = new Swiper(".workswiper", {
   breakpoints: {
     // スライドの表示枚数：600px以上の場合
     0: {
-      slidesPerView: 1,// 一度に表示する枚数
+      slidesPerView: 1, // 一度に表示する枚数
     },
     // スライドの表示枚数：768px以上の場合
     768: {
@@ -54,7 +54,7 @@ var swiper = new Swiper(".fadeSwiper", {
 
 
 var serviceSwaiper = new Swiper('.swiper-service', {
-  spaceBetween: 30,// 隣同士の余白
+  spaceBetween: 30, // 隣同士の余白
   loop: true,
   navigation: {
     nextEl: '.swiper-button-next',

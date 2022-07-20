@@ -1440,6 +1440,9 @@ footer {
 /*--------------------------
     * service
     --------------------------*/
+.service {
+  z-index: 40;
+}
 .service-menu__list {
   display: block;
   width: -webkit-fit-content;
@@ -1465,16 +1468,13 @@ footer {
   width: 80%;
   margin: 0 auto;
   position: relative;
+  z-index: 50;
 }
-.service .swiper .service-img img {
-  height: 500px;
+.service .swiper .service-img a {
+  height: 100%;
+  display: block;
 }
-@media screen and (max-width: 520px) {
-  .service .swiper .service-img img {
-    height: 300px;
-  }
-}
-.service .swiper .service-img:after {
+.service .swiper .service-img a:after {
   content: "";
   position: absolute;
   top: 0;
@@ -1483,6 +1483,14 @@ footer {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
+}
+.service .swiper .service-img img {
+  height: 500px;
+}
+@media screen and (max-width: 520px) {
+  .service .swiper .service-img img {
+    height: 300px;
+  }
 }
 .service .swiper .service-img__text {
   color: #fff;
@@ -1515,6 +1523,7 @@ footer {
   flex-shrink: 0;
   position: relative;
   transition-property: transform;
+  pointer-events: inherit;
 }
 .service .swiper-pagination {
   margin-top: 16px;
@@ -1538,24 +1547,38 @@ footer {
 }
 .service .swiper-button-next, .service .swiper-button-prev {
   position: absolute;
-  top: 35%;
+  top: calc(50% - 60px);
   cursor: pointer;
   color: #202A39;
   font-size: 3rem;
 }
 .service .swiper-button-next {
-  right: 4%;
+  right: 8%;
   z-index: 10;
 }
 .service .swiper-button-next::after {
-  content: ">";
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
 }
 .service .swiper-button-prev {
   left: 4%;
   z-index: 10;
 }
 .service .swiper-button-prev::after {
-  content: "<";
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(-135deg);
+  transition: all 0.5s ease;
 }
 .service .btn {
   margin-top: 32px;

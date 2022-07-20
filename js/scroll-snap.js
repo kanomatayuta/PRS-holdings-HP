@@ -1,14 +1,15 @@
 var current;
 $.scrollify({
   section: ".split",
+  interstitialSection: "header,footer,.global-contact",
   setHeights: false,
-  before: function (i, box) {
+  before: function (i, split) {
     current = i;
   },
 });
 $(window).on('resize', function () {
   if (current) {
-    var currentScrl = $('.box').eq(current).offset().top;
+    var currentScrl = $('.split').eq(current).offset().top;
     $(window).scrollTop(currentScrl);
   }
 });

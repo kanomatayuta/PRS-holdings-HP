@@ -350,6 +350,7 @@ footer {
     * service
     --------------------------*/
 .service {
+  z-index: 40;
 
   &-menu__list {
     display: block;
@@ -375,6 +376,23 @@ footer {
       width: 80%;
       margin: 0 auto;
       position: relative;
+      z-index: 50;
+
+      a {
+        height: 100%;
+        display: block;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: va.$smoke;
+          z-index: 1;
+        }
+      }
 
       img {
         height: 500px;
@@ -384,16 +402,7 @@ footer {
         }
       }
 
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: va.$smoke;
-        z-index: 1;
-      }
+
 
       &__text {
         color: va.$service-img-text;
@@ -428,6 +437,7 @@ footer {
       flex-shrink: 0;
       position: relative;
       transition-property: transform;
+      pointer-events: inherit;
     }
 
     &-pagination {
@@ -456,18 +466,25 @@ footer {
     &-button-next,
     &-button-prev {
       position: absolute;
-      top: 35%;
+      top: calc(50% - 60px);
       cursor: pointer;
       color: va.$swiper-button;
       font-size: 3rem;
     }
 
     &-button-next {
-      right: 4%;
+      right: 8%;
       z-index: 10;
 
       &::after {
-        content: ">";
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
       }
     }
 
@@ -476,7 +493,14 @@ footer {
       z-index: 10;
 
       &::after {
-        content: "<";
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        transform: rotate(-135deg);
+        transition: all 0.5s ease;
       }
     }
   }
