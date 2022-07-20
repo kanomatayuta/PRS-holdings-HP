@@ -196,39 +196,23 @@
         <p class="sec__text">
           PRSでは、研修を通して主にフロントエンジニアの育成に力を入れております。
         </p>
-
-        <div class="graphic">
+        <div class="chart-container">
           <div class="chart">
-            <span class="block" title="front">
-              <span class="value">60%</span>
-            </span>
-            <span class="block" title="back">
-              <span class="value">20%</span>
-            </span>
-            <span class="block" title="infra">
-              <span class="value">10%</span>
-            </span>
-            <span class="block" title="others">
-              <span class="value">10%</span>
-            </span>
+            <canvas id="myChart"></canvas>
           </div>
-        </div>
-
-        <div class="tb-ratio">
-          <svg class="circle" width="280" height="280">
-            <circle class="type type4 typeA4" cx="140" cy="140" r="90"></circle>
-            <circle class="type type3 typeA3" cx="140" cy="140" r="90"></circle>
-            <circle class="type type2 typeA2" cx="140" cy="140" r="90"></circle>
-            <circle class="type type1 typeA1" cx="140" cy="140" r="90"></circle>
-          </svg>
-        </div>
-
-        <div class="x-axis">
-          <ul class="legend">
-            <li>フロントエンド:<span>60%</span></li>
-            <li>バックエンド:<span>20%</span></li>
-            <li>インフラ:<span>10%</span></li>
-            <li>その他(運用、保守):<span>10%</span></li>
+          <ul class="label">
+            <li>
+              <p>フロントエンジニア</p>
+            </li>
+            <li>
+              <p>バックエンド</p>
+            </li>
+            <li>
+              <p>インフラ</p>
+            </li>
+            <li>
+              <p>その他(運用、保守)</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -378,6 +362,7 @@
     </div>
     <small class="copyright">© 2022 PRS HOLDINGS Co.,Ltd.</small>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
   <script src="js/navi.js"></script>
   <script src="js/graph.js"></script>
 

@@ -15,3 +15,18 @@ for (let count = 0; count < tab.length; count++)
     contents[count].classList.toggle("active");
   });
 }
+
+
+
+// インタビュー項目
+const atab = document.querySelectorAll(".readmore-button-box");
+const acontents = document.querySelectorAll(".readmore-area");
+
+// 繰り返し(ループ)
+for (let count = 0; count < atab.length; count++)
+{
+  atab[count].addEventListener("click", function () {
+    this.classList.toggle("active");
+    acontents[count].classList.toggle("active");
+  });
+}

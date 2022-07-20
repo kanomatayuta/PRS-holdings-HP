@@ -37,7 +37,8 @@ $sp: 350px;
 // セクション共通
 .produce,
 .consign,
-.ses {
+.ses,
+.consul {
   .content {
     display: flex;
 
@@ -70,40 +71,25 @@ $sp: 350px;
       width: 50%;
       height: 400px;
       z-index: 0;
-      position: relative;
 
       @include pc() {
         padding: 0;
-        width: 100%;
+        width: 80%;
         margin: 56px auto 32px; // 背景画像分（下）の余白
         padding: 0px;
-        width: 100%;
       }
 
-      &::before {
-        content: "";
+      @include tb() {
         width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        z-index: -1;
-
-        @include pc() {
-          top: 32px;
-          left: -32px;
-          width: 100%;
-        }
+        height: 250px;
       }
     }
   }
 }
 
 // consignテキストと画像反対
-.consign {
+.consign,
+.consul {
   .row {
     flex-direction: row-reverse;
 
@@ -128,29 +114,36 @@ $sp: 350px;
 }
 
 // タイトルカラー
-.title--blue {
+.produce .title {
   border-left: 16px solid va.$produce--blue;
   height: 100px;
 }
 
-.title--pink {
+.consign .title {
   border-left: 16px solid va.$consign--pink;
 }
 
-.title--green {
+.ses .title {
   border-left: 16px solid va.$ses--green;
 }
 
+.consul .title {
+  border-left: 16px solid va.$consign--pink;
+}
+
 // 背景 BOX
-.produce .content__img::before {
-  background-color: va.$produce--blue;
+.produce .content__img img {
+  box-shadow: 3vw 3vw 0 va.$produce--blue;
 }
 
-.consign .content__img::before {
-  left: -40px;
-  background-color: va.$consign--pink;
+.consign .content__img img {
+  box-shadow: -3vw 3vw 0 va.$consign--pink;
 }
 
-.ses .content__img::before {
-  background-color: va.$ses--green;
+.ses .content__img img {
+  box-shadow: 3vw 3vw 0 va.$ses--green;
+}
+
+.consul .content__img img {
+  box-shadow: -3vw 3vw 0 va.$consign--pink;
 }

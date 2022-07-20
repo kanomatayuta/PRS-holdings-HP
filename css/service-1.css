@@ -854,7 +854,8 @@ footer
 --------------------------*/
 .produce .content,
 .consign .content,
-.ses .content {
+.ses .content,
+.consul .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -862,127 +863,134 @@ footer
 @media screen and (max-width: 960px) {
   .produce .content,
 .consign .content,
-.ses .content {
+.ses .content,
+.consul .content {
     display: block;
   }
 }
 .produce .content__text,
 .consign .content__text,
-.ses .content__text {
+.ses .content__text,
+.consul .content__text {
   padding-right: 24px;
   width: 50%;
 }
 @media screen and (max-width: 960px) {
   .produce .content__text,
 .consign .content__text,
-.ses .content__text {
+.ses .content__text,
+.consul .content__text {
     padding: 0;
     width: 100%;
   }
 }
 .produce .content__text .title,
 .consign .content__text .title,
-.ses .content__text .title {
+.ses .content__text .title,
+.consul .content__text .title {
   font-size: 1.6em;
   padding: 2rem 1.5rem;
 }
 .produce .content__text p,
 .consign .content__text p,
-.ses .content__text p {
+.ses .content__text p,
+.consul .content__text p {
   margin: 48px 0px 48px 16px;
 }
 .produce .content__img,
 .consign .content__img,
-.ses .content__img {
+.ses .content__img,
+.consul .content__img {
   margin-bottom: 40px;
   padding-left: 24px;
   width: 50%;
   height: 400px;
   z-index: 0;
-  position: relative;
 }
 @media screen and (max-width: 960px) {
   .produce .content__img,
 .consign .content__img,
-.ses .content__img {
+.ses .content__img,
+.consul .content__img {
     padding: 0;
-    width: 100%;
+    width: 80%;
     margin: 56px auto 32px;
     padding: 0px;
-    width: 100%;
   }
 }
-.produce .content__img::before,
-.consign .content__img::before,
-.ses .content__img::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  z-index: -1;
-}
-@media screen and (max-width: 960px) {
-  .produce .content__img::before,
-.consign .content__img::before,
-.ses .content__img::before {
-    top: 32px;
-    left: -32px;
+@media screen and (max-width: 520px) {
+  .produce .content__img,
+.consign .content__img,
+.ses .content__img,
+.consul .content__img {
     width: 100%;
+    height: 250px;
   }
 }
 
-.consign .row {
+.consign .row,
+.consul .row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
-.consign .row .content__text {
+.consign .row .content__text,
+.consul .row .content__text {
   padding-right: 0px;
   padding-left: 24px;
 }
 @media screen and (max-width: 960px) {
-  .consign .row .content__text {
+  .consign .row .content__text,
+.consul .row .content__text {
     padding: 0;
   }
 }
-.consign .row .content__img {
+.consign .row .content__img,
+.consul .row .content__img {
   padding-left: 0px;
   padding-right: 24px;
 }
 @media screen and (max-width: 960px) {
-  .consign .row .content__img {
+  .consign .row .content__img,
+.consul .row .content__img {
     padding: 0;
   }
 }
 
-.title--blue {
+.produce .title {
   border-left: 16px solid #97B5E7;
   height: 100px;
 }
 
-.title--pink {
+.consign .title {
   border-left: 16px solid #F2E0E5;
 }
 
-.title--green {
+.ses .title {
   border-left: 16px solid #81D6E6;
 }
 
-.produce .content__img::before {
-  background-color: #97B5E7;
+.consul .title {
+  border-left: 16px solid #F2E0E5;
 }
 
-.consign .content__img::before {
-  left: -40px;
-  background-color: #F2E0E5;
+.produce .content__img img {
+  -webkit-box-shadow: 3vw 3vw 0 #97B5E7;
+          box-shadow: 3vw 3vw 0 #97B5E7;
 }
 
-.ses .content__img::before {
-  background-color: #81D6E6;
+.consign .content__img img {
+  -webkit-box-shadow: -3vw 3vw 0 #F2E0E5;
+          box-shadow: -3vw 3vw 0 #F2E0E5;
+}
+
+.ses .content__img img {
+  -webkit-box-shadow: 3vw 3vw 0 #81D6E6;
+          box-shadow: 3vw 3vw 0 #81D6E6;
+}
+
+.consul .content__img img {
+  -webkit-box-shadow: -3vw 3vw 0 #F2E0E5;
+          box-shadow: -3vw 3vw 0 #F2E0E5;
 }/*# sourceMappingURL=service-1.css.map */
