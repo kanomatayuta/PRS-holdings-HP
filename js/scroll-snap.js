@@ -8,7 +8,8 @@ $.scrollify({
   },
 });
 $(window).on('resize', function () {
-  if (current) {
+  if (current)
+  {
     var currentScrl = $('.split').eq(current).offset().top;
     $(window).scrollTop(currentScrl);
   }
