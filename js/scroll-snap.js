@@ -2,7 +2,8 @@ var current;
 $.scrollify({
   section: ".split",
   interstitialSection: "header,footer,.global-contact",
-  scrollSpeed: 700,
+  scrollSpeed: 300,
+  easing: "swing",
   setHeights: false,
   before: function (i, split) {
     current = i;
