@@ -243,6 +243,13 @@ $sp: 350px;
       @include tb() {
         width: 25%;
         writing-mode: vertical-rl;
+
+        // Safari対応
+        div {
+          font-weight: bold;
+          writing-mode: vertical-lr;
+          min-height: 250px;
+        }
       }
     }
 
@@ -273,7 +280,7 @@ $sp: 350px;
     line-height: 35px;
 
     @include tb() {
-      font-size: 0.9rem;
+      font-size: 0.9em;
       line-height: 30px;
     }
   }
