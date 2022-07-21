@@ -1173,7 +1173,7 @@ footer
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 520px) {
   .readmore-button-box span {
     background-color: #CBDAF3;
     color: #000;

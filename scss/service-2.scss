@@ -350,7 +350,7 @@ $sp: 350px;
 }
 
 //続きを読む
-@include sp() {
+@include tb() {
 
   .readmore-button-box span {
     background-color: va.$btn--blue;
