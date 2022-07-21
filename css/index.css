@@ -133,19 +133,16 @@ img {
   width: 100%;
   visibility: visible;
   opacity: 0;
-  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-  -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-  -moz-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .tb-gnavi__wrapper {
   position: absolute;
   width: 100%;
   top: 8%;
   left: 50%;
-  transform: translate(-50%, -5%);
   -webkit-transform: translate(-50%, -5%);
-  -moz-transform: translate(-50%, -5%);
-  -ms-transform: translate(-50%, -5%);
+          transform: translate(-50%, -5%);
 }
 .tb-gnavi__logo {
   margin: 0 auto;
@@ -379,9 +376,8 @@ img {
   top: 0;
   left: 0;
   opacity: 1;
-  transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-  -webkit-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-  -moz-transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition: all 1s;
+  transition: all 1s;
   z-index: 999;
 }
 
@@ -393,9 +389,8 @@ img {
 .btn--active .hamburger--trigger span:nth-of-type(2),
 .btn--active .main-hamburger--trigger span:nth-of-type(2) {
   width: 0;
-  transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
-  -moz-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 .btn--active .hamburger--trigger span:nth-of-type(3),
 .btn--active .main-hamburger--trigger span:nth-of-type(3) {
@@ -1391,7 +1386,7 @@ footer {
 .swiper--visual-item {
   position: relative;
   width: 100%;
-  padding-top: 60vh;
+  padding-top: 65%;
   overflow: hidden;
 }
 

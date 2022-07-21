@@ -121,9 +121,7 @@ $sp: 350px;
   width: 100%;
   visibility: visible;
   opacity: 0;
-  transition: all 1s cubic-bezier(.19, 1, .22, 1);
-  -webkit-transition: all 1s cubic-bezier(.19, 1, .22, 1);
-  -moz-transition: all 1s cubic-bezier(.19, 1, .22, 1);
+  transition: all 1s;
 
   &__wrapper {
     position: absolute;
@@ -131,9 +129,6 @@ $sp: 350px;
     top: 8%;
     left: 50%;
     transform: translate(-50%, -5%);
-    -webkit-transform: translate(-50%, -5%);
-    -moz-transform: translate(-50%, -5%);
-    -ms-transform: translate(-50%, -5%);
   }
 
   &__logo {
@@ -381,9 +376,7 @@ $sp: 350px;
   top: 0;
   left: 0;
   opacity: 1;
-  transition: all 2s cubic-bezier(.19, 1, .22, 1);
-  -webkit-transition: all 2s cubic-bezier(.19, 1, .22, 1);
-  -moz-transition: all 2s cubic-bezier(.19, 1, .22, 1);
+  transition: all 1s;
   z-index: 999;
 }
 
@@ -398,8 +391,6 @@ $sp: 350px;
     span:nth-of-type(2) {
       width: 0;
       transition-delay: .1s;
-      -webkit-transition-delay: .1s;
-      -moz-transition-delay: .1s;
     }
 
     span:nth-of-type(3) {
