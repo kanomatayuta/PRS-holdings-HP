@@ -552,6 +552,15 @@ body {
   background: #81D6E6;
 }
 
+.btn--orange {
+  color: #000;
+  background-color: #FFDF88;
+}
+.btn--orange:hover {
+  color: #fff;
+  background: #FDD258;
+}
+
 /*
 --------------------------------------
 global-contact
@@ -972,7 +981,7 @@ footer
 }
 
 .consul .title {
-  border-left: 16px solid #F2E0E5;
+  border-left: 16px solid #FDD258;
 }
 
 .produce .content__img img {
@@ -991,6 +1000,6 @@ footer
 }
 
 .consul .content__img img {
-  -webkit-box-shadow: -3vw 3vw 0 #F2E0E5;
-          box-shadow: -3vw 3vw 0 #F2E0E5;
+  -webkit-box-shadow: -3vw 3vw 0 #FDD258;
+          box-shadow: -3vw 3vw 0 #FDD258;
 }/*# sourceMappingURL=service-1.css.map */

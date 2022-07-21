@@ -189,6 +189,16 @@ body {
   }
 }
 
+.btn--orange {
+  color: va.$btn-text;
+  background-color: va.$btn--orange;
+
+  &:hover {
+    color: va.$btn-text-hover;
+    background: va.$btn--orange-hover;
+  }
+}
+
 
 
 /*
