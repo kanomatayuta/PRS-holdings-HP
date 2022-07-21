@@ -54,7 +54,6 @@ img {
   z-index: 2;
   display: flex;
   height: 100vh;
-  border-bottom: solid 1px va.$split-border;
 
   @include pc() {
     display: block;
@@ -93,7 +92,7 @@ img {
 
 .split__img {
   opacity: 0;
-  transition: opacity .7s;
+  transition: opacity 0s;
 
   @include pc() {
     opacity: 1;
