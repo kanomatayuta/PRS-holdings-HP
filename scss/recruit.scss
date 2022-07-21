@@ -242,14 +242,7 @@ $sp: 350px;
 
       @include tb() {
         width: 25%;
-        writing-mode: vertical-lr;
-
-        // Safari対応
-        div {
-          font-weight: bold;
-          writing-mode: vertical-lr;
-          min-height: 250px;
-        }
+        writing-mode: vertical-rl;
       }
     }
 
@@ -280,7 +273,7 @@ $sp: 350px;
     line-height: 35px;
 
     @include tb() {
-      font-size: 0.8em;
+      font-size: 0.9rem;
       line-height: 30px;
     }
   }

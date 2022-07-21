@@ -460,7 +460,7 @@ body {
 * セクション
 --------------------------*/
 .sec {
-  padding: min(8vw, 80px) 0;
+  padding: 8vw 0;
   margin: 0 auto;
 }
 
@@ -470,7 +470,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
 .sec__title {
   text-align: center;
   font-size: 2em;
@@ -1053,16 +1052,9 @@ footer
 @media screen and (max-width: 520px) {
   .recruitment tr th {
     width: 25%;
-    -webkit-writing-mode: vertical-lr;
-        -ms-writing-mode: tb-lr;
-            writing-mode: vertical-lr;
-  }
-  .recruitment tr th div {
-    font-weight: bold;
-    -webkit-writing-mode: vertical-lr;
-        -ms-writing-mode: tb-lr;
-            writing-mode: vertical-lr;
-    min-height: 250px;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
   }
 }
 .recruitment tr td {
@@ -1088,7 +1080,7 @@ footer
 }
 @media screen and (max-width: 520px) {
   .recruitment span {
-    font-size: 0.8em;
+    font-size: 0.9rem;
     line-height: 30px;
   }
 }/*# sourceMappingURL=recruit.css.map */

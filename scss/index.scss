@@ -7,8 +7,8 @@
 @use "header";
 @use "svg-anime";
 @use "base";
-@use "variables" as va;
-@use "fonts" as fo;
+@use "variables"as va;
+@use "fonts"as fo;
 @use "footer";
 // レスポンシブ
 $pc: 960px;
@@ -224,7 +224,7 @@ footer {
 .swiper--visual-item {
   position: relative;
   width: 100%;
-  padding-top: 60vh;
+  padding-top: 500px;
   overflow: hidden;
 }
 
@@ -252,6 +252,20 @@ footer {
   background-image: url(../img/homevisual/main3.jpg);
 }
 
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.swiper-slide-active figure {
+  animation: zoomUp 10s linear 0s 1 normal both;
+}
+
 .slide-img img {
   display: block;
 }
@@ -259,7 +273,37 @@ footer {
 
 .swiper--visual-pagination {
   display: none;
+  // display: flex;
+  // position: absolute;
+  // top: 50%;
+  // right: 3%;
+  // flex-direction: column;
+  // transform: translateY(-50%);
 }
+
+// .swiper-pagination-bullet {
+//   cursor: pointer;
+//   display: block;
+//   border-radius: 50%;
+//   opacity: 1;
+//   width: 16px;
+//   height: 16px;
+//   background-color: va.$pagination-bullet;
+//   flex-direction: column;
+// }
+
+// .swiper-pagination-bullet-active {
+//   opacity: 1;
+//   background-color: va.$pagination-active-a;
+// }
+
+// .swiper-pagination-bullet {
+//   margin-top: 32px;
+// }
+
+// .swiper-pagination-bullet:first-child {
+//   margin-top: 0px;
+// }
 
 /*--------------------------
   * js
@@ -350,10 +394,10 @@ footer {
       }
 
       img {
-        height: 50vh;
+        height: 500px;
 
         @include tb() {
-          height: 30vh;
+          height: 300px;
         }
       }
 
