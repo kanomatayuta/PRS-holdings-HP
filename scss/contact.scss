@@ -7,8 +7,8 @@
 @use "reset";
 @use "header";
 @use "base";
-@use "variables" as va;
-@use "fonts" as fo;
+@use "variables"as va;
+@use "fonts"as fo;
 @use "footer";
 
 // レスポンシブ
@@ -136,6 +136,13 @@ $sp: 350px;
 
 .privacy {
   margin-bottom: 8vw;
+  background-color: #fff;
+
+  .sec__wrapper {
+    .sec__text {
+      text-align: center;
+    }
+  }
 
   .agree {
     margin-top: 32px;
