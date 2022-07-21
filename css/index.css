@@ -1347,9 +1347,6 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
 }
 @media screen and (max-width: 960px) {
   .mainvisual,
@@ -1659,4 +1656,13 @@ footer {
 }
 .company-visual .btn {
   margin-top: 32px;
+}
+
+/*
+--------------------------------------
+.global-contact
+--------------------------------------
+*/
+.global-contact {
+  margin-top: 0;
 }/*# sourceMappingURL=index.css.map */
