@@ -110,12 +110,25 @@ footer {
 .service,
 .company {
   display: flex;
-  height: 100vh;
   align-items: center;
 
   @include pc() {
     flex-wrap: wrap;
     align-content: center;
+  }
+}
+
+.sec {
+  padding: 8vw 0;
+}
+
+.mainvisual.sec,
+.concept.sec,
+.service.sec,
+.company.sec {
+  @include tb() {
+    padding: 0;
+    height: 100vh;
   }
 }
 
@@ -248,14 +261,12 @@ footer {
     position: relative;
 
     .service-img {
-      width: 80%;
+      width: 75%;
       margin: 0 auto;
       position: relative;
       z-index: 50;
 
       a {
-        height: 100%;
-        display: block;
 
         &:after {
           content: "";
@@ -268,23 +279,6 @@ footer {
           z-index: 1;
         }
       }
-
-      img {
-        height: 50vh;
-
-        @include pc() {
-          height: 40vh;
-        }
-
-        @include tb() {
-          height: 30vh;
-        }
-
-        @include sp() {
-          height: 20vh;
-        }
-      }
-
 
 
       &__text {

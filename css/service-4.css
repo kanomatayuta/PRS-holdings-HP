@@ -455,7 +455,7 @@ body {
 * セクション
 --------------------------*/
 .sec {
-  padding: 8vw 0;
+  padding: min(8vw, 80px) 0;
   margin: 0 auto;
 }
 
@@ -465,6 +465,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .sec__title {
   text-align: center;
   font-size: 2em;
@@ -1035,25 +1036,6 @@ footer
 @media screen and (max-width: 960px) {
   .introduction-flow {
     border-spacing: 0px 50px;
-  }
-}
-.introduction-flow tbody {
-  position: relative;
-}
-.introduction-flow tbody::before {
-  content: "";
-  position: absolute;
-  top: 32px;
-  left: 5.3%;
-  border-left: 5px dotted #202A39;
-  -webkit-transform: translateX(-10%);
-          transform: translateX(-10%);
-  height: 90%;
-  width: 5px;
-}
-@media screen and (max-width: 960px) {
-  .introduction-flow tbody::before {
-    content: none;
   }
 }
 .introduction-flow .step-box {

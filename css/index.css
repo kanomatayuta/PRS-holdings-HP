@@ -855,7 +855,7 @@ body {
 * セクション
 --------------------------*/
 .sec {
-  padding: 8vw 0;
+  padding: min(8vw, 80px) 0;
   margin: 0 auto;
 }
 
@@ -865,6 +865,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
 .sec__title {
   text-align: center;
   font-size: 2em;
@@ -1338,7 +1339,6 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1352,6 +1352,20 @@ footer {
         flex-wrap: wrap;
     -ms-flex-line-pack: center;
         align-content: center;
+  }
+}
+
+.sec {
+  padding: 8vw 0;
+}
+
+@media screen and (max-width: 520px) {
+  .mainvisual.sec,
+.concept.sec,
+.service.sec,
+.company.sec {
+    padding: 0;
+    height: 100vh;
   }
 }
 
@@ -1490,14 +1504,10 @@ footer {
   position: relative;
 }
 .service .swiper .service-img {
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   position: relative;
   z-index: 50;
-}
-.service .swiper .service-img a {
-  height: 100%;
-  display: block;
 }
 .service .swiper .service-img a:after {
   content: "";
@@ -1508,24 +1518,6 @@ footer {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
-}
-.service .swiper .service-img img {
-  height: 50vh;
-}
-@media screen and (max-width: 960px) {
-  .service .swiper .service-img img {
-    height: 40vh;
-  }
-}
-@media screen and (max-width: 520px) {
-  .service .swiper .service-img img {
-    height: 30vh;
-  }
-}
-@media screen and (max-width: 350px) {
-  .service .swiper .service-img img {
-    height: 20vh;
-  }
 }
 .service .swiper .service-img__text {
   color: #fff;
