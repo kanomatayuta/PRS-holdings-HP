@@ -1038,25 +1038,6 @@ footer
     border-spacing: 0px 50px;
   }
 }
-.introduction-flow tbody {
-  position: relative;
-}
-.introduction-flow tbody::before {
-  content: "";
-  position: absolute;
-  top: 32px;
-  left: 5.3%;
-  border-left: 5px dotted #202A39;
-  -webkit-transform: translateX(-10%);
-          transform: translateX(-10%);
-  height: 90%;
-  width: 5px;
-}
-@media screen and (max-width: 960px) {
-  .introduction-flow tbody::before {
-    content: none;
-  }
-}
 .introduction-flow .step-box {
   display: inline-block;
   width: 100px;

@@ -203,25 +203,6 @@ $sp: 350px;
     border-spacing: 0px 50px;
   }
 
-  tbody {
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 32px;
-      left: 5.3%;
-      border-left: 5px dotted va.$introduction-tbody;
-      transform: translateX(-10%);
-      height: 90%;
-      width: 5px;
-
-      @include pc() {
-        content: none;
-      }
-    }
-  }
-
   .step-box {
     display: inline-block;
     width: 100px;

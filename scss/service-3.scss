@@ -144,25 +144,6 @@ $sp: 350px;
   border-spacing: 0px 24px;
 }
 
-tbody {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 24px;
-    left: 10%;
-    border-left: 5px dotted va.$production-tbody;
-    transform: translateX(-10%);
-    height: 90%;
-    width: 5px;
-
-    @include pc() {
-      content: none;
-    }
-  }
-}
-
 .step-box {
   width: 20%;
   padding: 24px;

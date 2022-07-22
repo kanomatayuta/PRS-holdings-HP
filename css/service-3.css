@@ -970,26 +970,6 @@ footer
   border-spacing: 0px 24px;
 }
 
-tbody {
-  position: relative;
-}
-tbody::before {
-  content: "";
-  position: absolute;
-  top: 24px;
-  left: 10%;
-  border-left: 5px dotted #202A39;
-  -webkit-transform: translateX(-10%);
-          transform: translateX(-10%);
-  height: 90%;
-  width: 5px;
-}
-@media screen and (max-width: 960px) {
-  tbody::before {
-    content: none;
-  }
-}
-
 .step-box {
   width: 20%;
   padding: 24px;
