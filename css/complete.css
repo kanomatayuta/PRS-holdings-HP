@@ -792,145 +792,39 @@ footer
 /*--------------------------
 * 共通
 --------------------------*/
-/*--------------------------
-* contact form
---------------------------*/
-.form {
-  margin-top: 32px;
-  background-color: #E0E9F8;
-}
-.form__wrapper {
-  width: 90%;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4vw 0;
-  margin: 0 auto;
-}
-.form .Form-Item {
-  padding: 16px 0;
-  width: 100%;
+.flex {
+  margin-top: 150px;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.form .Form-Item-Label {
-  width: 100%;
-  letter-spacing: 0.05em;
-  font-weight: bold;
-  display: flex;
+  justify-content: center;
   align-items: center;
 }
-.form .Form-Item-Label.isMsg {
-  margin-top: 0;
-  margin-bottom: auto;
-}
-.form .Form-Item-Label-Required {
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(50, 50, 93, 0.1);
-  margin-left: 30px;
-  width: 48px;
-  display: inline-block;
+.flex .message {
+  border: solid 5px #E0E9F8;
+  width: 60%;
   text-align: center;
-  background-color: #19a2db;
-  color: #fff;
-  font-size: 14px;
+  padding: 80px;
 }
-.form .Form-Item-Input {
-  box-shadow: 0 2px 5px rgba(50, 50, 93, 0.1);
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-left: 0px;
-  margin-top: 18px;
-  padding-left: 1em;
-  padding-right: 1em;
-  height: 48px;
-  flex: inherit;
-  width: 100%;
-  background: #fff;
-  font-size: 18px;
+.flex .message h2 {
+  font-size: 4rem;
 }
-.form .Form-Item-Input::-moz-placeholder {
-  color: #a3a3a3;
-}
-.form .Form-Item-Input:-ms-input-placeholder {
-  color: #a3a3a3;
-}
-.form .Form-Item-Input::placeholder {
-  color: #a3a3a3;
-}
-.form .Form-Item-Textarea {
-  box-shadow: 0 2px 5px rgba(50, 50, 93, 0.1);
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-left: 0;
-  margin-top: 18px;
-  padding-left: 1em;
-  padding-right: 1em;
-  height: 216px;
-  flex: inherit;
-  width: 100%;
-  background: #fff;
-  font-size: 16px;
-}
-.form .contact-type {
-  display: flex;
-  gap: 30px;
-  margin-top: 16px;
-}
-@media screen and (max-width: 350px) {
-  .form .contact-type {
-    flex-wrap: wrap;
-  }
-}
-
-/*--------------------------
-* privacy
---------------------------*/
-.privacy {
-  margin-bottom: 8vw;
-  background-color: #fff;
-}
-.privacy .sec__wrapper .sec__text {
-  text-align: center;
-}
-.privacy .agree {
-  margin-top: 32px;
-}
-@media screen and (max-width: 350px) {
-  .privacy .agree {
-    margin-top: 40px;
-  }
-}
-.privacy .agree h3 {
-  text-align: center;
-}
-.privacy .agree__cntent {
-  margin-top: 32px;
-  padding: 40px;
-  text-align: left;
-  background-color: #E0E9F8;
-  height: 500px;
-  overflow-y: scroll;
-}
-@media screen and (max-width: 350px) {
-  .privacy .agree__cntent {
-    margin-top: 20px;
-  }
-}
-.privacy .agree__cntent h4 {
-  margin-top: 16px;
-}
-.privacy .agree .check-text {
-  margin: 30px auto;
-  text-align: center;
-}
-.privacy .agree input[type=checkbox] {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-.privacy .agree button[type=submit] {
+.flex .message a {
+  margin: 120px auto 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 2rem 10rem;
+  border-color: none;
+  border-radius: 100vh;
+  color: #000;
+  background-color: #CBDAF3;
   border: none;
-}/*# sourceMappingURL=contact.css.map */
+  cursor: pointer;
+}
+.flex .message a:hover {
+  color: #fff;
+  background: #97B5E7;
+  transition: all 0.3s;
+}/*# sourceMappingURL=complete.css.map */

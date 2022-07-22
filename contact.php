@@ -150,19 +150,19 @@
             <p class="Form-Item-Label isMsg">お問い合わせ種類</p>
             <ul class="contact-type">
               <li>
-                <input type="radio" id="entry" name="contact_type">
+                <input type="radio" id="entry" name="contact_type" value="採用エントリー">
                 <label for="entry">採用エントリー</label>
               </li>
               <li>
-                <input type="radio" id="question" name="contact_type">
+                <input type="radio" id="question" name="contact_type" value="質問">
                 <label for="question">質問</label>
               </li>
               <li>
-                <input type="radio" id="request" name="contact_type">
+                <input type="radio" id="request" name="contact_type" value="ご依頼">
                 <label for="request">ご依頼</label>
               </li>
               <li>
-                <input type="radio" id="others" name="contact_type">
+                <input type="radio" id="others" name="contact_type" value="その他">
                 <label for="others">その他</label>
               </li>
             </ul>

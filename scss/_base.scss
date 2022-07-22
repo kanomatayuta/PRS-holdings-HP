@@ -1,5 +1,5 @@
-@use "variables" as va;
-@use "fonts" as fo;
+@use "variables"as va;
+@use "fonts"as fo;
 // レスポンシブ
 $pc: 960px;
 $tb: 520px;
@@ -136,6 +136,8 @@ body {
     position: relative;
     padding: 2rem 6rem;
     border-radius: 100vh;
+    cursor: pointer;
+    transition: all .5s ease;
 
     &::before {
       content: "";
@@ -162,6 +164,7 @@ body {
 .btn--blue {
   color: va.$btn-text;
   background-color: va.$btn--blue;
+  transition: all .5s ease;
 
   &:hover {
     color: va.$btn-text-hover;

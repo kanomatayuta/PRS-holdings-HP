@@ -1,45 +1,17 @@
 <?php
 //直リンクされた場合index.phpにリダイレクト
 if($_SERVER["REQUEST_METHOD"] != "POST"){
-	header("Location: index.html");
+	header("Location: contact.html");
 	exit();
 }
 
-//メールの日本語設定
-mb_language("Japanese");
-mb_internal_encoding("UTF-8");
-
-//送信先アドレス
-$to = $_POST['email'];
-//メール件名
-$subject = "お問い合わせありがとうございます。";
-//メッセージ本文を視覚的に見やすく格納（ヒアドキュメント）
-$message = <<< EOM
-お問い合わせありがとうございます。
-
-以下の内容で承りました。
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-【 お名前 】
-{$_POST["name"]}
-
-【 電話番号 】
-{$_POST["tel"]}
-
-【 メール 】
-{$_POST["email"]}
-
-【 お問い合わせの種類 】
-{$_POST["contact_type"]}
-
-【 お問い合わせ内容 】
-{$_POST["contact_body"]}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EOM;
-//送信元
-$headers = "From: info@prsholdings.co.jp";
-//メール送信
-mb_send_mail($to, $subject, $message, $headers);
+//各項目を内容を取得
+$name = $_POST['name'];
+$furigana = $_POST['furigana'];
+$tel = $_POST['tel'];
+$email = $_POST['email'];
+$contact_type = $_POST['contact_type'];
+$contact_body = $_POST['contact_body'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,12 +34,12 @@ mb_send_mail($to, $subject, $message, $headers);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- スタイル -->
   <link rel="icon" href="./img/meta/prs-logo.png">
-  <link rel="stylesheet" href="css/complete.css">
+  <link rel="stylesheet" href="css/confirm.css">
   <script src="https://kit.fontawesome.com/97c82750ad.js" crossorigin="anonymous"></script>
   <title>PRSホールディングス株式会社|お問い合わせ</title>
 </head>
 <body>
-<header class="sub-header" id="header">
+  <header class="sub-header" id="header">
     <div class="sub-header__logo">
       <img src="img/header/PRS-logo_WEB.png">
     </div>
@@ -147,11 +119,41 @@ mb_send_mail($to, $subject, $message, $headers);
         </div>
       </div>
     </div>
-		<div class="flex">
-		  <div class="message">
-	      <h2>お問い合わせ完了</h2>
-      	<a href="index.html">ページトップへ</a>
-	     </div>
-	  </div>
+	<div class="flex">
+  <form action="complete.php" method="post" class="form-area">
+    <h2>お問い合わせ内容確認</h2>
+    <div class="input-area">
+      <p>お名前</p>
+      <?php echo htmlspecialchars($name,ENT_QUOTES,'UTF-8');?>
+		</div>
+    <div class="input-area">
+      <p>電話番号</p>
+      <?php echo htmlspecialchars($tel,ENT_QUOTES,'UTF-8');?>
+    </div>
+
+		<div class="input-area">
+      <p>メール</p>
+      <?php echo htmlspecialchars($email,ENT_QUOTES,'UTF-8');?>
+    </div>
+
+    <div class="input-area">
+      <p>お問い合わせ種別</p>
+      <?php echo $contact_type;?>
+    </div>
+
+		<div class="input-area">
+      <p>お問い合わせ内容</p>
+      <?php echo nl2br(htmlspecialchars($contact_body,ENT_QUOTES,'UTF-8'));?>
+		</div>
+		<div class="input-area">
+      <input type="submit" name="submit" value="送信" class="btn-border">
+      <input type="hidden" name="name" value="<?php echo $name;?>">
+      <input type="hidden" name="tel" value="<?php echo $tel;?>">
+      <input type="hidden" name="email" value="<?php echo $email;?>">
+      <input type="hidden" name="contact_type" value="<?php echo $contact_type;?>">
+      <input type="hidden" name="contact_body" value="<?php echo $contact_body;?>">
+      </div>
+    </form>
+		</div>
   </body>
 </html>
