@@ -796,6 +796,10 @@ footer
 /*--------------------------
 * contact form
 --------------------------*/
+.contact p {
+  text-align: center;
+}
+
 .form {
   margin-top: 32px;
   background-color: #E0E9F8;

@@ -37,6 +37,12 @@ $sp: 350px;
 /*--------------------------
 * contact form
 --------------------------*/
+.contact {
+  p {
+    text-align: center;
+  }
+}
+
 .form {
   margin-top: 32px;
   background-color: va.$form-bg;
