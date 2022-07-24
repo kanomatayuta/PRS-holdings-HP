@@ -1,7 +1,8 @@
 <?php
+
 //直リンクされた場合index.phpにリダイレクト
 if($_SERVER["REQUEST_METHOD"] != "POST"){
-	header("Location: contact.html");
+	header("Location: index.html");
 	exit();
 }
 
@@ -15,6 +16,7 @@ $contact_body = $_POST['contact_body'];
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- 文字コード -->
   <meta charset="UTF-8">
@@ -38,6 +40,7 @@ $contact_body = $_POST['contact_body'];
   <script src="https://kit.fontawesome.com/97c82750ad.js" crossorigin="anonymous"></script>
   <title>PRSホールディングス株式会社|お問い合わせ</title>
 </head>
+
 <body>
   <header class="sub-header" id="header">
     <div class="sub-header__logo">
@@ -96,64 +99,65 @@ $contact_body = $_POST['contact_body'];
       </div>
     </div>
   </header>
-	<div class="hero">
-      <div class="hero__bg">
-        <div class="hero__content">
-          <p>お問い合わせ</p>
-          <h1>CONTACT</h1>
-          <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a itemprop="item" href="index.html">
-                <span itemprop="name">ホーム</span>
-              </a>
-              <meta itemprop="position" content="1" />
-            </li>
+  <div class="hero">
+    <div class="hero__bg">
+      <div class="hero__content">
+        <p>お問い合わせ</p>
+        <h1>CONTACT</h1>
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="index.html">
+              <span itemprop="name">ホーム</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
 
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a itemprop="item" href="contact.html">
-                <span itemprop="name">お問い合わせ</span>
-              </a>
-              <meta itemprop="position" content="2" />
-            </li>
-          </ol>
-        </div>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="contact.html">
+              <span itemprop="name">お問い合わせ</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
       </div>
     </div>
-	<div class="flex">
-  <form action="complete.php" method="post" class="form-area">
-    <h2>お問い合わせ内容確認</h2>
-    <div class="input-area">
-      <p>お名前</p>
-      <?php echo htmlspecialchars($name,ENT_QUOTES,'UTF-8');?>
-		</div>
-    <div class="input-area">
-      <p>電話番号</p>
-      <?php echo htmlspecialchars($tel,ENT_QUOTES,'UTF-8');?>
-    </div>
+  </div>
+  <div class="flex">
+    <form action="complete.php" method="post" class="form-area">
+      <h2>お問い合わせ内容確認</h2>
+      <div class="input-area">
+        <p>お名前</p>
+        <?php echo htmlspecialchars($name,ENT_QUOTES,'UTF-8');?>
+      </div>
+      <div class="input-area">
+        <p>電話番号</p>
+        <?php echo htmlspecialchars($tel,ENT_QUOTES,'UTF-8');?>
+      </div>
 
-		<div class="input-area">
-      <p>メール</p>
-      <?php echo htmlspecialchars($email,ENT_QUOTES,'UTF-8');?>
-    </div>
+      <div class="input-area">
+        <p>メール</p>
+        <?php echo htmlspecialchars($email,ENT_QUOTES,'UTF-8');?>
+      </div>
 
-    <div class="input-area">
-      <p>お問い合わせ種別</p>
-      <?php echo $contact_type;?>
-    </div>
+      <div class="input-area">
+        <p>お問い合わせ種別</p>
+        <?php echo $contact_type;?>
+      </div>
 
-		<div class="input-area">
-      <p>お問い合わせ内容</p>
-      <?php echo nl2br(htmlspecialchars($contact_body,ENT_QUOTES,'UTF-8'));?>
-		</div>
-		<div class="input-area">
-      <input type="submit" name="submit" value="送信" class="btn-border">
-      <input type="hidden" name="name" value="<?php echo $name;?>">
-      <input type="hidden" name="tel" value="<?php echo $tel;?>">
-      <input type="hidden" name="email" value="<?php echo $email;?>">
-      <input type="hidden" name="contact_type" value="<?php echo $contact_type;?>">
-      <input type="hidden" name="contact_body" value="<?php echo $contact_body;?>">
+      <div class="input-area">
+        <p>お問い合わせ内容</p>
+        <?php echo nl2br(htmlspecialchars($contact_body,ENT_QUOTES,'UTF-8'));?>
+      </div>
+      <div class="input-area">
+        <input type="submit" name="submit" value="送信" class="btn-border">
+        <input type="hidden" name="name" value="<?php echo $name;?>">
+        <input type="hidden" name="tel" value="<?php echo $tel;?>">
+        <input type="hidden" name="email" value="<?php echo $email;?>">
+        <input type="hidden" name="contact_type" value="<?php echo $contact_type;?>">
+        <input type="hidden" name="contact_body" value="<?php echo $contact_body;?>">
       </div>
     </form>
-		</div>
-  </body>
+  </div>
+</body>
+
 </html>
